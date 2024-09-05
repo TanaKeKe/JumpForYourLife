@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Block : MonoBehaviour
+public class GameObject : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Transform _transform;
     private bool _checkCollisionWithWall;
     private Collider2D _collider2D;
+    
+
     private void Awake()
     {
         _transform = transform;
@@ -20,6 +22,12 @@ public class Block : MonoBehaviour
         Messenger.AddListener(EventKey.COLLIDER, CheckCollisionWithWall);
     }
 
+    private void Update()
+    {
+        Move();
+
+    }
+
     private void CheckCollisionWithWall()
     {
         if (_checkCollisionWithWall)
@@ -29,11 +37,6 @@ public class Block : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        Move();
-       
-    }
 
     private void turnOnTrigger()
     {
