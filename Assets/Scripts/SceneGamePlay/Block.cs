@@ -9,17 +9,19 @@ public class GameObject : MonoBehaviour
     private Transform _transform;
     private bool _checkCollisionWithWall;
     private Collider2D _collider2D;
-    
+    private Rigidbody2D _rigidBody2D;
 
     private void Awake()
     {
-        _transform = transform;
+        _transform = GetComponent<Transform>();
         _collider2D = GetComponent<Collider2D>();
+        _rigidBody2D = GetComponent<Rigidbody2D>();
+
     }
     private void Start()
     {
+        
         Messenger.AddListener(EventKey.JUMP, turnOnTrigger);
-        Messenger.AddListener(EventKey.COLLIDER, CheckCollisionWithWall);
     }
 
     private void Update()
@@ -40,6 +42,7 @@ public class GameObject : MonoBehaviour
 
     private void turnOnTrigger()
     {
+
         _collider2D.isTrigger = true;
         speed = 0f;
     }
@@ -50,12 +53,11 @@ public class GameObject : MonoBehaviour
         CheckCollisionWithWall();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.gameObject.CompareTag("Wall"))
         {
-            
+
             _checkCollisionWithWall = true;
             Debug.Log("Đất va chạm vào tường nè bà");
         }
@@ -64,6 +66,10 @@ public class GameObject : MonoBehaviour
     private void OnDisable()
     {
         Messenger.RemoveListener(EventKey.JUMP, turnOnTrigger);
-        Messenger.RemoveListener(EventKey.COLLIDER, CheckCollisionWithWall);
+    }
+
+    internal void setActive(bool v)
+    {
+        gameObject.SetActive(v);
     }
 }

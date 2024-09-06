@@ -12,39 +12,23 @@ public class GamePlayPanel : MonoBehaviour
 
     [Space(10)]
 
-    [SerializeField] private GameObject block;
-    [SerializeField] private UnityEngine.GameObject blocks;
-    private List<GameObject> _blockList;
+
     private float _positionYOfWall;
-    private float _positionYOfBlock;
     void Start()
     {
         _positionYOfWall = wallTinyRight.transform.position.y;
-        _positionYOfBlock = block.transform.position.y;
-        GenerateWall(wallTinyLeft,wallTinyRight);
-        GenerateBlock(block);
-        
+
+        GenerateWall(wallTinyLeft, wallTinyRight);
+
     }
 
-    
-
-    private void GenerateBlock(GameObject block)
-    {
-        for(int i =1;i<=8;++i)
-        {
-            var blockClone = Instantiate(block, blocks.transform);
-            _blockList.Add(blockClone);
-        }
-
-        
-    }
 
     private void GenerateWall(UnityEngine.GameObject wallTinyLeft, UnityEngine.GameObject wallTinyRight)
     {
-        
-        for ( int i=1;i<=15;++i)
+
+        for (int i = 1; i <= 15; ++i)
         {
-            
+
             var wallTinyLeftClone = Instantiate(wallTinyLeft, wallLeft.transform);
             wallTinyLeftClone.transform.position = new Vector3(wallTinyLeftClone.transform.position.x, _positionYOfWall, wallTinyLeftClone.transform.position.z);
             var wallTinyRightClone = Instantiate(wallTinyRight, wallRight.transform);
