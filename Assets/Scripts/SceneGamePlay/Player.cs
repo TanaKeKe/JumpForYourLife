@@ -8,17 +8,20 @@ using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private float force;
+
+    [Space(10)]
     private Rigidbody2D _rigidbody2d;
-    private Transform _transform;
+    
     private Collider2D _collider2D;
-    [SerializeField] private float speed;
-    [SerializeField] private float jumpForce;
+    
+    
     private bool _isJump;
     private void Awake()
     {
         _rigidbody2d = GetComponent<Rigidbody2D>();
-        _rigidbody2d.velocity = Vector3.zero;
-        _transform = GetComponent<Transform>();
+        
+        
         _collider2D = GetComponent<Collider2D>();
     }
     private void Update()
@@ -30,9 +33,9 @@ public class Player : MonoBehaviour
             _isJump = true;
             if(_isJump)
             {
-                _rigidbody2d.velocity = Vector3.up * jumpForce;
+                _rigidbody2d.AddForce(Vector2.up * force);
             }
-            _transform.SetParent(null); // trả lại tranform hiện tại của player
+            
             
         }
         
@@ -46,22 +49,20 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Block"))
         {
-            _isJump = false;
+            transform.SetParent(null);
             Debug.Log("BLock va chạm nhân vật nè");
             setConnectBlock(collision);
         }
 
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            Debug.Log("Tường va chạm nhân vật nè");
-            
-        }
+        
     }
 
     private void setConnectBlock(Collision2D collision)
     {
+       
+        _isJump = false;
         // collion là khối player đang va chạm => cho khối player đang va chạm làm bố của nhân vật
-        _transform.parent = collision.transform;
+        transform.SetParent(collision.transform);
         
     }
 }

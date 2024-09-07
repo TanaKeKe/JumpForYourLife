@@ -22,6 +22,13 @@ public class GameObject : MonoBehaviour
     {
         
         Messenger.AddListener(EventKey.JUMP, turnOnTrigger);
+        Messenger.AddListener(EventKey.PLAYERCONNECTBLOCK, turnOffTrigger);
+    }
+
+    private void turnOffTrigger()
+    {
+
+        _collider2D.isTrigger = false;
     }
 
     private void Update()
@@ -44,7 +51,7 @@ public class GameObject : MonoBehaviour
     {
 
         _collider2D.isTrigger = true;
-        speed = 0f;
+        
     }
     
     private void Move()
@@ -63,13 +70,25 @@ public class GameObject : MonoBehaviour
         }
     }
 
+    
     private void OnDisable()
     {
         Messenger.RemoveListener(EventKey.JUMP, turnOnTrigger);
+        Messenger.RemoveListener(EventKey.PLAYERCONNECTBLOCK, turnOffTrigger);
     }
 
     internal void setActive(bool v)
     {
         gameObject.SetActive(v);
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+
+    internal float GetSpeed()
+    {
+        return speed;
     }
 }

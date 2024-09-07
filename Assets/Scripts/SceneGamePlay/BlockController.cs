@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BlockController : MonoBehaviour
 {
     [SerializeField] private GameObject block;
-    [SerializeField] private UnityEngine.GameObject blocks;
+    
 
     [Space(10)]
     [SerializeField] private float spaceBetweenTwoBlocks;
@@ -21,25 +23,33 @@ public class BlockController : MonoBehaviour
     {
         GenerateBlock(block);
         Debug.Log("Số khối trong danh sách là " + _blockList.Count);
-
-        
-        
     }
 
-    private void Update()
-    {
-        
-    }
 
     private void GenerateBlock(GameObject block)
     {
-        for (int i = 1; i <= 8; ++i)
+        for (int i = 0; i < 6; ++i)
         {
-            var blockClone = Instantiate(block, blocks.transform);
-            blockClone.setActive(false);
+            var blockClone = Instantiate(block, this.gameObject.transform);
+            // set position of block
+            if(_blockList.Count != 0 )
+            {
+                blockClone.transform.position -= Vector3.up * spaceBetweenTwoBlocks * i;
+            }
+            // set speed of block
+            if(i%2 == 0)
+            {
+                blockClone.SetSpeed(Random.Range(-blockClone.GetSpeed()+0.5f, -blockClone.GetSpeed() - 0.5f));
+            }
+            else
+            {
+                blockClone.SetSpeed(Random.Range(blockClone.GetSpeed() + 0.5f, blockClone.GetSpeed() - 0.5f));
+            }
             _blockList.Add(blockClone);
         }
 
 
     }
+
+    
 }

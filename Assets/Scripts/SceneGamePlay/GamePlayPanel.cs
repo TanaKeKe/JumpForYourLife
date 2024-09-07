@@ -17,7 +17,6 @@ public class GamePlayPanel : MonoBehaviour
     void Start()
     {
         _positionYOfWall = wallTinyRight.transform.position.y;
-
         GenerateWall(wallTinyLeft, wallTinyRight);
 
     }
@@ -36,4 +35,5 @@ public class GamePlayPanel : MonoBehaviour
             _positionYOfWall -= 1.5f;
         }
     }
+    
 }
