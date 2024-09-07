@@ -3,21 +3,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Block : MonoBehaviour
+public class GameObject : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Transform _transform;
     private bool _checkCollisionWithWall;
     private Collider2D _collider2D;
+    private Rigidbody2D _rigidBody2D;
+
     private void Awake()
     {
-        _transform = transform;
+        _transform = GetComponent<Transform>();
         _collider2D = GetComponent<Collider2D>();
+        _rigidBody2D = GetComponent<Rigidbody2D>();
+
     }
     private void Start()
     {
+        
         Messenger.AddListener(EventKey.JUMP, turnOnTrigger);
-        Messenger.AddListener(EventKey.COLLIDER, CheckCollisionWithWall);
+        Messenger.AddListener(EventKey.PLAYERCONNECTBLOCK, turnOffTrigger);
+    }
+
+    private void turnOffTrigger()
+    {
+
+        _collider2D.isTrigger = false;
+    }
+
+    private void Update()
+    {
+        Move();
+
     }
 
     private void CheckCollisionWithWall()
@@ -29,16 +46,12 @@ public class Block : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        Move();
-       
-    }
 
     private void turnOnTrigger()
     {
+
         _collider2D.isTrigger = true;
-        speed = 0f;
+        
     }
     
     private void Move()
@@ -47,20 +60,35 @@ public class Block : MonoBehaviour
         CheckCollisionWithWall();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.gameObject.CompareTag("Wall"))
         {
-            
+
             _checkCollisionWithWall = true;
             Debug.Log("Đất va chạm vào tường nè bà");
         }
     }
 
+    
     private void OnDisable()
     {
         Messenger.RemoveListener(EventKey.JUMP, turnOnTrigger);
-        Messenger.RemoveListener(EventKey.COLLIDER, CheckCollisionWithWall);
+        Messenger.RemoveListener(EventKey.PLAYERCONNECTBLOCK, turnOffTrigger);
+    }
+
+    internal void setActive(bool v)
+    {
+        gameObject.SetActive(v);
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+
+    internal float GetSpeed()
+    {
+        return speed;
     }
 }

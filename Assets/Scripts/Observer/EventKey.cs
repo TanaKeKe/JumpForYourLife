@@ -1,5 +1,5 @@
 ﻿public enum EventKey
 {
     JUMP,
-    COLLIDER,
+    PLAYERCONNECTBLOCK,
 }

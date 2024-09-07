@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Block
+  - Scorce
   layers:
   - Default
   - TransparentFX
