@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GamePlayPanel : MonoBehaviour
+public class WallSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject wallTinyLeftPrefab;
     [SerializeField] private GameObject wallTinyRightPrefab;

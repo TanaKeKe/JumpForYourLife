@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &82243021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 205121769}
   m_Layer: 0
   m_Name: TurnOnTriggerBarONE
-  m_TagString: Scorce
+  m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 465794362}
   m_Layer: 0
   m_Name: TurnOnTriggerBarTWO
-  m_TagString: Scorce
+  m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -708,10 +708,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallTinyLeftPrefab: {fileID: 1506922651361001361, guid: f1edb02681ffa8c48a508af75f501800, type: 3}
-  wallTinyRightPrefab: {fileID: 5209213401375906111, guid: 193d2f9cd0f0d5b4190c4c29890a2c22, type: 3}
+  wallTinyRightPrefab: {fileID: 4434516708640773609, guid: 193d2f9cd0f0d5b4190c4c29890a2c22, type: 3}
   wallLeft: {fileID: 1896397849}
   wallRight: {fileID: 290009945}
-  wallCount: 15
+  wallCount: 1
 --- !u!4 &957188089
 Transform:
   m_ObjectHideFlags: 0
