@@ -21,8 +21,8 @@ public class GameObject : MonoBehaviour
     private void Start()
     {
         
-        Messenger.AddListener(EventKey.JUMP, turnOnTrigger);
-        Messenger.AddListener(EventKey.PLAYERCONNECTBLOCK, turnOffTrigger);
+        Messenger.AddListener(EventKey.PlayerJump, turnOnTrigger);
+        Messenger.AddListener(EventKey.PlayerConnectBlock, turnOffTrigger);
     }
 
     private void turnOffTrigger()
@@ -73,8 +73,8 @@ public class GameObject : MonoBehaviour
     
     private void OnDisable()
     {
-        Messenger.RemoveListener(EventKey.JUMP, turnOnTrigger);
-        Messenger.RemoveListener(EventKey.PLAYERCONNECTBLOCK, turnOffTrigger);
+        Messenger.RemoveListener(EventKey.PlayerJump, turnOnTrigger);
+        Messenger.RemoveListener(EventKey.PlayerConnectBlock, turnOffTrigger);
     }
 
     internal void setActive(bool v)

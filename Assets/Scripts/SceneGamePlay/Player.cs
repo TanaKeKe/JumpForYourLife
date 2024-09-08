@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _isJump == false)
         {
             Debug.Log("Ấn vào màn hình");
-            Messenger.Broadcast(EventKey.JUMP);// Phát sự kiện JUMP
+            Messenger.Broadcast(EventKey.PlayerJump);// Phát sự kiện JUMP
             _isJump = true;
             if(_isJump)
             {
