@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Block : MonoBehaviour
@@ -40,7 +39,7 @@ public class Block : MonoBehaviour
     {
         Move();
     }
-    
+
     private void Move()
     {
         // transform.position += Vector3.right * speed * Time.deltaTime;
@@ -55,15 +54,6 @@ public class Block : MonoBehaviour
             ChangeDirection();
         }
     }
-
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("Wall"))
-    //     {
-    //         Debug.Log("Đất va chạm vào tường nè bà");
-    //         ChangeDirection();
-    //     }
-    // }
 
     public void ChangeDirection()
     {
