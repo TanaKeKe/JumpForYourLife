@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 8371244810744228229}
   - component: {fileID: 2403976975866865631}
   - component: {fileID: 1110352814985344425}
+  - component: {fileID: 772109886005809704}
+  - component: {fileID: 4921280302115716652}
   m_Layer: 0
-  m_Name: wallTinyOfLeft
+  m_Name: WallTinyOfLeft
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,3 +132,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.04, y: 1.595}
   m_EdgeRadius: 0
+--- !u!50 &772109886005809704
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506922651361001361}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!114 &4921280302115716652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506922651361001361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abde8dfddd524a55a76f52156dcd13c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

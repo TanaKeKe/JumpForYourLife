@@ -1,94 +1,77 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class GameObject : MonoBehaviour
+public class Block : MonoBehaviour
 {
     [SerializeField] private float speed;
-    private Transform _transform;
-    private bool _checkCollisionWithWall;
+    [SerializeField] private float speedRandomRange = 0.2f;
+
     private Collider2D _collider2D;
-    private Rigidbody2D _rigidBody2D;
 
     private void Awake()
     {
-        _transform = GetComponent<Transform>();
         _collider2D = GetComponent<Collider2D>();
-        _rigidBody2D = GetComponent<Rigidbody2D>();
-
-    }
-    private void Start()
-    {
-        
-        Messenger.AddListener(EventKey.PlayerJump, turnOnTrigger);
-        Messenger.AddListener(EventKey.PlayerConnectBlock, turnOffTrigger);
     }
 
-    private void turnOffTrigger()
+    private void OnEnable()
     {
+        Messenger.AddListener(EventKey.PlayerJump, TurnOnTrigger);
+        Messenger.AddListener(EventKey.PlayerConnectBlock, TurnOffTrigger);
+    }
 
+    private void OnDisable()
+    {
+        Messenger.RemoveListener(EventKey.PlayerJump, TurnOnTrigger);
+        Messenger.RemoveListener(EventKey.PlayerConnectBlock, TurnOffTrigger);
+    }
+
+    private void TurnOnTrigger()
+    {
+        _collider2D.isTrigger = true;
+    }
+
+    private void TurnOffTrigger()
+    {
         _collider2D.isTrigger = false;
     }
 
     private void Update()
     {
         Move();
-
-    }
-
-    private void CheckCollisionWithWall()
-    {
-        if (_checkCollisionWithWall)
-        {
-            speed *= -1f;
-            _checkCollisionWithWall = false;
-        }
-    }
-
-
-    private void turnOnTrigger()
-    {
-
-        _collider2D.isTrigger = true;
-        
     }
     
     private void Move()
     {
-        transform.position += Vector3.right * speed * Time.deltaTime;
-        CheckCollisionWithWall();
+        // transform.position += Vector3.right * speed * Time.deltaTime;
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-
-            _checkCollisionWithWall = true;
             Debug.Log("Đất va chạm vào tường nè bà");
+            ChangeDirection();
         }
     }
 
-    
-    private void OnDisable()
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.CompareTag("Wall"))
+    //     {
+    //         Debug.Log("Đất va chạm vào tường nè bà");
+    //         ChangeDirection();
+    //     }
+    // }
+
+    public void ChangeDirection()
     {
-        Messenger.RemoveListener(EventKey.PlayerJump, turnOnTrigger);
-        Messenger.RemoveListener(EventKey.PlayerConnectBlock, turnOffTrigger);
+        speed *= -1f;
     }
 
-    internal void setActive(bool v)
+    public void RandomSpeed(int direction)
     {
-        gameObject.SetActive(v);
-    }
-
-    public void SetSpeed(float speed)
-    {
-        this.speed = speed;
-    }
-
-    internal float GetSpeed()
-    {
-        return speed;
+        speed = direction * Random.Range(speed - speedRandomRange, speed + speedRandomRange);
     }
 }

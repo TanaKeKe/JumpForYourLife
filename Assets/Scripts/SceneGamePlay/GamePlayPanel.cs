@@ -1,39 +1,36 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GamePlayPanel : MonoBehaviour
 {
-    [SerializeField] private UnityEngine.GameObject wallTinyLeft;
-    [SerializeField] private UnityEngine.GameObject wallTinyRight;
-    [SerializeField] private UnityEngine.GameObject wallLeft;
-    [SerializeField] private UnityEngine.GameObject wallRight;
+    [SerializeField] private GameObject wallTinyLeftPrefab;
+    [SerializeField] private GameObject wallTinyRightPrefab;
+    [SerializeField] private Transform wallLeft;
+    [SerializeField] private Transform wallRight;
+    [SerializeField] private int wallCount = 15;
 
-    [Space(10)]
+    private float _wallPosition;
 
-
-    private float _positionYOfWall;
-    void Start()
+    private void Start()
     {
-        _positionYOfWall = wallTinyRight.transform.position.y;
-        GenerateWall(wallTinyLeft, wallTinyRight);
-
+        _wallPosition = wallTinyRightPrefab.transform.position.y;
+        GenerateWall(wallTinyLeftPrefab, wallTinyRightPrefab);
     }
 
-
-    private void GenerateWall(UnityEngine.GameObject wallTinyLeft, UnityEngine.GameObject wallTinyRight)
+    private void GenerateWall(GameObject wallTinyLeft, GameObject wallTinyRight)
     {
-
-        for (int i = 1; i <= 15; ++i)
+        for (int i = 1; i <= wallCount; ++i)
         {
+            var wallTinyLeftClone = Instantiate(wallTinyLeft, wallLeft);
+            var wallTinyRightClone = Instantiate(wallTinyRight, wallRight);
 
-            var wallTinyLeftClone = Instantiate(wallTinyLeft, wallLeft.transform);
-            wallTinyLeftClone.transform.position = new Vector3(wallTinyLeftClone.transform.position.x, _positionYOfWall, wallTinyLeftClone.transform.position.z);
-            var wallTinyRightClone = Instantiate(wallTinyRight, wallRight.transform);
-            wallTinyRightClone.transform.position = new Vector3(wallTinyRightClone.transform.position.x, _positionYOfWall, wallTinyRightClone.transform.position.z);
-            _positionYOfWall -= 1.5f;
+            var wallPos = wallTinyLeftClone.transform.position;
+            wallPos.y = _wallPosition;
+            wallTinyLeftClone.transform.position = wallPos;
+
+            wallPos.x *= -1;
+            wallTinyRightClone.transform.position = wallPos;
+
+            _wallPosition -= 1.5f;
         }
     }
-    
 }
