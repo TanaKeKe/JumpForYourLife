@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1506922651361001361, guid: f1edb02681ffa8c48a508af75f501800, type: 3}
       propertyPath: m_Name
-      value: Wall_Right
+      value: WallTinyOfRight
       objectReference: {fileID: 0}
     - target: {fileID: 8371244810744228229, guid: f1edb02681ffa8c48a508af75f501800, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8371244810744228229, guid: f1edb02681ffa8c48a508af75f501800, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8371244810744228229, guid: f1edb02681ffa8c48a508af75f501800, type: 3}
       propertyPath: m_LocalPosition.z
