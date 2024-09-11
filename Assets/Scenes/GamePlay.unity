@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -188,7 +187,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010752261, y: -0.5519507}
+  m_Offset: {x: -0.011502422, y: -0.56996477}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -199,7 +198,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.34882826, y: 0.098098755}
+  m_Size: {x: 0.3178134, y: 0.052672148}
   m_EdgeRadius: 0
 --- !u!50 &82243023
 Rigidbody2D:
@@ -622,8 +621,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652061831}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -688,8 +687,9 @@ GameObject:
   m_Component:
   - component: {fileID: 957188089}
   - component: {fileID: 957188088}
+  - component: {fileID: 957188090}
   m_Layer: 0
-  m_Name: GamePlayPanel
+  m_Name: GamePlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,7 +711,7 @@ MonoBehaviour:
   wallTinyRightPrefab: {fileID: 4434516708640773609, guid: 193d2f9cd0f0d5b4190c4c29890a2c22, type: 3}
   wallLeft: {fileID: 1896397849}
   wallRight: {fileID: 290009945}
-  wallCount: 1
+  wallCount: 2
 --- !u!4 &957188089
 Transform:
   m_ObjectHideFlags: 0
@@ -730,6 +730,22 @@ Transform:
   - {fileID: 1896397849}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &957188090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957188087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beeb0f70382f21f47bc07991fae573e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 0
+  myCamera: {fileID: 93066036}
+  bars: {fileID: 652061831}
+  countChangeCamera: 0.25
 --- !u!1 &1213011272
 GameObject:
   m_ObjectHideFlags: 0
