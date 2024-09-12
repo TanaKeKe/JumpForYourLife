@@ -9,9 +9,13 @@ public class BlockPool : ObjectPool
     [Space(10)]
     [SerializeField] private float spaceBetweenTwoBlocks;
     [SerializeField] private float lengthBlock;
-    
+
+    private List<GameObject> _blockPool;
+    private bool _checkStart;
+
     private void Start()
     {
+        _blockPool = GetObjectPool();
         GenerateBlock(blockPrefab);
         Debug.Log("Sinh khối đứng thành công: " + AmountObjectInPool());
         
@@ -20,6 +24,15 @@ public class BlockPool : ObjectPool
     private void Update()
     {
         GetObjectFromPool(lengthBlock);
+        if (GameController.Instance._isPlaying && !_checkStart)
+        {
+            _checkStart = true;
+            _blockPool[0].GetComponent<Block>().SetSpeed(1.3f);
+        }
+        else
+        {
+            if(!_checkStart) _blockPool[0].GetComponent<Block>().SetNoneSpeed();
+        }
         CheckOutCameraToResetPositionObject(lengthBlock,spaceBetweenTwoBlocks);
     }
     private void GenerateBlock(GameObject block)
@@ -35,4 +48,8 @@ public class BlockPool : ObjectPool
         }
     }
 
+    public float GetSpaceBetweenTwoBlocks()
+    {
+        return spaceBetweenTwoBlocks;
+    }
 }

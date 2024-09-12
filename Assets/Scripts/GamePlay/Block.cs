@@ -84,5 +84,10 @@ public class Block : MonoBehaviour
         speed = direction * Random.Range(speed - speedRandomRange, speed + speedRandomRange);
     }
 
+    public void SetNoneSpeed()
+    {
+        speed = 0;
+    }
+
     
 }

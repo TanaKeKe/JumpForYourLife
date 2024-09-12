@@ -31,12 +31,11 @@ public class ObjectPool : MonoBehaviour
     {
         float rangeTopCamera = GameController.Instance.GetRangeTopCamera();
         float rangeBottomCamera = GameController.Instance.GetRangeBottomCamera();
-
         foreach (GameObject obj in _objectPool)
         {
             if (obj != null)
             {
-                if (obj.transform.position.y <= rangeTopCamera || obj.transform.position.y >= rangeBottomCamera)
+                if (obj.transform.position.y - lengthObject <= rangeTopCamera && obj.transform.position.y + lengthObject >= rangeBottomCamera)
                 {
                     obj.SetActive(true);
                 }
@@ -85,5 +84,8 @@ public class ObjectPool : MonoBehaviour
         obj.transform.position = position; // đặt lại vị trí cho object
     }
 
-
+    public List<GameObject> GetObjectPool()
+    {
+        return _objectPool;
+    }
 }
