@@ -2,5 +2,5 @@
 {
     PlayerJump,
     PlayerConnectBlock,
-    
+    Score,
 }
