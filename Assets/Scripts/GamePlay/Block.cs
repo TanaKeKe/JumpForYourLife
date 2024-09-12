@@ -89,5 +89,8 @@ public class Block : MonoBehaviour
         speed = 0;
     }
 
-    
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
 }
