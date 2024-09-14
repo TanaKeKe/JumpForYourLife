@@ -24,7 +24,7 @@ public class BlockPool : ObjectPool
     private void Update()
     {
         GetObjectFromPool(lengthBlock);
-        if (GameController.Instance._isPlaying && !_checkStart)
+        if (GameController.Instance.isPlaying && !_checkStart)
         {
             _checkStart = true;
             _blockPool[0].GetComponent<Block>().SetSpeed(1.3f);

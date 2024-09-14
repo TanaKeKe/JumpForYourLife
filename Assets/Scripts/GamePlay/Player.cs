@@ -22,8 +22,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && _isJump == false)
         {
-
-            GameController.Instance._isPlaying = true;
+            GameController.Instance.isPlaying = true;
             Debug.Log("Ấn vào màn hình");
             Messenger.Broadcast(EventKey.PlayerJump); // Phát sự kiện JUMP
             _isJump = true;
@@ -43,29 +42,28 @@ public class Player : MonoBehaviour
             Debug.Log("BLock va chạm nhân vật nè");
             setConnectBlock(collision);
             SetDistanceJump();
-            if (GameController.Instance._isPlaying)
+            if (GameController.Instance.isPlaying)
             {
                 GameController.Instance.ChangePositionCamera(_distanceJump);
                 GameController.Instance.ChangePositionBars(_distanceJump);
-                Messenger.Broadcast<float>(EventKey.Score,_distanceJump);
+                Messenger.Broadcast<float>(EventKey.Score, _distanceJump);
             }
         }
     }
-    
 
     private void setConnectBlock(Collision2D collision)
     {
         _isJump = false;
         // collion là khối player đang va chạm => cho khối player đang va chạm làm bố của nhân vật
         transform.SetParent(collision.transform);
-        if(GameController.Instance._isPlaying)
+        if (GameController.Instance.isPlaying)
         {
             Vector3 localPosition = transform.localPosition; // vị trí hiện tại của player ngay khi va chạm
             Debug.Log("Tọa độ X của Player là: " + localPosition.x);
             if (localPosition.x <= 0.1f && localPosition.x >= -0.1f)
             {
                 Debug.Log("Nhay vao perfect");
-                GameController.Instance._isPerfect = true;
+                GameController.Instance.isPerfect = true;
                 GameController.Instance.SetActivePerfect();
             }
         }

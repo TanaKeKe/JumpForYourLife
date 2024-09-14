@@ -17,14 +17,13 @@ public class GameController : Singleton<GameController>
     [SerializeField] private float spaceBetweenTwoBlocks;
     [SerializeField] private GameObject perfect;
     [Space(10)]
-
     [SerializeField] private GameObject tutorial;
     private int _score;
     private Vector3 _targetPosition;
-    public bool _isPlaying;
-    public bool _isPerfect;
-    public bool _isFinish;
-    
+    public bool isPlaying;
+    public bool isPerfect;
+    public bool isFinish;
+
     private void Start()
     {
         _score = 0;
@@ -34,17 +33,15 @@ public class GameController : Singleton<GameController>
     private void Update()
     {
         Play();
-        if (_isFinish)
+        if (isFinish)
         {
             // show popup
         }
-
     }
-
 
     private void Play()
     {
-        if (_isPlaying)
+        if (isPlaying)
         {
             tutorial.SetActive(false);
         }
@@ -61,9 +58,8 @@ public class GameController : Singleton<GameController>
 
     public void UpdateScore(float distance)
     {
-
         int currentScore = (int)distance / (int)spaceBetweenTwoBlocks;
-        if (_isPerfect)
+        if (isPerfect)
         {
             currentScore *= 2;
             //_isPerfect = false;
