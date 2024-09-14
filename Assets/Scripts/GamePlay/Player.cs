@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private bool _startGame;
     private void Awake()
     {
+        _positionStartJump = 2.5f;
         _rigidbody2d = GetComponent<Rigidbody2D>();
         _collider2D = GetComponent<Collider2D>();
     }
@@ -29,7 +30,6 @@ public class Player : MonoBehaviour
             _isJump = true;
             if (_isJump)
             {
-                _positionStartJump = transform.position.y;
                 transform.SetParent(null);
                 _rigidbody2d.AddForce(Vector2.up * force);
             }
