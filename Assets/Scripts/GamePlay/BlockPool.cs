@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockPool : ObjectPool
@@ -24,6 +25,12 @@ public class BlockPool : ObjectPool
     private void Update()
     {
         GetObjectFromPool(lengthBlock);
+        TutorialToStart();
+        CheckOutCameraToResetPositionObject(lengthBlock,spaceBetweenTwoBlocks);
+    }
+
+    private void TutorialToStart()
+    {
         if (GameController.Instance._isPlaying && !_checkStart)
         {
             _checkStart = true;
@@ -31,10 +38,10 @@ public class BlockPool : ObjectPool
         }
         else
         {
-            if(!_checkStart) _blockPool[0].GetComponent<Block>().SetNoneSpeed();
+            if (!_checkStart) _blockPool[0].GetComponent<Block>().SetNoneSpeed();
         }
-        CheckOutCameraToResetPositionObject(lengthBlock,spaceBetweenTwoBlocks);
     }
+
     private void GenerateBlock(GameObject block)
     {
         for (int i = 0; i < blockCount; ++i)
