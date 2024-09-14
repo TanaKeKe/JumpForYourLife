@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Block : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float speedRandomRange = 0.2f;
+    [SerializeField] private float speedRandomRange = 0.1f;
 
     private Collider2D _collider2D;
 
@@ -38,6 +39,7 @@ public class Block : MonoBehaviour
     private void Update()
     {
         Move();
+        ChangeDirection();
     }
 
     private void Move()
@@ -51,17 +53,41 @@ public class Block : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             Debug.Log("Đất va chạm vào tường nè bà");
-            ChangeDirection();
         }
     }
 
     public void ChangeDirection()
     {
-        speed *= -1f;
+        if (transform.position.x < -2.1f)
+        {
+            Vector3 position = transform.position;
+            position.x = -2.1f;
+            transform.position = position;
+        }
+
+        if (transform.position.x > 2.1f)
+        {
+            Vector3 position = transform.position;
+            position.x = 2.1f;
+            transform.position = position;
+        }
+
+        // không so sánh 2 số float vì sẽ có sai số cực nhỏ
+        if (Mathf.Approximately(Math.Abs(transform.position.x), 2.1f)) speed *= -1f;
     }
 
     public void RandomSpeed(int direction)
     {
         speed = direction * Random.Range(speed - speedRandomRange, speed + speedRandomRange);
+    }
+
+    public void SetNoneSpeed()
+    {
+        speed = 0;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
     }
 }
