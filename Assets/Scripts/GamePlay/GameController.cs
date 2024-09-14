@@ -100,13 +100,6 @@ public class GameController : Singleton<GameController>
         }
     }
 
-
-    public void ChangePositionBars(float distanceJump)
-    {
-        Debug.Log("Thay đổi vị trí của 2 thanh tắt trigger" + bars.transform.position);
-        bars.transform.position += (Vector3.down * distanceJump);
-    }
-
     public float GetRangeTopCamera()
     {
         return myCamera.transform.position.y + rangeCamera;
@@ -115,5 +108,10 @@ public class GameController : Singleton<GameController>
     public float GetRangeBottomCamera()
     {
         return myCamera.transform.position.y - rangeCamera;
+    }
+
+    public Camera GetMyCamera()
+    {
+        return myCamera;
     }
 }

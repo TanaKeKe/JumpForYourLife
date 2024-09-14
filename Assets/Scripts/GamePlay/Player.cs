@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
             if (GameController.Instance._isPlaying)
             {
                 GameController.Instance.ChangePositionCamera(_distanceJump);
-                GameController.Instance.ChangePositionBars(_distanceJump);
                 Messenger.Broadcast<float>(EventKey.Score,_distanceJump);
             }
         }
@@ -76,5 +75,6 @@ public class Player : MonoBehaviour
         _positionEndJump = transform.position.y;
         _distanceJump = Math.Abs(_positionEndJump - _positionStartJump);
         _distanceJump = (float)Math.Round(_distanceJump,1);
+        _positionStartJump = _positionEndJump;
     }
 }
