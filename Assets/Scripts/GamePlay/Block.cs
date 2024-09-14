@@ -76,7 +76,9 @@ public class Block : MonoBehaviour
             position.x = 2.1f;
             transform.position = position;
         }
-        if (Math.Abs(transform.position.x) == 2.1f) speed *= -1f;
+
+        // không so sánh 2 số float vì sẽ có sai số cực nhỏ
+        if (Mathf.Approximately(Math.Abs(transform.position.x), 2.1f)) speed *= -1f;
     }
 
     public void RandomSpeed(int direction)
