@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Pool;
 using Random = UnityEngine.Random;
 
 public class Block : MonoBehaviour
@@ -19,14 +18,12 @@ public class Block : MonoBehaviour
     {
         Messenger.AddListener(EventKey.PlayerJump, TurnOnTrigger);
         Messenger.AddListener(EventKey.PlayerConnectBlock, TurnOffTrigger);
-
     }
 
     private void OnDisable()
     {
         Messenger.RemoveListener(EventKey.PlayerJump, TurnOnTrigger);
         Messenger.RemoveListener(EventKey.PlayerConnectBlock, TurnOffTrigger);
-
     }
 
     private void TurnOnTrigger()
@@ -56,10 +53,8 @@ public class Block : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             Debug.Log("Đất va chạm vào tường nè bà");
-
         }
     }
-
 
     public void ChangeDirection()
     {
@@ -68,15 +63,17 @@ public class Block : MonoBehaviour
             Vector3 position = transform.position;
             position.x = -2.1f;
             transform.position = position;
-
         }
+
         if (transform.position.x > 2.1f)
         {
             Vector3 position = transform.position;
             position.x = 2.1f;
             transform.position = position;
         }
-        if (Math.Abs(transform.position.x) == 2.1f) speed *= -1f;
+
+        // không so sánh 2 số float vì sẽ có sai số cực nhỏ
+        if (Mathf.Approximately(Math.Abs(transform.position.x), 2.1f)) speed *= -1f;
     }
 
     public void RandomSpeed(int direction)

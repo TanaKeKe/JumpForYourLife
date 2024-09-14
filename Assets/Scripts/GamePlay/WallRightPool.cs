@@ -8,7 +8,6 @@ public class WallRightPool : ObjectPool
     [SerializeField] private float distanceWallSpawn;
     [SerializeField] private float lengthWall;
     private float _wallPosition;
-    
 
     private void Start()
     {
@@ -20,8 +19,9 @@ public class WallRightPool : ObjectPool
     private void Update()
     {
         GetObjectFromPool(lengthWall);
-        CheckOutCameraToResetPositionObject(lengthWall,distanceWallSpawn);
+        CheckOutCameraToResetPositionObject(lengthWall, distanceWallSpawn);
     }
+
     private void GenerateWall(GameObject wallTinyRight)
     {
         for (int i = 1; i <= wallCount; ++i)
@@ -36,6 +36,4 @@ public class WallRightPool : ObjectPool
             _wallPosition -= distanceWallSpawn;
         }
     }
-
-
 }
