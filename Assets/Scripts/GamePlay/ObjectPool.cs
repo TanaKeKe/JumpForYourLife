@@ -1,25 +1,21 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
     private List<GameObject> _objectPool;
     private float _positionLowest;
+
     private void Awake()
     {
         _objectPool = new List<GameObject>();
         _positionLowest = 5.1f;
-
     }
 
     public void AddObjectToPool(GameObject obj)
     {
         obj.SetActive(false);
         _objectPool.Add(obj);
-
     }
 
     public int AmountObjectInPool()
@@ -61,8 +57,6 @@ public class ObjectPool : MonoBehaviour
                 }
             }
         }
-
-
     }
 
     private void ResetPositionObject(GameObject obj, float distanceObject)
@@ -78,6 +72,7 @@ public class ObjectPool : MonoBehaviour
                 Debug.Log("Trong Pool có phần tử null!");
             }
         }
+
         Debug.Log(_positionLowest);
         Vector3 position = obj.transform.position;
         position.y = _positionLowest - distanceObject;

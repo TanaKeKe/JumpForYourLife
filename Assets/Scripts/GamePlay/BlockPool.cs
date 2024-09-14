@@ -18,7 +18,6 @@ public class BlockPool : ObjectPool
         _blockPool = GetObjectPool();
         GenerateBlock(blockPrefab);
         Debug.Log("Sinh khối đứng thành công: " + AmountObjectInPool());
-        
     }
 
     private void Update()
@@ -31,16 +30,18 @@ public class BlockPool : ObjectPool
         }
         else
         {
-            if(!_checkStart) _blockPool[0].GetComponent<Block>().SetNoneSpeed();
+            if (!_checkStart) _blockPool[0].GetComponent<Block>().SetNoneSpeed();
         }
-        CheckOutCameraToResetPositionObject(lengthBlock,spaceBetweenTwoBlocks);
+
+        CheckOutCameraToResetPositionObject(lengthBlock, spaceBetweenTwoBlocks);
     }
+
     private void GenerateBlock(GameObject block)
     {
         for (int i = 0; i < blockCount; ++i)
         {
             var blockClone = Instantiate(block, this.gameObject.transform);
-            blockClone.transform.position -= Vector3.up * spaceBetweenTwoBlocks * i;// set position of block
+            blockClone.transform.position -= Vector3.up * spaceBetweenTwoBlocks * i; // set position of block
             var direction = i % 2 == 0 ? -1 : 1; // chẵn sang trái, lẻ sang phải
             blockClone.GetComponent<Block>().RandomSpeed(direction);
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 public class GameController : Singleton<GameController>
@@ -12,7 +13,6 @@ public class GameController : Singleton<GameController>
     [SerializeField] private float rangeCamera;
     [SerializeField] private float countChangeCamera;
     [Space(10)]
-
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private float spaceBetweenTwoBlocks;
     [SerializeField] private GameObject perfect;
@@ -46,6 +46,7 @@ public class GameController : Singleton<GameController>
             tutorial.SetActive(false);
         }
     }
+
     private void OnEnable()
     {
         Messenger.AddListener<float>(EventKey.Score, UpdateScore);
@@ -64,6 +65,7 @@ public class GameController : Singleton<GameController>
             currentScore *= 2;
             //_isPerfect = false;
         }
+
         _score += currentScore;
         scoreText.text = _score.ToString();
     }
@@ -72,18 +74,19 @@ public class GameController : Singleton<GameController>
     {
         StartCoroutine(CoroutinePerfect());
     }
+
     private IEnumerator CoroutinePerfect()
     {
         perfect.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         perfect.SetActive(false);
     }
+
     public void ChangePositionCamera(float distanceJump)
     {
         Debug.Log("Thay đổi camera" + distanceJump);
         _targetPosition = myCamera.transform.position + Vector3.down * (distanceJump);
         StartCoroutine(CoroutineSmooth());
-
     }
 
     private IEnumerator CoroutineSmooth()
@@ -95,7 +98,6 @@ public class GameController : Singleton<GameController>
             yield return null;
         }
     }
-
 
     public void ChangePositionBars(float distanceJump)
     {

@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private float _positionEndJump;
     private float _distanceJump;
     private bool _startGame;
+
     private void Awake()
     {
         _rigidbody2d = GetComponent<Rigidbody2D>();
@@ -73,6 +74,6 @@ public class Player : MonoBehaviour
     {
         _positionEndJump = transform.position.y;
         _distanceJump = Math.Abs(_positionEndJump - _positionStartJump);
-        _distanceJump = (float)Math.Round(_distanceJump,1);
+        _distanceJump = (float)Math.Round(_distanceJump, 1);
     }
 }
