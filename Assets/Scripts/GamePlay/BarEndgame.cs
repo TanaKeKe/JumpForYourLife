@@ -10,7 +10,7 @@ public class BarEndgame : MonoBehaviour
         {
             Debug.Log("OnExitTrigger2D: Nhân vật chạm vào thanh endgame");
             Time.timeScale = 0;
-            GameController.Instance.isFinish = true;
+            GamePlayController.Instance.isFinish = true;
         }
     }
 }
