@@ -6,18 +6,17 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
-public class GameController : Singleton<GameController>
+public class GamePlayController : Singleton<GamePlayController>
 {
-    [SerializeField] private Camera myCamera; // cameraController
+    [SerializeField] private Camera myCamera;
     [SerializeField] private GameObject bars;
     [SerializeField] private float rangeCamera;
     [SerializeField] private float countChangeCamera;
     [Space(10)]
-    [SerializeField] private TextMeshProUGUI scoreText;
+
     [SerializeField] private float spaceBetweenTwoBlocks;
     [SerializeField] private GameObject perfect;
-    [Space(10)]
-    [SerializeField] private GameObject tutorial;
+
     private int _score;
     private Vector3 _targetPosition;
     public bool isPlaying;
@@ -26,35 +25,33 @@ public class GameController : Singleton<GameController>
 
     private void Start()
     {
+        perfect.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
         _score = 0;
-        scoreText.text = _score.ToString();
     }
 
     private void Update()
     {
-        Play();
         if (isFinish)
         {
             // show popup
         }
     }
 
-    private void Play()
-    {
-        if (isPlaying)
-        {
-            tutorial.SetActive(false);
-        }
-    }
-
     private void OnEnable()
     {
-        Messenger.AddListener<float>(EventKey.Score, UpdateScore);
+        Messenger.AddListener<float>(EventKey.UpdateScore, UpdateScore);
+        Messenger.AddListener<TextMeshProUGUI>(EventKey.ShowScore, ShowScore);
     }
 
     private void OnDisable()
     {
-        Messenger.RemoveListener<float>(EventKey.Score, UpdateScore);
+        Messenger.RemoveListener<float>(EventKey.UpdateScore, UpdateScore);
+        Messenger.RemoveListener<TextMeshProUGUI>(EventKey.ShowScore, ShowScore);
+    }
+
+    private void ShowScore(TextMeshProUGUI scoreText)
+    {
+        scoreText.text = _score.ToString();
     }
 
     public void UpdateScore(float distance)
@@ -63,11 +60,8 @@ public class GameController : Singleton<GameController>
         if (isPerfect)
         {
             currentScore *= 2;
-            //_isPerfect = false;
         }
-
         _score += currentScore;
-        scoreText.text = _score.ToString();
     }
 
     public void SetActivePerfect()
@@ -113,5 +107,10 @@ public class GameController : Singleton<GameController>
     public float GetRangeBottomCamera()
     {
         return myCamera.transform.position.y - rangeCamera;
+    }
+
+    public Camera GetCamera()
+    {
+        return myCamera;
     }
 }

@@ -2,5 +2,7 @@
 {
     PlayerJump,
     PlayerConnectBlock,
-    Score,
+    UpdateScore,
+    SetNullParentOfPlayer,
+    ShowScore,
 }
