@@ -6,10 +6,9 @@ public class BlockPool : ObjectPool
 {
     [SerializeField] private GameObject blockPrefab;
     [SerializeField] private int blockCount;
-
     [Space(10)]
+
     [SerializeField] private float spaceBetweenTwoBlocks;
-    [SerializeField] private float lengthBlock;
 
     private List<GameObject> _blockPool;
     private bool _checkStart;
@@ -23,22 +22,18 @@ public class BlockPool : ObjectPool
 
     private void Update()
     {
-        GetObjectFromPool(lengthBlock);
+        GetObjectFromPool();
         TutorialPlay();
-        CheckOutCameraToResetPositionObject(lengthBlock, spaceBetweenTwoBlocks);
+        CheckOutCameraToResetPositionObject(spaceBetweenTwoBlocks);
         
     }
 
-    
-
-
-
     private void TutorialPlay()
     {
-        if (GameController.Instance.isPlaying && !_checkStart)
+        if (GamePlayController.Instance.isPlaying && !_checkStart)
         {
             _checkStart = true;
-            _blockPool[0].GetComponent<Block>().SetSpeed(1.3f);
+            _blockPool[0].GetComponent<Block>().SetSpeed(1.2f);
         }
         else
         {
@@ -52,6 +47,7 @@ public class BlockPool : ObjectPool
         {
             var blockClone = Instantiate(block, this.gameObject.transform);
             blockClone.transform.position -= Vector3.up * spaceBetweenTwoBlocks * i; // set position of block
+            Debug.Log(blockClone.transform.position);
             var direction = i % 2 == 0 ? -1 : 1; // chẵn sang trái, lẻ sang phải
             blockClone.GetComponent<Block>().RandomSpeed(direction);
 

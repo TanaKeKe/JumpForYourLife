@@ -14,7 +14,6 @@ public class ObjectPool : MonoBehaviour
 
     public void AddObjectToPool(GameObject obj)
     {
-        obj.SetActive(false);
         _objectPool.Add(obj);
     }
 
@@ -23,17 +22,21 @@ public class ObjectPool : MonoBehaviour
         return _objectPool.Count;
     }
 
-    public void GetObjectFromPool(float lengthObject)
+    public void GetObjectFromPool()
     {
-        float rangeTopCamera = GameController.Instance.GetRangeTopCamera();
-        float rangeBottomCamera = GameController.Instance.GetRangeBottomCamera();
+        float rangeTopCamera = GamePlayController.Instance.GetRangeTopCamera();
+        float rangeBottomCamera = GamePlayController.Instance.GetRangeBottomCamera();
         foreach (GameObject obj in _objectPool)
         {
             if (obj != null)
             {
-                if (obj.transform.position.y - lengthObject <= rangeTopCamera && obj.transform.position.y + lengthObject >= rangeBottomCamera)
+                if (obj.transform.position.y <= rangeTopCamera && obj.transform.position.y >= rangeBottomCamera)
                 {
                     obj.SetActive(true);
+                }
+                else
+                {
+                    obj.SetActive(false);
                 }
             }
             else
@@ -43,14 +46,14 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    public void CheckOutCameraToResetPositionObject(float lengthObject, float distanceObject)
+    public void CheckOutCameraToResetPositionObject(float distanceObject)
     {
-        float rangeTopCamera = GameController.Instance.GetRangeTopCamera(); // lấy khoảng trên của camera
+        float rangeTopCamera = GamePlayController.Instance.GetRangeTopCamera(); // lấy khoảng trên của camera
         foreach (GameObject obj in _objectPool) // tìm những object ở ngoài camera về phía trên
         {
             if (obj != null)
             {
-                if (obj.transform.position.y - lengthObject > rangeTopCamera)
+                if (obj.transform.position.y > rangeTopCamera)
                 {
                     obj.SetActive(false); // ẩn obj đi
                     ResetPositionObject(obj, distanceObject);

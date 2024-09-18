@@ -9,7 +9,7 @@ public class Block : MonoBehaviour
 
     private Collider2D _collider2D;
 
-    private void Awake()
+    private void Start()
     {
         _collider2D = GetComponent<Collider2D>();
     }
