@@ -18,9 +18,18 @@ public class BlockEvent : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private void OnEnable()
+    {
+        Messenger.AddListener<GameObject>(EventKey.SetOriginSprite, SetOriginBlock);
+    }
     private void OnDisable()
     {
-        _spriteRenderer.sprite = spriteOrigin;
+        Messenger.RemoveListener<GameObject>(EventKey.SetOriginSprite, SetOriginBlock);
+    }
+
+    private void SetOriginBlock(GameObject gameObject)
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = spriteOrigin;
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
