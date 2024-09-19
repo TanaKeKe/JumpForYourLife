@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
@@ -17,6 +18,9 @@ public class GamePlayController : Singleton<GamePlayController>
     [SerializeField] private float spaceBetweenTwoBlocks;
     [SerializeField] private GameObject perfect;
 
+    // tạm thời gọi panel trong đây sau chuyển sang 1 Script riêng
+    [SerializeField] private GameObject endGamePanel;
+    
     private int _score;
     private Vector3 _targetPosition;
     public bool isPlaying;
@@ -33,7 +37,7 @@ public class GamePlayController : Singleton<GamePlayController>
     {
         if (isFinish)
         {
-            // show popup
+            endGamePanel.SetActive(true);
         }
     }
 
@@ -41,12 +45,20 @@ public class GamePlayController : Singleton<GamePlayController>
     {
         Messenger.AddListener<float>(EventKey.UpdateScore, UpdateScore);
         Messenger.AddListener<TextMeshProUGUI>(EventKey.ShowScore, ShowScore);
+        Messenger.AddListener(EventKey.Replay, ReloadScene);
     }
 
+    
     private void OnDisable()
     {
         Messenger.RemoveListener<float>(EventKey.UpdateScore, UpdateScore);
         Messenger.RemoveListener<TextMeshProUGUI>(EventKey.ShowScore, ShowScore);
+        Messenger.RemoveListener(EventKey.Replay, ReloadScene);
+    }
+
+    private void ReloadScene()
+    {
+        SceneManager.LoadScene(Scene.gameplay);
     }
 
     private void ShowScore(TextMeshProUGUI scoreText)

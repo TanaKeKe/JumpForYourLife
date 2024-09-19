@@ -36,6 +36,7 @@ public class ObjectPool : MonoBehaviour
                 }
                 else
                 {
+                    Messenger.Broadcast<GameObject>(EventKey.SetOriginSprite, obj);
                     obj.SetActive(false);
                 }
             }
