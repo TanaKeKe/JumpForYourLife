@@ -40,6 +40,15 @@ public class Block : MonoBehaviour
     {
         Move();
         ChangeDirection();
+        CheckFinish();
+    }
+
+    private void CheckFinish()
+    {
+        if(GamePlayController.Instance.isFinish)
+        {
+            SetNoneSpeed();
+        }
     }
 
     private void Move()
