@@ -5,4 +5,6 @@
     UpdateScore,
     SetNullParentOfPlayer,
     ShowScore,
+    Replay,
+    SetOriginSprite,
 }
