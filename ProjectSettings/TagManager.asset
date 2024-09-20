@@ -48,3 +48,9 @@ TagManager:
   - name: UI
     uniqueID: 2144632977
     locked: 0
+  - name: GamePlay
+    uniqueID: 1097997939
+    locked: 0
+  - name: PopUp
+    uniqueID: 2864744159
+    locked: 0

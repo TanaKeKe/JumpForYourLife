@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockPool : ObjectPool
 {
     [SerializeField] private GameObject blockPrefab;
     [SerializeField] private int blockCount;
-
     [Space(10)]
+
     [SerializeField] private float spaceBetweenTwoBlocks;
-    [SerializeField] private float lengthBlock;
 
     private List<GameObject> _blockPool;
     private bool _checkStart;
@@ -22,18 +22,23 @@ public class BlockPool : ObjectPool
 
     private void Update()
     {
-        GetObjectFromPool(lengthBlock);
-        if (GameController.Instance.isPlaying && !_checkStart)
+        GetObjectFromPool();
+        TutorialPlay();
+        CheckOutCameraToResetPositionObject(spaceBetweenTwoBlocks);
+        
+    }
+
+    private void TutorialPlay()
+    {
+        if (GamePlayController.Instance.isPlaying && !_checkStart)
         {
             _checkStart = true;
-            _blockPool[0].GetComponent<Block>().SetSpeed(1.3f);
+            _blockPool[0].GetComponent<Block>().SetSpeed(1.2f);
         }
         else
         {
             if (!_checkStart) _blockPool[0].GetComponent<Block>().SetNoneSpeed();
         }
-
-        CheckOutCameraToResetPositionObject(lengthBlock, spaceBetweenTwoBlocks);
     }
 
     private void GenerateBlock(GameObject block)
@@ -42,6 +47,7 @@ public class BlockPool : ObjectPool
         {
             var blockClone = Instantiate(block, this.gameObject.transform);
             blockClone.transform.position -= Vector3.up * spaceBetweenTwoBlocks * i; // set position of block
+            Debug.Log(blockClone.transform.position);
             var direction = i % 2 == 0 ? -1 : 1; // chẵn sang trái, lẻ sang phải
             blockClone.GetComponent<Block>().RandomSpeed(direction);
 
