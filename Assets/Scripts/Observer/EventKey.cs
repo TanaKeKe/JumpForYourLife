@@ -2,5 +2,9 @@
 {
     PlayerJump,
     PlayerConnectBlock,
-    Score,
+    UpdateScore,
+    SetNullParentOfPlayer,
+    ShowScore,
+    Replay,
+    SetOriginSprite,
 }
