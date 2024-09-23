@@ -1,10 +1,11 @@
 ﻿public enum EventKey
 {
-    PlayerJump,
+    PlayerOnTriggerBlock,
     PlayerConnectBlock,
     UpdateScore,
     SetNullParentOfPlayer,
     ShowScore,
     Replay,
     SetOriginSprite,
+    PlayerJump,
 }
