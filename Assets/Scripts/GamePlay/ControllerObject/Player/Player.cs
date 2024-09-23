@@ -1,5 +1,7 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -22,11 +24,13 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         Messenger.AddListener(EventKey.SetNullParentOfPlayer, SetNullParent);
+        Messenger.AddListener(EventKey.PlayerJump,Jump);
     }
 
     private void OnDisable()
     {
         Messenger.RemoveListener(EventKey.SetNullParentOfPlayer, SetNullParent);
+        Messenger.RemoveListener(EventKey.PlayerJump, Jump);
     }
 
     private void SetNullParent()
@@ -34,21 +38,26 @@ public class Player : MonoBehaviour
         transform.SetParent(null);
     }
 
-    private void Update()
+    public void Jump()
     {
-        if (Input.GetMouseButtonDown(0) && _isJump == false)
+        if (Input.GetMouseButtonDown(0))
         {
-            GamePlayController.Instance.isPlaying = true;
-            Debug.Log("Ấn vào màn hình");
-            Messenger.Broadcast(EventKey.PlayerJump);
-            _isJump = true;
-            if (_isJump)
+            if (!_isJump)
             {
-                SetNullParent();
-                _rigidbody2d.AddForce(Vector2.up * force);
+                GamePlayController.Instance.isPlaying = true;
+                Debug.Log("Ấn vào màn hình");
+                Messenger.Broadcast(EventKey.PlayerOnTriggerBlock);
+                _isJump = true;
+                if (_isJump)
+                {
+                    SetNullParent();
+                    _rigidbody2d.AddForce(Vector2.up * force);
+                }
             }
         }
     }
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

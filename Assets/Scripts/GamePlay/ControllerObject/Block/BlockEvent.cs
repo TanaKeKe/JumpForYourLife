@@ -65,7 +65,7 @@ public class BlockEvent : MonoBehaviour
                 {
                     _spriteRenderer.sprite = null;
                     Messenger.Broadcast(EventKey.SetNullParentOfPlayer);
-                    Messenger.Broadcast(EventKey.PlayerJump);
+                    Messenger.Broadcast(EventKey.PlayerOnTriggerBlock);
                 }
             }
         }

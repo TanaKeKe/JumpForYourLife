@@ -16,13 +16,13 @@ public class Block : MonoBehaviour
 
     private void OnEnable()
     {
-        Messenger.AddListener(EventKey.PlayerJump, TurnOnTrigger);
+        Messenger.AddListener(EventKey.PlayerOnTriggerBlock, TurnOnTrigger);
         Messenger.AddListener(EventKey.PlayerConnectBlock, TurnOffTrigger);
     }
 
     private void OnDisable()
     {
-        Messenger.RemoveListener(EventKey.PlayerJump, TurnOnTrigger);
+        Messenger.RemoveListener(EventKey.PlayerOnTriggerBlock, TurnOnTrigger);
         Messenger.RemoveListener(EventKey.PlayerConnectBlock, TurnOffTrigger);
     }
 
@@ -40,12 +40,12 @@ public class Block : MonoBehaviour
     {
         Move();
         ChangeDirection();
-        CheckFinish();
+        CheckFinishAndPause();
     }
 
-    private void CheckFinish()
+    private void CheckFinishAndPause()
     {
-        if(GamePlayController.Instance.isFinish)
+        if(GamePlayController.Instance.isFinish || GamePlayController.Instance.isPause)
         {
             SetNoneSpeed();
         }

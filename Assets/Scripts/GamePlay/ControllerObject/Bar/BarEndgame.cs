@@ -9,8 +9,8 @@ public class BarEndgame : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("OnExitTrigger2D: Nhân vật chạm vào thanh endgame");
-            Time.timeScale = 0;
             GamePlayController.Instance.isFinish = true;
+            PanelManager.Instance.OpenPanel("EndGamePanel");
         }
     }
 }

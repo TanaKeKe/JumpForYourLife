@@ -18,27 +18,17 @@ public class GamePlayController : Singleton<GamePlayController>
     [SerializeField] private float spaceBetweenTwoBlocks;
     [SerializeField] private GameObject perfect;
 
-    // tạm thời gọi panel trong đây sau chuyển sang 1 Script riêng
-    [SerializeField] private GameObject endGamePanel;
-    
     private int _score;
     private Vector3 _targetPosition;
     public bool isPlaying;
     public bool isPerfect;
     public bool isFinish;
+    public bool isPause;
 
     private void Start()
     {
         perfect.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
         _score = 0;
-    }
-
-    private void Update()
-    {
-        if (isFinish)
-        {
-            endGamePanel.SetActive(true);
-        }
     }
 
     private void OnEnable()
