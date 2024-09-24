@@ -46,6 +46,15 @@ public class GamePlayController : Singleton<GamePlayController>
         Messenger.RemoveListener(EventKey.Replay, ReloadScene);
     }
 
+    private void Update()
+    {
+        if (isPause == false)
+        {
+            Debug.Log("Ấn để chơi game");
+            Messenger.Broadcast(EventKey.PlayerJump);
+        }
+    }
+
     private void ReloadScene()
     {
         SceneManager.LoadScene(Scene.gameplay);

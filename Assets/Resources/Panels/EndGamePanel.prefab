@@ -835,7 +835,8 @@ GameObject:
   - component: {fileID: 4449612595736821237}
   - component: {fileID: 5467544026258755422}
   - component: {fileID: 7679374070740616757}
-  - component: {fileID: 5288283465245542575}
+  - component: {fileID: 3993339926602550273}
+  - component: {fileID: -6151039190615547419}
   m_Layer: 5
   m_Name: EndGamePanel
   m_TagString: Untagged
@@ -913,10 +914,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f2c32f296f54d4e94d85e8412b6d94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyOnClose: 1
+  destroyOnClose: 0
   scoreText: {fileID: 2044674151623995852}
   glow: {fileID: 4100634304689946857}
---- !u!223 &5288283465245542575
+--- !u!223 &3993339926602550273
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -937,8 +938,25 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1430223137
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!114 &-6151039190615547419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6650085623641233406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &8073280207376756851
 GameObject:
   m_ObjectHideFlags: 0

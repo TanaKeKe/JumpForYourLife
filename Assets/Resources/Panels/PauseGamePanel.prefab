@@ -321,7 +321,8 @@ GameObject:
   - component: {fileID: 5947353394022298878}
   - component: {fileID: 604207510876636009}
   - component: {fileID: -2507460015854714616}
-  - component: {fileID: -6727034411096347372}
+  - component: {fileID: 5497434844171024119}
+  - component: {fileID: 4558235153712585795}
   m_Layer: 5
   m_Name: PauseGamePanel
   m_TagString: Untagged
@@ -399,8 +400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4a819ca9daa7843819b26b2726c9e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyOnClose: 1
---- !u!223 &-6727034411096347372
+  destroyOnClose: 0
+--- !u!223 &5497434844171024119
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -421,8 +422,25 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1430223137
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!114 &4558235153712585795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2560347236513029807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &2612900456196183947
 GameObject:
   m_ObjectHideFlags: 0

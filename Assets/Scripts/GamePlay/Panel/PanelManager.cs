@@ -27,7 +27,7 @@ public class PanelManager : Singleton<PanelManager>
         Debug.Log("Load thành công Panel" + (transform == null) + " " + (panel == null));
         //Sinh ra mot ban sao
         Panel newPanel = Instantiate(panel, transform);
-        
+        newPanel.transform.SetAsLastSibling();
         newPanel.name = name;
         newPanel.gameObject.SetActive(false);
 

@@ -1320,6 +1320,10 @@ PrefabInstance:
       propertyPath: pauseBtn
       value: 
       objectReference: {fileID: 739932693}
+    - target: {fileID: 652727808652154297, guid: 5d48c2e2ac062fe4b9f9ca0c42bd04e3, type: 3}
+      propertyPath: pauseGame
+      value: 
+      objectReference: {fileID: 739932693}
     - target: {fileID: 1814958492181614882, guid: 5d48c2e2ac062fe4b9f9ca0c42bd04e3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
