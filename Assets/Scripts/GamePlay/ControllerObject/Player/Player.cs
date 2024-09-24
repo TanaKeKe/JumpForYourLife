@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 
     public void Jump()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !UIHelper.IsMouseOverUI())
         {
             if (!_isJump)
             {
