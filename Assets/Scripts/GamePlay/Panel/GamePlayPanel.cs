@@ -9,7 +9,9 @@ public class GamePlayPanel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private GameObject tutorial;
+
     private int _score;
+
     private void Start()
     {
         tutorial.SetActive(true);
@@ -34,7 +36,8 @@ public class GamePlayPanel : MonoBehaviour
     public void Pause()
     {
         GamePlayController.Instance.isPause = true;
-        Debug.Log("Đã pause");
+        GamePlayController.Instance.isResume = false;
+        //Debug.Log("Đã pause");
         PanelManager.Instance.OpenPanel("PauseGamePanel");
     }
 }

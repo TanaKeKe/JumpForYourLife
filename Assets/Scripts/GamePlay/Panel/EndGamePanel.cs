@@ -28,7 +28,11 @@ public class EndGamePanel : Panel
 
     public void Replay()
     {
-        Debug.Log("Đã chạm vào nút replay");
         Messenger.Broadcast(EventKey.Replay);
+    }
+
+    public void GoBackHome()
+    {
+        Messenger.Broadcast(EventKey.GoHome);
     }
 }
