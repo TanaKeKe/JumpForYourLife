@@ -244,7 +244,7 @@ TextureImporter:
         width: 107
         height: 109
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,7 +265,7 @@ TextureImporter:
         width: 106
         height: 102
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,6 +273,27 @@ TextureImporter:
       bones: []
       spriteID: 4af67681dbedd8646916453be404d471
       internalID: 520488745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Setting
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 110
+        width: 268
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3899a0735264b334ea57f06292626408
+      internalID: -705086195
       vertices: []
       indices: 
       edges: []
@@ -292,6 +313,7 @@ TextureImporter:
       GameOver: -1904727264
       Pause: -936934482
       PauseText: 532870037
+      Setting: -705086195
       Star: 520488745
       TP01_0: 30627616
       TP01_1: 596488412
