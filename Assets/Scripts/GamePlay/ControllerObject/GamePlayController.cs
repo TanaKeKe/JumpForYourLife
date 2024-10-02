@@ -17,6 +17,7 @@ public class GamePlayController : Singleton<GamePlayController>
 
     [SerializeField] private float spaceBetweenTwoBlocks;
     [SerializeField] private GameObject perfect;
+    [SerializeField] private GameObject countDown;
 
     private int _score;
     private Vector3 _targetPosition;
@@ -24,9 +25,11 @@ public class GamePlayController : Singleton<GamePlayController>
     public bool isPerfect;
     public bool isFinish;
     public bool isPause;
-
+    public bool isResume;
+    public bool isStart;
     private void Start()
     {
+        countDown.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
         perfect.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
         _score = 0;
     }
@@ -35,7 +38,8 @@ public class GamePlayController : Singleton<GamePlayController>
     {
         Messenger.AddListener<float>(EventKey.UpdateScore, UpdateScore);
         Messenger.AddListener<TextMeshProUGUI>(EventKey.ShowScore, ShowScore);
-        Messenger.AddListener(EventKey.Replay, ReloadScene);
+        Messenger.AddListener(EventKey.Replay, ReloadScenePlay);
+        Messenger.AddListener(EventKey.GoHome, ReLoadSceneHome);
     }
 
     
@@ -43,20 +47,53 @@ public class GamePlayController : Singleton<GamePlayController>
     {
         Messenger.RemoveListener<float>(EventKey.UpdateScore, UpdateScore);
         Messenger.RemoveListener<TextMeshProUGUI>(EventKey.ShowScore, ShowScore);
-        Messenger.RemoveListener(EventKey.Replay, ReloadScene);
+        Messenger.RemoveListener(EventKey.Replay, ReloadScenePlay);
+        Messenger.RemoveListener(EventKey.GoHome, ReLoadSceneHome);
+    }
+
+    private void ReLoadSceneHome()
+    {
+        if(isFinish)
+        {
+            SaveGame.SaveHighScore(_score);
+        }
+        SceneManager.LoadScene(Scene.home);
     }
 
     private void Update()
     {
-        if (isPause == false)
+        if (isPause == false && countDown.activeInHierarchy == false)
         {
-            Debug.Log("Ấn để chơi game");
+            //Debug.Log("Ấn để chơi game");
             Messenger.Broadcast(EventKey.PlayerJump);
+        }
+        CheckResume();
+    }
+
+
+    private void CheckResume()
+    {
+        if (isResume)
+        {
+            StartCoroutine(CoroutineResume());
+            isResume = false;
         }
     }
 
-    private void ReloadScene()
+    private IEnumerator CoroutineResume()
     {
+        countDown.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        countDown.SetActive(false);
+        Messenger.Broadcast(EventKey.SetSpeedBlocks);
+    }
+
+    private void ReloadScenePlay()
+    {
+        if (isFinish)
+        {
+            SaveGame.SaveHighScore(_score);
+        }
         SceneManager.LoadScene(Scene.gameplay);
     }
 
@@ -89,7 +126,7 @@ public class GamePlayController : Singleton<GamePlayController>
 
     public void ChangePositionCamera(float distanceJump)
     {
-        Debug.Log("Thay đổi camera" + distanceJump);
+        //Debug.Log("Thay đổi camera" + distanceJump);
         _targetPosition = myCamera.transform.position + Vector3.down * (distanceJump);
         StartCoroutine(CoroutineSmooth());
     }
@@ -106,7 +143,7 @@ public class GamePlayController : Singleton<GamePlayController>
 
     public void ChangePositionBars(float distanceJump)
     {
-        Debug.Log("Thay đổi vị trí của 2 thanh tắt trigger" + bars.transform.position);
+        //Debug.Log("Thay đổi vị trí của 2 thanh tắt trigger" + bars.transform.position);
         bars.transform.position += (Vector3.down * distanceJump);
     }
 

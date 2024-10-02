@@ -8,4 +8,6 @@
     Replay,
     SetOriginSprite,
     PlayerJump,
+    GoHome,
+    SetSpeedBlocks,
 }

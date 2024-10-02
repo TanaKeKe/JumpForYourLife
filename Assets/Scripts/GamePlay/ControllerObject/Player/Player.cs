@@ -40,13 +40,13 @@ public class Player : MonoBehaviour
 
     public void Jump()
     {
-        if (Input.GetMouseButtonDown(0) && !UIHelper.IsMouseOverUI())
+        if (GamePlayController.Instance.isStart && Input.GetMouseButtonDown(0) && !UIHelper.IsMouseOverUI())
         {
             if (!_isJump)
             {
                 GamePlayController.Instance.isPlaying = true;
-                Debug.Log("Ấn vào màn hình");
                 Messenger.Broadcast(EventKey.PlayerOnTriggerBlock);
+                //Debug.Log("Nhân vật nhảy");
                 _isJump = true;
                 if (_isJump)
                 {
@@ -63,7 +63,8 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Block"))
         {
-            Debug.Log("BLock va chạm nhân vật nè");
+            GamePlayController.Instance.isStart = true;
+            //Debug.Log("BLock va chạm nhân vật nè");
             setConnectBlock(collision);
             SetDistanceJump();
             if (GamePlayController.Instance.isPlaying)
@@ -73,6 +74,7 @@ public class Player : MonoBehaviour
                 Messenger.Broadcast<float>(EventKey.UpdateScore, _distanceJump);
                 GamePlayController.Instance.isPerfect = false;
             }
+            
         }
     }
 

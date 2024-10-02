@@ -42,7 +42,7 @@ public class ObjectPool : MonoBehaviour
             }
             else
             {
-                Debug.Log("Trong Pool có phần tử null!");
+                 //Debug.Log("Trong Pool có phần tử null!");
             }
         }
     }
@@ -73,7 +73,7 @@ public class ObjectPool : MonoBehaviour
             }
             else
             {
-                Debug.Log("Trong Pool có phần tử null!");
+                //Debug.Log("Trong Pool có phần tử null!");
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -6,7 +7,9 @@ public class Block : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float speedRandomRange = 0.1f;
+    
 
+    private float _pauseSpeed;
     private Collider2D _collider2D;
 
     private void Start()
@@ -18,12 +21,20 @@ public class Block : MonoBehaviour
     {
         Messenger.AddListener(EventKey.PlayerOnTriggerBlock, TurnOnTrigger);
         Messenger.AddListener(EventKey.PlayerConnectBlock, TurnOffTrigger);
+        Messenger.AddListener(EventKey.SetSpeedBlocks, SetSpeedBlocks);
     }
+
 
     private void OnDisable()
     {
         Messenger.RemoveListener(EventKey.PlayerOnTriggerBlock, TurnOnTrigger);
         Messenger.RemoveListener(EventKey.PlayerConnectBlock, TurnOffTrigger);
+        Messenger.RemoveListener(EventKey.SetSpeedBlocks, SetSpeedBlocks);
+    }
+
+    private void SetSpeedBlocks()
+    {
+        speed = _pauseSpeed;
     }
 
     private void TurnOnTrigger()
@@ -40,14 +51,29 @@ public class Block : MonoBehaviour
     {
         Move();
         ChangeDirection();
-        CheckFinishAndPause();
+        CheckFinish();
+        CheckPause();
     }
 
-    private void CheckFinishAndPause()
+    private void CheckPause()
     {
-        if(GamePlayController.Instance.isFinish || GamePlayController.Instance.isPause)
+        if(GamePlayController.Instance.isPause)
         {
-            SetNoneSpeed();
+            if (speed != 0)
+            {
+                SetNoneSpeed();
+            }
+        }
+    }
+
+    private void CheckFinish()
+    {
+        if(GamePlayController.Instance.isFinish)
+        {
+            if(speed != 0)
+            {
+                SetNoneSpeed();
+            }
         }
     }
 
@@ -61,7 +87,7 @@ public class Block : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("Đất va chạm vào tường nè bà");
+            //Debug.Log("Đất va chạm vào tường nè bà");
         }
     }
 
@@ -92,6 +118,7 @@ public class Block : MonoBehaviour
 
     public void SetNoneSpeed()
     {
+        _pauseSpeed = speed;
         speed = 0;
     }
 

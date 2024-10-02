@@ -6,7 +6,7 @@ public class BarTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Nhân vật va chạm với thanh bật trigger của block nè");
+            //Debug.Log("Nhân vật va chạm với thanh bật trigger của block nè");
             Messenger.Broadcast(EventKey.PlayerConnectBlock);
         }
     }
