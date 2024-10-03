@@ -7,7 +7,7 @@ public static class SaveGame
 {
     public static void SaveHighScore(int score)
     {
-        if (score > PlayerPrefs.GetInt("HightScore",0))
+        if (score > PlayerPrefs.GetInt("HighScore",0))
         {
             PlayerPrefs.SetInt("HighScore", score);
             PlayerPrefs.Save();

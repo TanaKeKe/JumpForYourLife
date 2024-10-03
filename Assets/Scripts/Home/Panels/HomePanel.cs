@@ -9,7 +9,7 @@ public class HomePanel : Panel
     [SerializeField] private TextMeshProUGUI highScoreText;
     private void Start()
     {
-        highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
+        highScoreText.text = PlayerPrefs.GetInt("HighScore",0).ToString();
     }
 
     public void StartGame()

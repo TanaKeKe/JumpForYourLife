@@ -933,7 +933,7 @@ MonoBehaviour:
   myCamera: {fileID: 93066036}
   bars: {fileID: 652061831}
   rangeCamera: 5.1
-  countChangeCamera: 0.25
+  countChangeCamera: 0.5
   spaceBetweenTwoBlocks: 3.5
   perfect: {fileID: 988849627}
   countDown: {fileID: 115000912}
@@ -1418,6 +1418,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1957842283259473470, guid: 5d48c2e2ac062fe4b9f9ca0c42bd04e3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 768265769, guid: eabc3a24d3b69994ab69a418d901f53f, type: 3}
     - target: {fileID: 2498457689274121582, guid: 5d48c2e2ac062fe4b9f9ca0c42bd04e3, type: 3}
       propertyPath: m_Name
       value: GamePlayPanel

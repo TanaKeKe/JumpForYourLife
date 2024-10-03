@@ -10,4 +10,6 @@
     PlayerJump,
     GoHome,
     SetSpeedBlocks,
+    NewRecordImage,
+    ScoreImage,
 }
