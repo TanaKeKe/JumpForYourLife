@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b502392cf90dd97469b3617b1b5ab6c0
+guid: 7c29b742bd4b2ac49b4cff912fffcfac
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,43 +110,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background_Large_1_0
+      name: canhcut_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 246
-        width: 901
-        height: 1802
+        x: 2
+        y: 485
+        width: 41
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c50d1c3cca027c64a948c820d82c77b8
-      internalID: -857675169
+      spriteID: d28b4a655d25d0b4bb345d215a77b89b
+      internalID: -878108210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Background_Large_1_1
+      name: canhcut_1
       rect:
         serializedVersion: 2
-        x: 902
-        y: 247
-        width: 903
-        height: 1801
+        x: 2
+        y: 427
+        width: 48
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdffb949785feb946a0b82b2bebfc102
-      internalID: 71845278
+      spriteID: 346f3fffe1b9d43408af6bba552fd716
+      internalID: -558752844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: canhcut_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 427
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53797c85513727f4b8959a5aadf71437
+      internalID: -221394807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: canhcut_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 363
+        width: 108
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65974468b9ab2c14ea5b0fae44000310
+      internalID: 1548938407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: canhcut_4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 363
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa6d32199550474ab4cb057c61f4b70
+      internalID: 1352929461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: canhcut_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 200
+        width: 124
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789af653349d89345bfd7128930fa483
+      internalID: 344606096
       vertices: []
       indices: 
       edges: []
@@ -162,8 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Background_Large_1_0: -857675169
-      Background_Large_1_1: 71845278
+      canhcut_0: -878108210
+      canhcut_1: -558752844
+      canhcut_2: -221394807
+      canhcut_3: 1548938407
+      canhcut_4: 1352929461
+      canhcut_5: 344606096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

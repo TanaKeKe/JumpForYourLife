@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1bc83af5d2a00b6489f0c5b098ff22b0
+guid: 210d17099fb81a744af4517025722d39
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: betrai_0
+      name: quilun_0_0
       rect:
         serializedVersion: 2
         x: 2
-        y: 215
-        width: 44
-        height: 39
+        y: 222
+        width: 33
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42d80d1a273bc1c41b52795543eb91a0
-      internalID: -1935315737
+      spriteID: 224bccdaf95feb94c90cab17be8c7b1e
+      internalID: 190655154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: betrai_1
+      name: quilun_0_1
       rect:
         serializedVersion: 2
         x: 2
-        y: 18
-        width: 167
-        height: 195
+        y: 155
+        width: 68
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cd81393a8f653049a173965a3bca0ea
-      internalID: -1095457638
+      spriteID: 3a6e28d2bdc71d14897c8f404f99f8ee
+      internalID: -463640176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: betrai_2
+      name: quilun_0_2
       rect:
         serializedVersion: 2
-        x: 171
-        y: 189
-        width: 22
-        height: 15
+        x: 72
+        y: 155
+        width: 47
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32085cd5bf8b5234bb4263c12a91e5ce
-      internalID: 606648297
+      spriteID: 63df949c14d9fa84fbfd59185d90f439
+      internalID: 848113289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: betrai_3
+      name: quilun_0_3
       rect:
         serializedVersion: 2
-        x: 171
-        y: 126
-        width: 71
-        height: 61
+        x: 2
+        y: 7
+        width: 175
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d563d329bb851548b4b8c395c460273
-      internalID: 19517382
+      spriteID: ece2935d6e010f8459794e37f815c26c
+      internalID: 1580510478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: betrai_4
+      name: quilun_0_4
       rect:
         serializedVersion: 2
-        x: 244
-        y: 126
-        width: 21
-        height: 15
+        x: 179
+        y: 55
+        width: 33
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b0bfc14e2ec96840b5c528655cea3e7
-      internalID: 1631741828
+      spriteID: 9b340e562971f8249a71bbcd2ec06503
+      internalID: -1591482024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: betrai_5
+      name: quilun_0_5
       rect:
         serializedVersion: 2
-        x: 171
-        y: 18
-        width: 127
-        height: 106
+        x: 179
+        y: 7
+        width: 49
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,71 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44434105a2cc9b0469de8b01d5823dc4
-      internalID: -600720563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: betrai_6
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 96
-        width: 32
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ea79327c3bba8a4cb47aaf1a0781e2b
-      internalID: -652740736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: betrai_7
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 18
-        width: 139
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f592aaca409a9a4f9feaccd19717ce3
-      internalID: -1568335429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: betrai_8
-      rect:
-        serializedVersion: 2
-        x: 441
-        y: 18
-        width: 27
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5fd82f7cbc0344c43a37e91805e69095
-      internalID: 1789640141
+      spriteID: ebacd509081e73149a67f6062c3cab88
+      internalID: -1754189607
       vertices: []
       indices: 
       edges: []
@@ -309,15 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      betrai_0: -1935315737
-      betrai_1: -1095457638
-      betrai_2: 606648297
-      betrai_3: 19517382
-      betrai_4: 1631741828
-      betrai_5: -600720563
-      betrai_6: -652740736
-      betrai_7: -1568335429
-      betrai_8: 1789640141
+      quilun_0_0: 190655154
+      quilun_0_1: -463640176
+      quilun_0_2: 848113289
+      quilun_0_3: 1580510478
+      quilun_0_4: -1591482024
+      quilun_0_5: -1754189607
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

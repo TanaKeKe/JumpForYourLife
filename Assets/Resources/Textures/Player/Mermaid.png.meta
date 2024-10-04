@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b502392cf90dd97469b3617b1b5ab6c0
+guid: 9213e4b73145e844fbb2ab8d7f95179d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,43 +110,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background_Large_1_0
+      name: thocon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 246
-        width: 901
-        height: 1802
+        x: 2
+        y: 208
+        width: 82
+        height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c50d1c3cca027c64a948c820d82c77b8
-      internalID: -857675169
+      spriteID: b356415067884ec4cb730387fafb2108
+      internalID: 1791803546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Background_Large_1_1
+      name: thocon_1
       rect:
         serializedVersion: 2
-        x: 902
-        y: 247
-        width: 903
-        height: 1801
+        x: 86
+        y: 207
+        width: 51
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdffb949785feb946a0b82b2bebfc102
-      internalID: 71845278
+      spriteID: c70076a5bd41daf458c747907b1846ac
+      internalID: 1423521377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thocon_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 8
+        width: 188
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 249be8cd413161c4a8e95fa368fc1c1d
+      internalID: 2008848842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thocon_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 60
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f5db2efd2eb3c48b561b083767873a
+      internalID: 1798039231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thocon_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 2
+        width: 105
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d82f18bf77569409b5dec52c44f848
+      internalID: -563920521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thocon_5
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 2
+        width: 49
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6339921ff115e4bbb16477ba1c0085
+      internalID: 700148099
       vertices: []
       indices: 
       edges: []
@@ -162,8 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Background_Large_1_0: -857675169
-      Background_Large_1_1: 71845278
+      thocon_0: 1791803546
+      thocon_1: 1423521377
+      thocon_2: 2008848842
+      thocon_3: 1798039231
+      thocon_4: -563920521
+      thocon_5: 700148099
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

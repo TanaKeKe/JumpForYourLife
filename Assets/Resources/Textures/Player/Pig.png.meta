@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b502392cf90dd97469b3617b1b5ab6c0
+guid: 76e8c3d5b368e5c42a2cc112d5a3ec80
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,43 +110,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background_Large_1_0
+      name: conmeo_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 246
-        width: 901
-        height: 1802
+        x: 2
+        y: 221
+        width: 38
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c50d1c3cca027c64a948c820d82c77b8
-      internalID: -857675169
+      spriteID: 43953ff948750ac44b4efaaf69b1377e
+      internalID: -1896769134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Background_Large_1_1
+      name: conmeo_1
       rect:
         serializedVersion: 2
-        x: 902
-        y: 247
-        width: 903
-        height: 1801
+        x: 2
+        y: 147
+        width: 78
+        height: 72
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdffb949785feb946a0b82b2bebfc102
-      internalID: 71845278
+      spriteID: 6aabeba45b5947a4ea8d0d2132eeabd5
+      internalID: 396574430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conmeo_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 147
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1582069a5b5bea498bb8e9857d38a38
+      internalID: 1578834072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conmeo_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 4
+        width: 139
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b9a01e575ce324c9510f134abfa43a
+      internalID: 364640898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conmeo_4
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 54
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f506d36e47849b4994b9bae510246f0
+      internalID: 372235959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conmeo_5
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 4
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468206e21e3f38c429a780a3fba93e6d
+      internalID: -1715483592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conmeo_6
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 4
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f896cfc69be4746ad642cfc5508431
+      internalID: 646061167
       vertices: []
       indices: 
       edges: []
@@ -162,8 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Background_Large_1_0: -857675169
-      Background_Large_1_1: 71845278
+      conmeo_0: -1896769134
+      conmeo_1: 396574430
+      conmeo_2: 1578834072
+      conmeo_3: 364640898
+      conmeo_4: 372235959
+      conmeo_5: -1715483592
+      conmeo_6: 646061167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

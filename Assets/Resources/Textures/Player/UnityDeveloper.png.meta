@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bagia_0
+      name: ThoDan_0
       rect:
         serializedVersion: 2
         x: 85
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44a04f6f151453d41976db9d6b8a1ae3
-      internalID: -460543866
+      spriteID: e1aa3c17fc26b7b4bace59cb85798608
+      internalID: 1798551390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bagia_1
+      name: ThoDan_1
       rect:
         serializedVersion: 2
         x: 2
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0027a367abb87384fa90388648b1fa2c
-      internalID: -1828916931
+      spriteID: 8390f7982d12645459af284a641c0b59
+      internalID: 1975546861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bagia_2
+      name: ThoDan_2
       rect:
         serializedVersion: 2
         x: 85
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01d2efd4ddf375f4faacd1ef3193e5f0
-      internalID: -1181014307
+      spriteID: 31e4996fc8c841448bc5a742fdae4d55
+      internalID: 186560388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bagia_3
+      name: ThoDan_3
       rect:
         serializedVersion: 2
         x: 160
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad1dfa4a9204a3840b10f5a153d762d8
-      internalID: 796428598
+      spriteID: 8aa581106b0f8d848b4a0393d8ed81da
+      internalID: 942459275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bagia_4
+      name: ThoDan_4
       rect:
         serializedVersion: 2
         x: 2
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18031eef72a92574f8837a73f77e4b25
-      internalID: -928115658
+      spriteID: 7c542d13b2e6ae846bb4a730376010f7
+      internalID: 1010468605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bagia_5
+      name: ThoDan_5
       rect:
         serializedVersion: 2
         x: 215
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed140d3513feb464bb8bc5756e73140a
-      internalID: 1818071958
+      spriteID: 355fc673c21d3d74faecf61fc2058dee
+      internalID: 1026353692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bagia_6
+      name: ThoDan_6
       rect:
         serializedVersion: 2
         x: 260
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb5d4caa474ad674da2b6de176def327
-      internalID: 40657238
+      spriteID: 10ef44866c5917f4ea037e3fd183c91a
+      internalID: 799353584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bagia_7
+      name: ThoDan_7
       rect:
         serializedVersion: 2
         x: 309
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a25e99603e2618941ab9ccef79fb11cd
-      internalID: 1588978283
+      spriteID: b4959eed7fe4cf348bf7d50856601b42
+      internalID: 391380997
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bagia_0: -460543866
-      bagia_1: -1828916931
-      bagia_2: -1181014307
-      bagia_3: 796428598
-      bagia_4: -928115658
-      bagia_5: 1818071958
-      bagia_6: 40657238
-      bagia_7: 1588978283
+      ThoDan_0: 1798551390
+      ThoDan_1: 1975546861
+      ThoDan_2: 186560388
+      ThoDan_3: 942459275
+      ThoDan_4: 1010468605
+      ThoDan_5: 1026353692
+      ThoDan_6: 799353584
+      ThoDan_7: 391380997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

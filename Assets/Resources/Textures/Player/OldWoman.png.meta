@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b502392cf90dd97469b3617b1b5ab6c0
+guid: 9b9b46a5988fbed40810418010bf0c2c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,43 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background_Large_1_0
+      name: quilun_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 246
-        width: 901
-        height: 1802
+        x: 2
+        y: 219
+        width: 41
+        height: 35
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c50d1c3cca027c64a948c820d82c77b8
-      internalID: -857675169
+      spriteID: bc9480c0b99df234ca2eb123012e0d66
+      internalID: 970376152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Background_Large_1_1
+      name: quilun_1
       rect:
         serializedVersion: 2
-        x: 902
-        y: 247
-        width: 903
-        height: 1801
+        x: 2
+        y: 167
+        width: 71
+        height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdffb949785feb946a0b82b2bebfc102
-      internalID: 71845278
+      spriteID: 1a80f8276baf06b4e92448347bdb79ea
+      internalID: 1020926842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quilun_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 167
+        width: 78
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2bac7c88c4a24499c9814876decd40
+      internalID: -92225545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quilun_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 5
+        width: 182
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bafaaa094c968864680dfe48b73516cd
+      internalID: -471035602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quilun_4
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 136
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c29315370129ea41a8fef56ff97d130
+      internalID: 1998034619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quilun_5
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 136
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726813eb837a8fe47b0dcb17427a13f0
+      internalID: -1852572876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quilun_6
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 84
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077a8fb8db7bcd641a80738f3d3bb8ca
+      internalID: -937556421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quilun_7
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 5
+        width: 42
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05222705c5377dc4f917ac11527edac8
+      internalID: -513956414
       vertices: []
       indices: 
       edges: []
@@ -162,8 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Background_Large_1_0: -857675169
-      Background_Large_1_1: 71845278
+      quilun_0: 970376152
+      quilun_1: 1020926842
+      quilun_2: -92225545
+      quilun_3: -471035602
+      quilun_4: 1998034619
+      quilun_5: -1852572876
+      quilun_6: -937556421
+      quilun_7: -513956414
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

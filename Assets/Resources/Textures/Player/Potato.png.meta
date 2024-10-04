@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76e8c3d5b368e5c42a2cc112d5a3ec80
+guid: be38fade1a990d24c8997231dda751e7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: conmeo_0
+      name: cucai_0
       rect:
         serializedVersion: 2
         x: 2
-        y: 221
-        width: 38
-        height: 33
+        y: 190
+        width: 70
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43953ff948750ac44b4efaaf69b1377e
-      internalID: -1896769134
+      spriteID: 3d4a66afc55e7a44994bce60a469289b
+      internalID: 382238644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: conmeo_1
+      name: cucai_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 190
+        width: 41
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41eab58c2f529ed4c8ec37edac4e07b2
+      internalID: 1427978880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cucai_2
       rect:
         serializedVersion: 2
         x: 2
-        y: 147
-        width: 78
-        height: 72
+        y: 22
+        width: 140
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6aabeba45b5947a4ea8d0d2132eeabd5
-      internalID: 396574430
+      spriteID: b1bbbf63bb21dc34db2950e2734ea04c
+      internalID: -2120024798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: conmeo_2
+      name: cucai_3
       rect:
         serializedVersion: 2
-        x: 82
-        y: 147
-        width: 32
-        height: 37
+        x: 144
+        y: 76
+        width: 22
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1582069a5b5bea498bb8e9857d38a38
-      internalID: 1578834072
+      spriteID: ee462b0428cd162458b358eadf3bdc4d
+      internalID: -2035700368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: conmeo_3
+      name: cucai_4
       rect:
         serializedVersion: 2
-        x: 2
-        y: 4
-        width: 139
-        height: 141
+        x: 144
+        y: 22
+        width: 48
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1b9a01e575ce324c9510f134abfa43a
-      internalID: 364640898
+      spriteID: d8de5176876576049ae0d164d56580ac
+      internalID: 1168343161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: conmeo_4
+      name: cucai_5
       rect:
         serializedVersion: 2
-        x: 143
-        y: 54
-        width: 29
-        height: 32
+        x: 194
+        y: 22
+        width: 11
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,50 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f506d36e47849b4994b9bae510246f0
-      internalID: 372235959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: conmeo_5
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 4
-        width: 34
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 468206e21e3f38c429a780a3fba93e6d
-      internalID: -1715483592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: conmeo_6
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 4
-        width: 29
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55f896cfc69be4746ad642cfc5508431
-      internalID: 646061167
+      spriteID: b1c0d395e5e8bdc42aa9ef6beec24943
+      internalID: -68250483
       vertices: []
       indices: 
       edges: []
@@ -267,13 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      conmeo_0: -1896769134
-      conmeo_1: 396574430
-      conmeo_2: 1578834072
-      conmeo_3: 364640898
-      conmeo_4: 372235959
-      conmeo_5: -1715483592
-      conmeo_6: 646061167
+      cucai_0: 382238644
+      cucai_1: 1427978880
+      cucai_2: -2120024798
+      cucai_3: -2035700368
+      cucai_4: 1168343161
+      cucai_5: -68250483
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

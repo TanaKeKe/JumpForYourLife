@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b502392cf90dd97469b3617b1b5ab6c0
+guid: 0e07dfff2c9ebbe4b929a7fd68a98414
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,43 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background_Large_1_0
+      name: cukhoai_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 246
-        width: 901
-        height: 1802
+        x: 2
+        y: 9
+        width: 129
+        height: 117
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c50d1c3cca027c64a948c820d82c77b8
-      internalID: -857675169
+      spriteID: 75f105c43ac7da043abd90847cd7b4f3
+      internalID: -52552248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Background_Large_1_1
+      name: cukhoai_1
       rect:
         serializedVersion: 2
-        x: 902
-        y: 247
-        width: 903
-        height: 1801
+        x: 133
+        y: 9
+        width: 65
+        height: 107
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdffb949785feb946a0b82b2bebfc102
-      internalID: 71845278
+      spriteID: 5a7a2bda3b48cca478f0dea2ed3b8348
+      internalID: 1610374551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cukhoai_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 93
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c715bb9107b4846b79f7d409ab9680
+      internalID: -58903615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cukhoai_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 9
+        width: 70
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0c1f929f8483549bc676b9c5900865
+      internalID: -642728768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cukhoai_4
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 9
+        width: 65
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4289b93bf9aaf03408ed444f7eae656b
+      internalID: 54827748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cukhoai_5
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 9
+        width: 49
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45feaa882e8e46844837130741102215
+      internalID: -980242698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cukhoai_6
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 9
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aaf4f5959d6fe843a052c2575b604ac
+      internalID: 1387037125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cukhoai_7
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 9
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684ee4c7bb32a5a47bd275b70a0088e4
+      internalID: 419048366
       vertices: []
       indices: 
       edges: []
@@ -162,8 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Background_Large_1_0: -857675169
-      Background_Large_1_1: 71845278
+      cukhoai_0: -52552248
+      cukhoai_1: 1610374551
+      cukhoai_2: -58903615
+      cukhoai_3: -642728768
+      cukhoai_4: 54827748
+      cukhoai_5: -980242698
+      cukhoai_6: 1387037125
+      cukhoai_7: 419048366
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
