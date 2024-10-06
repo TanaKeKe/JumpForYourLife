@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
                 if (_isJump)
                 {
                     SetNullParent();
+                    AudioGamePlayManager.Instance.PlaySound(AudioGamePlayManager.Instance.JumpSound);
                     _rigidbody2d.AddForce(Vector2.up * force);
                 }
             }

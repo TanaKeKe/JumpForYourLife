@@ -8,6 +8,8 @@ public class BarEndgame : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioGamePlayManager.Instance.StopMusic();
+            AudioGamePlayManager.Instance.PlaySound(AudioGamePlayManager.Instance.GameOverSound);
             //Debug.Log("OnExitTrigger2D: Nhân vật chạm vào thanh endgame");
             GamePlayController.Instance.isFinish = true;
             PanelManager.Instance.OpenPanel("EndGamePanel");

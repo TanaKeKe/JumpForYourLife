@@ -58,11 +58,13 @@ public class BlockEvent : MonoBehaviour
                 ++_countChange;
                 if (_countChange == 1)
                 {
+                    AudioGamePlayManager.Instance.PlaySound(AudioGamePlayManager.Instance.BreakSound);
                     _spriteRenderer.sprite = spriteBreak;
                 }
 
                 if (_countChange == 2)
                 {
+                    AudioGamePlayManager.Instance.PlaySound(AudioGamePlayManager.Instance.BreakSound);
                     _spriteRenderer.sprite = null;
                     Messenger.Broadcast(EventKey.SetNullParentOfPlayer);
                     Messenger.Broadcast(EventKey.PlayerOnTriggerBlock);
