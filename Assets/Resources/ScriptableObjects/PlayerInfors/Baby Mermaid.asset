@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79405a5eb6da4a4fa3e409d415f6a3f, type: 3}
-  m_Name: OldWoman
+  m_Name: Baby Mermaid
   m_EditorClassIdentifier: 
-  playerSprite: {fileID: -843771583, guid: 30d14e84afe8b0b45a88180a0ad5e95d, type: 3}
-  avatarSpriteOn: {fileID: 471719302, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
-  avatarSpriteOff: {fileID: -981603966, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
-  avatarName: OVTK Woman
+  playerSprite: {fileID: -766816908, guid: 30d14e84afe8b0b45a88180a0ad5e95d, type: 3}
+  avatarSpriteOn: {fileID: 1090798992, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
+  avatarSpriteOff: {fileID: 888108338, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
+  avatarName: Baby Mermaid

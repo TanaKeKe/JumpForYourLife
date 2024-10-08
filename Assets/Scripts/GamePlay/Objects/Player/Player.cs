@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float force;
-
+    
     private Rigidbody2D _rigidbody2d;
     private Collider2D _collider2D;
+    private Animator _animator;
     private bool _isJump;
     private float _positionStartJump;
     private float _positionEndJump;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
         _positionStartJump = 3f;
         _rigidbody2d = GetComponent<Rigidbody2D>();
         _collider2D = GetComponent<Collider2D>();
+        _animator = GetComponent<Animator>();
     }
     private void OnEnable()
     {
@@ -52,6 +54,7 @@ public class Player : MonoBehaviour
                 {
                     SetNullParent();
                     AudioGamePlayManager.Instance.PlaySound(AudioGamePlayManager.Instance.JumpSound);
+                    _animator.SetBool("isJumping", true);
                     _rigidbody2d.AddForce(Vector2.up * force);
                 }
             }
@@ -64,6 +67,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Block"))
         {
+            _animator.SetBool("isJumping",false);
             GamePlayController.Instance.isStart = true;
             //Debug.Log("BLock va chạm nhân vật nè");
             setConnectBlock(collision);
