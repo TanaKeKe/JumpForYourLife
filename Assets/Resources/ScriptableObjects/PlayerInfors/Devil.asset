@@ -15,4 +15,4 @@ MonoBehaviour:
   playerSprite: {fileID: -150048940, guid: 4950a6879aac9f44db930b77a3e9559b, type: 3}
   avatarSpriteOn: {fileID: -1542440019, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
   avatarSpriteOff: {fileID: 379206005, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
-  avatarName: Devil
+  avatarName: Devil PROPTIT

@@ -15,4 +15,4 @@ MonoBehaviour:
   playerSprite: {fileID: -697482875, guid: 30d14e84afe8b0b45a88180a0ad5e95d, type: 3}
   avatarSpriteOn: {fileID: -2104657732, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
   avatarSpriteOff: {fileID: -20730040, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
-  avatarName: Penguin
+  avatarName: Baby Penguin

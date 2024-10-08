@@ -15,4 +15,4 @@ MonoBehaviour:
   playerSprite: {fileID: 2035282529, guid: 30d14e84afe8b0b45a88180a0ad5e95d, type: 3}
   avatarSpriteOn: {fileID: -1297397794, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
   avatarSpriteOff: {fileID: 783922194, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
-  avatarName: UnityDeveloper
+  avatarName: Unity Developer

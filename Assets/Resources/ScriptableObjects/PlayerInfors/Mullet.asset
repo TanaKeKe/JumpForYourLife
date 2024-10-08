@@ -15,4 +15,4 @@ MonoBehaviour:
   playerSprite: {fileID: -835645419, guid: 4950a6879aac9f44db930b77a3e9559b, type: 3}
   avatarSpriteOn: {fileID: 396319669, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
   avatarSpriteOff: {fileID: -222714013, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
-  avatarName: newPlayerInfors
+  avatarName: Baby Mullet

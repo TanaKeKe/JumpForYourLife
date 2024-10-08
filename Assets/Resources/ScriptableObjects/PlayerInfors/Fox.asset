@@ -15,4 +15,4 @@ MonoBehaviour:
   playerSprite: {fileID: 903027799, guid: 30d14e84afe8b0b45a88180a0ad5e95d, type: 3}
   avatarSpriteOn: {fileID: 899419575, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
   avatarSpriteOff: {fileID: -672292658, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
-  avatarName: Fox
+  avatarName: Baby Fox

@@ -15,4 +15,4 @@ MonoBehaviour:
   playerSprite: {fileID: 382624837, guid: 30d14e84afe8b0b45a88180a0ad5e95d, type: 3}
   avatarSpriteOn: {fileID: -261303628, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
   avatarSpriteOff: {fileID: -1264771181, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
-  avatarName: Radis
+  avatarName: Baby Radis

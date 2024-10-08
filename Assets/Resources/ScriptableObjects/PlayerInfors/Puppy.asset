@@ -15,4 +15,4 @@ MonoBehaviour:
   playerSprite: {fileID: 1096466437, guid: 30d14e84afe8b0b45a88180a0ad5e95d, type: 3}
   avatarSpriteOn: {fileID: -373364013, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
   avatarSpriteOff: {fileID: -487671984, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
-  avatarName: Puppy
+  avatarName: TanaKeKe

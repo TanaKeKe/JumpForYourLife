@@ -116,7 +116,7 @@ TextureImporter:
         x: 0
         y: 246
         width: 901
-        height: 1802
+        height: 1801
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,9 +134,9 @@ TextureImporter:
       name: Background_Large_1_1
       rect:
         serializedVersion: 2
-        x: 902
+        x: 903
         y: 247
-        width: 903
+        width: 901
         height: 1801
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

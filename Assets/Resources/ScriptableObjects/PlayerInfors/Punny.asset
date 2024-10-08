@@ -15,4 +15,4 @@ MonoBehaviour:
   playerSprite: {fileID: 121623635, guid: 4950a6879aac9f44db930b77a3e9559b, type: 3}
   avatarSpriteOn: {fileID: 450802629, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
   avatarSpriteOff: {fileID: -22375662, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
-  avatarName: Punny
+  avatarName: Baby Punny
