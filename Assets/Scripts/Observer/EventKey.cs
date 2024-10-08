@@ -12,4 +12,9 @@
     SetSpeedBlocks,
     NewRecordImage,
     ScoreImage,
+    SetOriginAvatarBtn,
+    SetNewThemeBtnToThemeSprite,
+    SetOriginThemeBtn,
+    SetNewPlayerBtnToPlayerSprite,
+    SetIconShop,
 }
