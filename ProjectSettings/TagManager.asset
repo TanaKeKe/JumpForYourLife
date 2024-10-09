@@ -6,8 +6,10 @@ TagManager:
   tags:
   - Wall
   - Block
-  - Score
   - EndGame
+  - Score
+  - Score1
+  - Score2
   layers:
   - Default
   - TransparentFX
@@ -50,6 +52,9 @@ TagManager:
     locked: 0
   - name: GamePlay
     uniqueID: 1097997939
+    locked: 0
+  - name: Player
+    uniqueID: 2551568623
     locked: 0
   - name: OverlayUI
     uniqueID: 2864744159
