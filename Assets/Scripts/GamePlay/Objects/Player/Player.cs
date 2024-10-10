@@ -34,10 +34,23 @@ public class Player : MonoBehaviour
         Messenger.RemoveListener(EventKey.SetNullParentOfPlayer, SetNullParent);
         Messenger.RemoveListener(EventKey.PlayerJump, Jump);
     }
+    private void Update()
+    {
+        if(_isJump)
+        {
+            _rigidbody2d.gravityScale += 0.05f;
+        }
+        else
+        {
+            _rigidbody2d.gravityScale = 1f;
+        }
+    }
 
     private void SetNullParent()
     {
         transform.SetParent(null);
+        _animator.SetBool("isJumping", true);
+        _isJump = true;
     }
 
     public void Jump()
@@ -54,7 +67,6 @@ public class Player : MonoBehaviour
                 {
                     SetNullParent();
                     AudioGamePlayManager.Instance.PlaySound(AudioGamePlayManager.Instance.JumpSound);
-                    _animator.SetBool("isJumping", true);
                     _rigidbody2d.AddForce(Vector2.up * force);
                 }
             }
@@ -74,6 +86,7 @@ public class Player : MonoBehaviour
             SetDistanceJump();
             if (GamePlayController.Instance.isPlaying)
             {
+                Messenger.Broadcast(EventKey.MoveWall);
                 GamePlayController.Instance.ChangePositionCamera(_distanceJump);
                 GamePlayController.Instance.ChangePositionBars(_distanceJump);
                 Messenger.Broadcast<float>(EventKey.UpdateScore, _distanceJump);

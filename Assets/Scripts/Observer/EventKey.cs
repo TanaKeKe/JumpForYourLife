@@ -17,4 +17,8 @@
     SetOriginThemeBtn,
     SetNewPlayerBtnToPlayerSprite,
     SetIconShop,
+    SetSkinBlock,
+    SetSkinWall,
+    SetSkinBackGround,
+    MoveWall,
 }

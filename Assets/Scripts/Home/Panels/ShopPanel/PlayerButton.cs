@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,10 @@ public class PlayerButton : MonoBehaviour
 {
     [SerializeField] private GameObject iconOnGameObject;
     [SerializeField] private GameObject iconOffGameObject;
-    [SerializeField] private GameObject tickSelection;
     [SerializeField] private Image avatarBtn;
 
+    private Color _halfWhite = new Color(1, 1, 1, .5f);
     public PlayerInfors playerInfors;
-    private Color _originColorSelection;
     public void Init(PlayerInfors playerInfors)
     {
         this.playerInfors = playerInfors;
@@ -21,17 +21,36 @@ public class PlayerButton : MonoBehaviour
         iconOffGameObject.GetComponent<Image>().sprite = this.playerInfors.AvatarSpriteOff;
         iconOffGameObject.GetComponent<Image>().SetNativeSize();
 
+        SetButtonState();
+    }
+
+    private void SetButtonState()
+    {
         if (PlayerPrefs.GetString("player").Equals(this.playerInfors.AvatarName))
         {
             SetBtnSelected();
         }
+        else
+        {
+            SetOriginAvatarBtn();
+        }
     }
+
+    private void OnEnable()
+    {
+        Messenger.AddListener(EventKey.SetOriginAvatarBtn,SetButtonState);   
+    }
+    private void OnDisable()
+    {
+        Messenger.RemoveListener(EventKey.SetOriginAvatarBtn, SetButtonState);
+    }
+
 
     public void OnClick()
     {
+        PlayerPrefs.SetString("player", playerInfors.AvatarName);
         Messenger.Broadcast(EventKey.SetOriginAvatarBtn);
         SetBtnSelected();
-        PlayerPrefs.SetString("player", playerInfors.AvatarName);
         Messenger.Broadcast(EventKey.SetNewPlayerBtnToPlayerSprite);
     }
 
@@ -39,16 +58,12 @@ public class PlayerButton : MonoBehaviour
     {
         iconOffGameObject.SetActive(false);
         iconOnGameObject.SetActive(true);
-        tickSelection.SetActive(true);
-        _originColorSelection = avatarBtn.color;
         avatarBtn.color = Color.white;
     }
-
     public void SetOriginAvatarBtn()
     {
         iconOffGameObject.SetActive(true);
         iconOnGameObject.SetActive(false);
-        tickSelection.SetActive(false);
-        avatarBtn.color = _originColorSelection;
+        avatarBtn.color = _halfWhite;
     }
 }

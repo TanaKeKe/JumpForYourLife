@@ -20,14 +20,12 @@ public class PlayerShopController : MonoBehaviour
     }
     private void OnEnable()
     {
-        Messenger.AddListener(EventKey.SetOriginAvatarBtn, SetOriginBtn);
         Messenger.AddListener(EventKey.SetNewPlayerBtnToPlayerSprite, TurnOnSpriteAndNamePlayer);
         Messenger.AddListener<Image>(EventKey.SetIconShop, SetIconShop);
     }
 
     private void OnDisable()
     {
-        Messenger.RemoveListener(EventKey.SetOriginAvatarBtn, SetOriginBtn);
         Messenger.RemoveListener(EventKey.SetNewPlayerBtnToPlayerSprite, TurnOnSpriteAndNamePlayer);
         Messenger.RemoveListener<Image>(EventKey.SetIconShop, SetIconShop);
     }
@@ -45,18 +43,6 @@ public class PlayerShopController : MonoBehaviour
         }
     }
 
-    private void SetOriginBtn()
-    {
-        foreach (GameObject player in _avatarPrefabs)
-        {
-            PlayerInfors obj = player.GetComponent<PlayerButton>().playerInfors;
-            if (PlayerPrefs.GetString("player").Equals(obj.AvatarName))
-            {
-                player.GetComponent<PlayerButton>().SetOriginAvatarBtn();
-                break;
-            }
-        }
-    }
 
     public void TurnOnSpriteAndNamePlayer()
     {

@@ -8,14 +8,22 @@ public class BlockEvent : MonoBehaviour
     [SerializeField] private Sprite spriteOrigin;
     [SerializeField] private Sprite spriteBreak;
     [Space(10)]
-
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     public bool _isBreak;
     public int _countChange;
 
     private void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        LoadSkinBlock();
+    }
+
+    private void LoadSkinBlock()
+    {
+        string nameTheme = PlayerPrefs.GetString("theme");
+        ThemeInfors theme = Resources.Load<ThemeInfors>("ScriptableObjects/ThemeInfors/" + nameTheme);
+        _spriteRenderer.sprite = theme.OriginLengthBlock;
+        spriteOrigin = theme.OriginLengthBlock;
+        spriteBreak = theme.BreakLengthBlock;
     }
 
     private void OnEnable()
@@ -50,7 +58,7 @@ public class BlockEvent : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
         if (collision.gameObject.CompareTag("Wall"))
         {
             if (_isBreak)

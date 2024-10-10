@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Sky
   m_EditorClassIdentifier: 
   backgroundSprite: {fileID: -1441695755, guid: b8aa7c9ab28c3784994b56f50714d956, type: 3}
-  originLengthBlock: {fileID: -1549475511, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  originLengthBlock: {fileID: -954786604, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
   originShortBlock: {fileID: 1068978309, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
-  breakLengthBlock: {fileID: 1712886926, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  breakLengthBlock: {fileID: -1370350353, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
   breakShortBlock: {fileID: -1742886471, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
   avatarTheme: {fileID: 900561847, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
   wallSprite: {fileID: 685900172, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}

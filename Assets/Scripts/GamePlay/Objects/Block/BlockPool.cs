@@ -16,6 +16,7 @@ public class BlockPool : ObjectPool
     private void Start()
     {
         _blockPool = GetObjectPool();
+        Messenger.Broadcast(EventKey.SetSkinBlock, blockPrefab);
         GenerateBlock(blockPrefab);
         Debug.Log("Sinh khối đứng thành công: " + AmountObjectInPool());
     }

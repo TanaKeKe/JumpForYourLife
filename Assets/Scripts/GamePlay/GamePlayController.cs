@@ -29,9 +29,17 @@ public class GamePlayController : Singleton<GamePlayController>
     public bool isStart;
     private void Start()
     {
+        LoadPlayer();
         countDown.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
         perfect.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
         _score = 0;
+    }
+
+    private void LoadPlayer()
+    {
+        string namePlayer = PlayerPrefs.GetString("player");
+        GameObject playerCurrent = Resources.Load<GameObject>("Players/" + namePlayer);
+        Instantiate(playerCurrent, transform);
     }
 
     private void OnEnable()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,18 +13,49 @@ public class WallSpawn : MonoBehaviour
     [Space(10)]
 
     [SerializeField] private int wallCount;
+
+    private GameObject _wallTinyLeftClone;
+    private SpriteRenderer _wallTinyLeftSpriteRenderer;
+    private GameObject _wallTinyRightClone;
+    private SpriteRenderer _wallTinyRightSpriteRenderer;
+    private Vector2 _wallHeight = new Vector2(0, 10f);
     private void Start()
     {
+        LoadSkinWall();
+        wallTinyRightPrefab.GetComponent<SpriteRenderer>().sprite = wallTinyLeftPrefab.GetComponent<SpriteRenderer>().sprite;
         GenerateWall(wallTinyRightPrefab, wallTinyLeftPrefab);
-        walls.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
+    }
+
+    private void OnEnable()
+    {
+        Messenger.AddListener(EventKey.MoveWall, MoveWall);
+    }
+
+    private void OnDisable()
+    {
+        Messenger.RemoveListener(EventKey.MoveWall, MoveWall);
+    }
+
+    private void MoveWall()
+    {
+        _wallTinyLeftSpriteRenderer.size += _wallHeight;
+        _wallTinyRightSpriteRenderer.size += _wallHeight;
+    }
+
+    private void LoadSkinWall()
+    {
+        ThemeInfors theme = Resources.Load<ThemeInfors>("ScriptableObjects/ThemeInfors/" + PlayerPrefs.GetString("theme"));
+        wallTinyLeftPrefab.GetComponent<SpriteRenderer>().sprite = theme.WallSprite;
     }
 
     private void GenerateWall(GameObject wallTinyRight, GameObject wallTinyLeft)
     {
         for (int i = 1; i <= wallCount; ++i)
         {
-            var wallTinyLeftClone = Instantiate(wallTinyLeft, wallLeft);
-            var wallTinyRightClone = Instantiate(wallTinyRight, wallRight);
+            _wallTinyLeftClone = Instantiate(wallTinyLeft, wallLeft);
+            _wallTinyLeftSpriteRenderer = _wallTinyLeftClone.GetComponent<SpriteRenderer>();
+            _wallTinyRightClone = Instantiate(wallTinyRight, wallRight);
+            _wallTinyRightSpriteRenderer = _wallTinyRightClone.GetComponent<SpriteRenderer>();
         }
     }
 }
