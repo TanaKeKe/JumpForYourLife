@@ -34,17 +34,7 @@ public class Player : MonoBehaviour
         Messenger.RemoveListener(EventKey.SetNullParentOfPlayer, SetNullParent);
         Messenger.RemoveListener(EventKey.PlayerJump, Jump);
     }
-    private void Update()
-    {
-        if(_isJump)
-        {
-            _rigidbody2d.gravityScale += 0.05f;
-        }
-        else
-        {
-            _rigidbody2d.gravityScale = 1f;
-        }
-    }
+
 
     private void SetNullParent()
     {
