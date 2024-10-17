@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteOrigin: {fileID: -1459344457, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
   spriteBreak: {fileID: 1249517128, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
-  _spriteRenderer: {fileID: 2839352442062783630}
+  spriteRenderer: {fileID: 2839352442062783630}
+  col2D: {fileID: 2305671231600736897}
   _isBreak: 0
   _countChange: 0

@@ -36,7 +36,7 @@ public class ObjectPool : MonoBehaviour
                 }
                 else
                 {
-                    Messenger.Broadcast<GameObject>(EventKey.SetOriginSprite, obj);
+                    Messenger.Broadcast<GameObject>(EventKey.SetOriginBlock, obj);
                     obj.SetActive(false);
                 }
             }
@@ -77,7 +77,7 @@ public class ObjectPool : MonoBehaviour
             }
         }
 
-        Debug.Log(_positionLowest);
+        //Debug.Log(_positionLowest);
         Vector3 position = obj.transform.position;
         position.y = _positionLowest - distanceObject;
         obj.transform.position = position; // đặt lại vị trí cho object

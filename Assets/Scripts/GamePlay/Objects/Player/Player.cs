@@ -6,27 +6,25 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float force;
-    
+
     private Rigidbody2D _rigidbody2d;
     private Collider2D _collider2D;
     private Animator _animator;
     private bool _isJump;
-    private float _positionStartJump;
-    private float _positionEndJump;
     private float _distanceJump;
     private bool _startGame;
-
+    private float _positionYPlayer;
     private void Awake()
     {
-        _positionStartJump = 3f;
         _rigidbody2d = GetComponent<Rigidbody2D>();
         _collider2D = GetComponent<Collider2D>();
         _animator = GetComponent<Animator>();
+        _positionYPlayer = 3.5f;
     }
     private void OnEnable()
     {
         Messenger.AddListener(EventKey.SetNullParentOfPlayer, SetNullParent);
-        Messenger.AddListener(EventKey.PlayerJump,Jump);
+        Messenger.AddListener(EventKey.PlayerJump, Jump);
     }
 
     private void OnDisable()
@@ -50,15 +48,11 @@ public class Player : MonoBehaviour
             if (!_isJump)
             {
                 GamePlayController.Instance.isPlaying = true;
-                Messenger.Broadcast(EventKey.PlayerOnTriggerBlock);
                 //Debug.Log("Nhân vật nhảy");
-                _isJump = true;
-                if (_isJump)
-                {
-                    SetNullParent();
-                    AudioGamePlayManager.Instance.PlaySound(AudioGamePlayManager.Instance.JumpSound);
-                    _rigidbody2d.AddForce(Vector2.up * force);
-                }
+                SetNullParent();
+                AudioGamePlayManager.Instance.PlaySound(AudioGamePlayManager.Instance.JumpSound);
+                Messenger.Broadcast(EventKey.SetStatusBlockWhenPlay); 
+                _rigidbody2d.AddForce(Vector2.up * force);
             }
         }
     }
@@ -69,46 +63,59 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Block"))
         {
-            _animator.SetBool("isJumping",false);
-            GamePlayController.Instance.isStart = true;
-            //Debug.Log("BLock va chạm nhân vật nè");
-            setConnectBlock(collision);
+            _animator.SetBool("isJumping", false);
+            _isJump = false;
+            SetActionColliderWithBlockWhenPlaying(collision);
+        }
+    }
+
+    private void SetActionColliderWithBlockWhenPlaying(Collision2D collision)
+    {
+        if (GamePlayController.Instance.isPlaying)
+        {
             SetDistanceJump();
-            if (GamePlayController.Instance.isPlaying)
-            {
-                Messenger.Broadcast(EventKey.MoveWall);
-                GamePlayController.Instance.ChangePositionCamera(_distanceJump);
-                GamePlayController.Instance.ChangePositionBars(_distanceJump);
-                Messenger.Broadcast<float>(EventKey.UpdateScore, _distanceJump);
-                GamePlayController.Instance.isPerfect = false;
-            }
-            
+            setConnectBlock(collision);
+            Messenger.Broadcast(EventKey.MoveWall);
+            GamePlayController.Instance.ChangePositionCamera(_distanceJump);
+            Messenger.Broadcast<float>(EventKey.UpdateScore, _distanceJump);
+            GamePlayController.Instance.isPerfect = false;
+        }
+        else
+        {
+            GamePlayController.Instance.isStart = true;
         }
     }
 
     private void setConnectBlock(Collision2D collision)
     {
-        _isJump = false;
-        // collion là khối player đang va chạm => cho khối player đang va chạm làm bố của nhân vật
-        transform.SetParent(collision.transform);
-        if (GamePlayController.Instance.isPlaying)
+        transform.SetParent(collision.transform); // block làm bố nhân vật
+        PerfectAction();
+    }
+
+    private void PerfectAction()
+    {
+        Vector3 localPosition = transform.localPosition;
+        //Debug.Log("Tọa độ X của Player là: " + localPosition.x);
+        if (localPosition.x <= 0.1f && localPosition.x >= -0.1f)
         {
-            Vector3 localPosition = transform.localPosition; // vị trí hiện tại của player ngay khi va chạm
-            Debug.Log("Tọa độ X của Player là: " + localPosition.x);
-            if (localPosition.x <= 0.1f && localPosition.x >= -0.1f)
-            {
-                Debug.Log("Nhay vao perfect");
-                GamePlayController.Instance.isPerfect = true;
-                GamePlayController.Instance.SetActivePerfect();
-            }
+            GamePlayController.Instance.isPerfect = true;
+            GamePlayController.Instance.SetActivePerfect();
         }
     }
 
     public void SetDistanceJump()
     {
-        _positionEndJump = transform.position.y;
-        _distanceJump = Math.Abs(_positionEndJump - _positionStartJump);
-        _distanceJump = (float)Math.Round(_distanceJump, 1);
-        _positionStartJump = _positionEndJump;
+        double distanceJumpCurrent = Math.Round(_positionYPlayer - transform.position.y, 1);
+        //Debug.Log(distanceJumpCurrent);
+        if(Mathf.Approximately((float)distanceJumpCurrent,3.5f) == true)
+        {
+            _distanceJump = 3.5f;
+            _positionYPlayer = transform.position.y;
+        }
+        else
+        {
+            _distanceJump = 7f;
+            _positionYPlayer = transform.position.y;
+        }
     }
 }

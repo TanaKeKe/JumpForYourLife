@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2403976975866865631}
   - component: {fileID: 1110352814985344425}
   - component: {fileID: 1607044551068527111}
+  - component: {fileID: -3166935782461927522}
   m_Layer: 0
   m_Name: Wall_Left
   m_TagString: Wall
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 1097997939
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 685900172, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  m_Sprite: {fileID: -884786090, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,9 +121,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.01, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.035, y: 1.595}
+    oldSize: {x: 1.05, y: 1.6}
     newSize: {x: 1.04, y: 20}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
@@ -158,3 +159,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3166935782461927522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506922651361001361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c87c41151dcceb41bfe571d25cbdfd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

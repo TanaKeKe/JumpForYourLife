@@ -11,35 +11,61 @@ public class BlockPool : ObjectPool
     [SerializeField] private float spaceBetweenTwoBlocks;
 
     private List<GameObject> _blockPool;
-    private bool _checkStart;
-
+    private int _count = 0;
     private void Start()
     {
         _blockPool = GetObjectPool();
         Messenger.Broadcast(EventKey.SetSkinBlock, blockPrefab);
         GenerateBlock(blockPrefab);
         Debug.Log("Sinh khối đứng thành công: " + AmountObjectInPool());
+        GetObjectFromPool();
+    }
+
+    private void OnEnable()
+    {
+        Messenger.AddListener(EventKey.SetStatusBlockWhenPlay, SetStatusBlock);
+        Messenger.AddListener(EventKey.GetBlockFromPool, GetObjectFromPool);
+    }
+    private void OnDisable()
+    {
+        Messenger.RemoveListener(EventKey.SetStatusBlockWhenPlay, SetStatusBlock);
+        Messenger.RemoveListener(EventKey.GetBlockFromPool, GetObjectFromPool);
+    }
+
+    private void SetStatusBlock()
+    {
+        foreach (var block in _blockPool)
+        {
+            var obj = block.GetComponent<BlockEvent>().isBreak;
+            if (obj == true)
+            {
+                block.GetComponent<Block>()._collider2D.isTrigger = true;
+            }
+        }
     }
 
     private void Update()
     {
-        GetObjectFromPool();
-        TutorialPlay();
+        if (GamePlayController.Instance.isStart == false)
+        {
+            TutorialPlay();
+        }
+
+        if(GamePlayController.Instance.isPlaying == true)
+        {
+            if(_count == 0)
+            {
+                _blockPool[0].GetComponent<Block>().SetSpeed(1.2f);
+                ++_count;
+            }
+        }
         CheckOutCameraToResetPositionObject(spaceBetweenTwoBlocks);
-        
     }
 
     private void TutorialPlay()
     {
-        if (GamePlayController.Instance.isPlaying && !_checkStart)
-        {
-            _checkStart = true;
-            _blockPool[0].GetComponent<Block>().SetSpeed(1.2f);
-        }
-        else
-        {
-            if (!_checkStart) _blockPool[0].GetComponent<Block>().SetNoneSpeed();
-        }
+        _blockPool[0].GetComponent<BlockEvent>().isBreak = true;
+        _blockPool[0].GetComponent<Block>().SetNoneSpeed();
     }
 
     private void GenerateBlock(GameObject block)
@@ -48,7 +74,7 @@ public class BlockPool : ObjectPool
         {
             var blockClone = Instantiate(block, this.gameObject.transform);
             blockClone.transform.position -= Vector3.up * spaceBetweenTwoBlocks * i; // set position of block
-            Debug.Log(blockClone.transform.position);
+            //Debug.Log(blockClone.transform.position);
             var direction = i % 2 == 0 ? -1 : 1; // chẵn sang trái, lẻ sang phải
             blockClone.GetComponent<Block>().RandomSpeed(direction);
 

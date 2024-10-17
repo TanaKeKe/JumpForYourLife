@@ -10,7 +10,7 @@ public class Block : MonoBehaviour
     
 
     private float _pauseSpeed;
-    private Collider2D _collider2D;
+    public Collider2D _collider2D;
 
     private void Start()
     {
@@ -19,16 +19,12 @@ public class Block : MonoBehaviour
 
     private void OnEnable()
     {
-        Messenger.AddListener(EventKey.PlayerOnTriggerBlock, TurnOnTrigger);
-        Messenger.AddListener(EventKey.PlayerConnectBlock, TurnOffTrigger);
         Messenger.AddListener(EventKey.SetSpeedBlocks, SetSpeedBlocks);
     }
 
 
     private void OnDisable()
     {
-        Messenger.RemoveListener(EventKey.PlayerOnTriggerBlock, TurnOnTrigger);
-        Messenger.RemoveListener(EventKey.PlayerConnectBlock, TurnOffTrigger);
         Messenger.RemoveListener(EventKey.SetSpeedBlocks, SetSpeedBlocks);
     }
 
@@ -37,40 +33,18 @@ public class Block : MonoBehaviour
         speed = _pauseSpeed;
     }
 
-    private void TurnOnTrigger()
-    {
-        _collider2D.isTrigger = true;
-    }
-
-    private void TurnOffTrigger()
-    {
-        _collider2D.isTrigger = false;
-    }
-
     private void Update()
     {
         Move();
         ChangeDirection();
-        CheckFinish();
-        CheckPause();
+        CheckPauseAndFinish();
     }
 
-    private void CheckPause()
+    private void CheckPauseAndFinish()
     {
-        if(GamePlayController.Instance.isPause)
+        if(GamePlayController.Instance.isPause || GamePlayController.Instance.isFinish)
         {
             if (speed != 0)
-            {
-                SetNoneSpeed();
-            }
-        }
-    }
-
-    private void CheckFinish()
-    {
-        if(GamePlayController.Instance.isFinish)
-        {
-            if(speed != 0)
             {
                 SetNoneSpeed();
             }
@@ -81,14 +55,6 @@ public class Block : MonoBehaviour
     {
         // transform.position += Vector3.right * speed * Time.deltaTime;
         transform.Translate(Vector3.right * speed * Time.deltaTime);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            //Debug.Log("Đất va chạm vào tường nè bà");
-        }
     }
 
     public void ChangeDirection()

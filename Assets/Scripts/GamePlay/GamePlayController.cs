@@ -18,7 +18,7 @@ public class GamePlayController : Singleton<GamePlayController>
     [SerializeField] private float spaceBetweenTwoBlocks;
     [SerializeField] private GameObject perfect;
     [SerializeField] private GameObject countDown;
-
+    [SerializeField] private GameObject endGameBar;
     private int _score;
     private Vector3 _targetPosition;
     public bool isPlaying;
@@ -32,6 +32,7 @@ public class GamePlayController : Singleton<GamePlayController>
         LoadPlayer();
         countDown.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
         perfect.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
+        endGameBar.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
         _score = 0;
     }
 
@@ -70,15 +71,17 @@ public class GamePlayController : Singleton<GamePlayController>
 
     private void Update()
     {
-        if (isPause == false && countDown.activeInHierarchy == false)
-        {
-            //Debug.Log("Ấn để chơi game");
-            Messenger.Broadcast(EventKey.PlayerJump);
-        }
+        CheckPause();
         CheckResume();
     }
 
-
+    private void CheckPause()
+    {
+        if (isPause == false && countDown.activeInHierarchy == false)
+        {
+            Messenger.Broadcast(EventKey.PlayerJump);
+        }
+    }
     private void CheckResume()
     {
         if (isResume)
@@ -147,12 +150,7 @@ public class GamePlayController : Singleton<GamePlayController>
             if (myCamera.transform.position.y == _targetPosition.y) break;
             yield return null;
         }
-    }
-
-    public void ChangePositionBars(float distanceJump)
-    {
-        //Debug.Log("Thay đổi vị trí của 2 thanh tắt trigger" + bars.transform.position);
-        bars.transform.position += (Vector3.down * distanceJump);
+        Messenger.Broadcast(EventKey.GetBlockFromPool);
     }
 
     public float GetRangeTopCamera()

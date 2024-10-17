@@ -1,12 +1,11 @@
 ﻿public enum EventKey
 {
     PlayerOnTriggerBlock,
-    PlayerConnectBlock,
     UpdateScore,
     SetNullParentOfPlayer,
     ShowScore,
     Replay,
-    SetOriginSprite,
+    SetOriginBlock,
     PlayerJump,
     GoHome,
     SetSpeedBlocks,
@@ -21,4 +20,6 @@
     SetSkinWall,
     SetSkinBackGround,
     MoveWall,
+    SetStatusBlockWhenPlay,
+    GetBlockFromPool,
 }
