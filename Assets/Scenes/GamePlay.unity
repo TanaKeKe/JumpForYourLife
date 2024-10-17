@@ -506,11 +506,11 @@ Transform:
   m_GameObject: {fileID: 624283473}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.57, z: 0}
+  m_LocalPosition: {x: 0, y: -5.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 652061833}
+  m_Father: {fileID: 957188089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &624283476
 BoxCollider2D:
@@ -569,38 +569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97646fe02ac4a394c9cd78bf1dd49025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &652061831
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 652061833}
-  m_Layer: 0
-  m_Name: Bars
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &652061833
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652061831}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 624283474}
-  m_Father: {fileID: 957188089}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &703720052 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 240126638435747624, guid: 5d48c2e2ac062fe4b9f9ca0c42bd04e3, type: 3}
@@ -684,7 +652,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 733348670}
-  - {fileID: 652061833}
+  - {fileID: 624283474}
   - {fileID: 1429030100}
   - {fileID: 988849628}
   - {fileID: 115000915}
@@ -704,12 +672,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   myCamera: {fileID: 93066036}
-  bars: {fileID: 652061831}
+  bars: {fileID: 0}
   rangeCamera: 5.1
   countChangeCamera: 0.125
   spaceBetweenTwoBlocks: 3.5
   perfect: {fileID: 988849627}
   countDown: {fileID: 115000912}
+  endGameBar: {fileID: 624283473}
   isPlaying: 0
   isPerfect: 0
   isFinish: 0
