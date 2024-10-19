@@ -22,4 +22,5 @@
     MoveWall,
     SetStatusBlockWhenPlay,
     GetBlockFromPool,
+    ChangeSkinMediumBlock,
 }

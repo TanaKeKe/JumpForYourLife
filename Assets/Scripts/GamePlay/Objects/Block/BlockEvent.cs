@@ -23,9 +23,9 @@ public class BlockEvent : MonoBehaviour
     {
         string nameTheme = PlayerPrefs.GetString("theme");
         ThemeInfors theme = Resources.Load<ThemeInfors>("ScriptableObjects/ThemeInfors/" + nameTheme);
-        spriteRenderer.sprite = theme.OriginLengthBlock;
-        spriteOrigin = theme.OriginLengthBlock;
-        spriteBreak = theme.BreakLengthBlock;
+        spriteRenderer.sprite = theme.OriginNormalBlock;
+        spriteOrigin = theme.OriginNormalBlock;
+        spriteBreak = theme.BreakNormalBlock;
     }
 
     private void OnEnable()
