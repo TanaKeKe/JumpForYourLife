@@ -18,18 +18,15 @@ public class BlockPool : ObjectPool
         Messenger.Broadcast(EventKey.SetSkinBlock, blockPrefab);
         GenerateBlock(blockPrefab);
         Debug.Log("Sinh khối đứng thành công: " + AmountObjectInPool());
-        GetObjectFromPool();
     }
 
     private void OnEnable()
     {
         Messenger.AddListener(EventKey.SetStatusBlockWhenPlay, SetStatusBlock);
-        Messenger.AddListener(EventKey.GetBlockFromPool, GetObjectFromPool);
     }
     private void OnDisable()
     {
         Messenger.RemoveListener(EventKey.SetStatusBlockWhenPlay, SetStatusBlock);
-        Messenger.RemoveListener(EventKey.GetBlockFromPool, GetObjectFromPool);
     }
 
     private void SetStatusBlock()
@@ -59,6 +56,7 @@ public class BlockPool : ObjectPool
                 ++_count;
             }
         }
+        GetObjectFromPool();
         CheckOutCameraToResetPositionObject(spaceBetweenTwoBlocks);
     }
 

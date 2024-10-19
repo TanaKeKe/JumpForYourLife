@@ -150,7 +150,6 @@ public class GamePlayController : Singleton<GamePlayController>
             if (myCamera.transform.position.y == _targetPosition.y) break;
             yield return null;
         }
-        Messenger.Broadcast(EventKey.GetBlockFromPool);
     }
 
     public float GetRangeTopCamera()
