@@ -23,4 +23,7 @@
     SetStatusBlockWhenPlay,
     GetBlockFromPool,
     ChangeSkinMediumBlock,
+    SetBlock,
+    GetBlockFormPool,
+    SetLowestPosition,
 }

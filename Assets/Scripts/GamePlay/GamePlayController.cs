@@ -19,7 +19,7 @@ public class GamePlayController : Singleton<GamePlayController>
     [SerializeField] private GameObject perfect;
     [SerializeField] private GameObject countDown;
     [SerializeField] private GameObject endGameBar;
-    private int _score;
+    public int score;
     private Vector3 _targetPosition;
     public bool isPlaying;
     public bool isPerfect;
@@ -33,7 +33,7 @@ public class GamePlayController : Singleton<GamePlayController>
         countDown.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
         perfect.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
         endGameBar.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
-        _score = 0;
+        score = 0;
     }
 
     private void LoadPlayer()
@@ -64,7 +64,7 @@ public class GamePlayController : Singleton<GamePlayController>
     {
         if(isFinish)
         {
-            SaveGame.SaveHighScore(_score);
+            SaveGame.SaveHighScore(score);
         }
         SceneManager.LoadScene(Scene.home);
     }
@@ -103,14 +103,14 @@ public class GamePlayController : Singleton<GamePlayController>
     {
         if (isFinish)
         {
-            SaveGame.SaveHighScore(_score);
+            SaveGame.SaveHighScore(score);
         }
         SceneManager.LoadScene(Scene.gameplay);
     }
 
     private void ShowScore(TextMeshProUGUI scoreText)
     {
-        scoreText.text = _score.ToString();
+        scoreText.text = score.ToString();
     }
 
     public void UpdateScore(float distance)
@@ -120,11 +120,7 @@ public class GamePlayController : Singleton<GamePlayController>
         {
             currentScore *= 2;
         }
-        _score += currentScore;
-        if(_score > 1)
-        {
-            Messenger.Broadcast(EventKey.ChangeSkinMediumBlock);
-        }
+        score += currentScore;
     }
 
     public void SetActivePerfect()
@@ -154,6 +150,7 @@ public class GamePlayController : Singleton<GamePlayController>
             if (myCamera.transform.position.y == _targetPosition.y) break;
             yield return null;
         }
+        Messenger.Broadcast(EventKey.GetBlockFormPool);
     }
 
     public float GetRangeTopCamera()

@@ -33,7 +33,6 @@ public class Player : MonoBehaviour
         Messenger.RemoveListener(EventKey.PlayerJump, Jump);
     }
 
-
     private void SetNullParent()
     {
         transform.SetParent(null);
@@ -106,6 +105,7 @@ public class Player : MonoBehaviour
     public void SetDistanceJump()
     {
         double distanceJumpCurrent = Math.Round(_positionYPlayer - transform.position.y, 1);
+        if (distanceJumpCurrent < 4.5f) distanceJumpCurrent = 3.5f;
         //Debug.Log(distanceJumpCurrent);
         if(Mathf.Approximately((float)distanceJumpCurrent,3.5f) == true)
         {

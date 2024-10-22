@@ -24,7 +24,7 @@ public class PanelManager : Singleton<PanelManager>
         }
         //Load panel len tu resources
         Panel panel = Resources.Load<Panel>("Panels/" + name);
-        Debug.Log("Load thành công Panel" + (transform == null) + " " + (panel == null));
+        //Debug.Log("Load thành công Panel: " + (transform == null) + " " + (panel == null));
         //Sinh ra mot ban sao
         Panel newPanel = Instantiate(panel, transform);
         newPanel.transform.SetAsLastSibling();

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BlockEvent : MonoBehaviour
 {
@@ -10,16 +12,21 @@ public class BlockEvent : MonoBehaviour
     [SerializeField] private Sprite spriteBreak;
     [Space(10)]
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Collider2D col2D;
+    [SerializeField] private BoxCollider2D col2D;
+
     public bool isBreak;
     public int countChange;
+    public TypeBlock typeBlock;
+    public int endIndex = 0;
+    public static BlockEvent Instance;
+    private bool checkDotween;
 
     private void Start()
     {
-        LoadSkinBlock();
+        LoadSkinNormalBlock();
     }
 
-    private void LoadSkinBlock()
+    public void LoadSkinNormalBlock()
     {
         string nameTheme = PlayerPrefs.GetString("theme");
         ThemeInfors theme = Resources.Load<ThemeInfors>("ScriptableObjects/ThemeInfors/" + nameTheme);
@@ -28,21 +35,97 @@ public class BlockEvent : MonoBehaviour
         spriteBreak = theme.BreakNormalBlock;
     }
 
-    private void OnEnable()
+    public void LoadSkinMediumBlock()
     {
-        Messenger.AddListener<GameObject>(EventKey.SetOriginBlock, SetOriginBlock);
-    }
-    private void OnDisable()
-    {
-        Messenger.RemoveListener<GameObject>(EventKey.SetOriginBlock, SetOriginBlock);
+        string nameTheme = PlayerPrefs.GetString("theme");
+        ThemeInfors theme = Resources.Load<ThemeInfors>("ScriptableObjects/ThemeInfors/" + nameTheme);
+        spriteRenderer.sprite = theme.OriginMediumBlock;
+        spriteOrigin = theme.OriginMediumBlock;
+        spriteBreak = theme.BreakMediumBlock;
     }
 
-    private void SetOriginBlock(GameObject gameObject)
+    public void LoadSkinHardBlock()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = spriteOrigin;
-        gameObject.GetComponent<BlockEvent>().isBreak = false;
-        gameObject.GetComponent<BlockEvent>().countChange = 0;
-        gameObject.GetComponent<Collider2D>().isTrigger = false;
+        string nameTheme = PlayerPrefs.GetString("theme");
+        ThemeInfors theme = Resources.Load<ThemeInfors>("ScriptableObjects/ThemeInfors/" + nameTheme);
+        spriteRenderer.sprite = theme.OriginHardBlock;
+        spriteOrigin = theme.OriginHardBlock;
+        spriteBreak = theme.BreakHardBlock;
+    }
+
+    public void SetColliderNormalBlock()
+    {
+        col2D.size = new Vector2(1.1f, col2D.size.y);
+    }
+
+    public void SetColliderMediumBlock()
+    {
+        col2D.size = new Vector2(0.85f, col2D.size.y);
+    }
+
+    public void SetColliderHardBlock()
+    {
+        col2D.size = new Vector2(0.6f, col2D.size.y);
+    }
+
+    public void SetOriginBlock()
+    {
+        spriteRenderer.sprite = spriteOrigin;
+        isBreak = false;
+        countChange = 0;
+        col2D.isTrigger = false;
+    }
+
+    public void SetHiddenBlock()
+    {
+        //spriteRenderer.DOFade(0, 3f).SetLoops(-1, LoopType.Yoyo);
+        checkDotween = true;
+    }
+    private void Update()
+    {
+        if(checkDotween)
+        {
+            if(spriteRenderer.color.a <= 0.001f)
+            {
+                StartCoroutine(CoroutineFade());
+            }
+            if(spriteRenderer.color.a >= 0.999f)
+            {
+                StartCoroutine(CoroutineMakeOpacity());
+            }
+        }
+    }
+
+    private IEnumerator CoroutineMakeOpacity()
+    {
+        float faded = 1f;
+        while (faded > 0)
+        {
+            faded -= 0.001f;
+            spriteRenderer.color = new Color(1f, 1f, 1f, faded);
+            yield return null;
+        }
+    }
+
+    private IEnumerator CoroutineFade()
+    {
+        float faded = 0;
+        while(faded < 1f)
+        {
+            faded += 0.001f;
+            spriteRenderer.color = new Color(1f, 1f, 1f,faded);
+            yield return null;
+        }
+    }
+
+    public void SetDoKill()
+    {
+        if (checkDotween)
+        {
+            //spriteRenderer.DOKill();
+            spriteRenderer.color = Color.white;
+            checkDotween = false;
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -52,7 +135,6 @@ public class BlockEvent : MonoBehaviour
             isBreak = true;
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
 

@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Street
   m_EditorClassIdentifier: 
   backgroundSprite: {fileID: 1965350586, guid: eabc3a24d3b69994ab69a418d901f53f, type: 3}
-  originLengthBlock: {fileID: 2117366979, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
-  originShortBlock: {fileID: 88940089, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
-  breakLengthBlock: {fileID: 1700225502, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
-  breakShortBlock: {fileID: 883106711, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  originNormalBlock: {fileID: 2117366979, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  breakNormalBlock: {fileID: 1700225502, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  originMediumBlock: {fileID: -543727296, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  breakMediumBlock: {fileID: 938916282, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  originHardBlock: {fileID: 88940089, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  breakHardBlock: {fileID: 883106711, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
   avatarTheme: {fileID: 1368539234, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
   wallSprite: {fileID: -884786090, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
   nameTheme: Street

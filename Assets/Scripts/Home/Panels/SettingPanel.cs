@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using DG.Tweening;
 using UnityEngine;
 
 public class SettingPanel : Panel
@@ -12,6 +13,7 @@ public class SettingPanel : Panel
     [SerializeField] private GameObject soundOff;
     private void Start()
     {
+        //transform.DOScale(1, 1f).SetEase(Ease.OutBounce);
         LoadDataMusic();
         LoadDataSound();
     }
@@ -100,6 +102,14 @@ public class SettingPanel : Panel
 
     public void ClosePanel()
     {
+        //transform.DOScale(0,1f).SetEase(Ease.InBounce);
+        //transform.DOKill();
+        StartCoroutine(CouroutinePopup());
+    }
+
+    private IEnumerator CouroutinePopup()
+    {
+        yield return new WaitForSeconds(0f);
         PanelManager.Instance.ClosePanel("SettingPanel");
     }
 

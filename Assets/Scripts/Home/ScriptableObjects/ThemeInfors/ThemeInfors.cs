@@ -12,6 +12,10 @@ public class ThemeInfors : ScriptableObject
     [SerializeField] private Sprite originMediumBlock;
     [SerializeField] private Sprite breakMediumBlock;
 
+    [Header("----------Hard----------")]
+    [SerializeField] private Sprite originHardBlock;
+    [SerializeField] private Sprite breakHardBlock;
+
     [Header("----------Other----------")]
     [SerializeField] private Sprite avatarTheme;
     [SerializeField] private Sprite wallSprite;
@@ -22,6 +26,8 @@ public class ThemeInfors : ScriptableObject
     public Sprite BreakNormalBlock { get { return breakNormalBlock; } }
     public Sprite OriginMediumBlock { get { return originMediumBlock; } }
     public Sprite BreakMediumBlock { get { return breakMediumBlock; } }
+    public Sprite OriginHardBlock { get { return originHardBlock; } }
+    public Sprite BreakHardBlock { get { return breakHardBlock; } }
     public Sprite AvatarTheme { get { return avatarTheme; } }
     public Sprite WallSprite { get { return wallSprite; } }
     public string NameTheme { get { return nameTheme; } }

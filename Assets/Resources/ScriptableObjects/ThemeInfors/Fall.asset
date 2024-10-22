@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Fall
   m_EditorClassIdentifier: 
   backgroundSprite: {fileID: 768265769, guid: eabc3a24d3b69994ab69a418d901f53f, type: 3}
-  originLengthBlock: {fileID: -1459344457, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
-  originShortBlock: {fileID: 1427869711, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
-  breakLengthBlock: {fileID: 1249517128, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
-  breakShortBlock: {fileID: -956087328, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  originNormalBlock: {fileID: -1459344457, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  breakNormalBlock: {fileID: 1249517128, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  originMediumBlock: {fileID: 1035352234, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  breakMediumBlock: {fileID: -1931323380, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  originHardBlock: {fileID: 1427869711, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  breakHardBlock: {fileID: -956087328, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
   avatarTheme: {fileID: 44183918, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
   wallSprite: {fileID: -323432899, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
   nameTheme: Fall
