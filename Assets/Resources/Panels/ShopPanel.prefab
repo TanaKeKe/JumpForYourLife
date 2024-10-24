@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.0627451}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -317,6 +317,8 @@ MonoBehaviour:
   namePlayer: {fileID: 7912508561493681668}
   playerShop: {fileID: 3656687337365476954}
   themeShop: {fileID: 2026798017387853622}
+  popup: {fileID: 6128019867943412760}
+  image: {fileID: 5758896886852606378}
 --- !u!1 &1067563589143880740
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.8488, y: -467.29053}
+  m_AnchoredPosition: {x: 2.8488, y: -4658.1436}
   m_SizeDelta: {x: 780.7141, y: 1508.1077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6866228796367256259
@@ -1630,8 +1632,8 @@ RectTransform:
   m_GameObject: {fileID: 6128019867943412760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6359209245739139639}
   - {fileID: 5157071404266584353}

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,13 +21,25 @@ public class ShopPanel : Panel
     [Header("----------Shop----------")]
     [SerializeField] private GameObject playerShop;
     [SerializeField] private GameObject themeShop;
+    [SerializeField] private GameObject popup;
+    [SerializeField] private Image image;
+
     private Color _selectColor;
     private void Start()
     {
+        popup.transform.DOScale(1, 1f).SetEase(Ease.OutQuad);
         _selectColor = playerBtnImage.color;
     }
     public void ClosePanel()
     {
+        popup.transform.DOScale(0, 0.5f).SetEase(Ease.InQuad);
+        image.color = new Color(1, 1, 1, 0);
+        StartCoroutine(CouroutinePopup());
+    }
+
+    private IEnumerator CouroutinePopup()
+    {
+        yield return new WaitForSeconds(0.5f);
         PanelManager.Instance.ClosePanel("ShopPanel");
     }
 
