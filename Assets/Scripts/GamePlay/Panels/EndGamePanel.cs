@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class EndGamePanel : Panel
@@ -13,6 +10,7 @@ public class EndGamePanel : Panel
 
     private Quaternion _quaternion;
     private float _rotationZ;
+
     private void Start()
     {
         Messenger.Broadcast<TextMeshProUGUI>(EventKey.ShowScore, scoreText);
@@ -37,7 +35,6 @@ public class EndGamePanel : Panel
     {
         RotationGlow();
     }
-
     private void RotationGlow()
     {
         _quaternion = Quaternion.Euler(0, 0, _rotationZ++);

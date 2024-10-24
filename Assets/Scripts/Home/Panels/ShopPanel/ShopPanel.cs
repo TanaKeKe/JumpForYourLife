@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -24,12 +22,15 @@ public class ShopPanel : Panel
     [SerializeField] private GameObject popup;
     [SerializeField] private Image image;
 
+    [Header("----------Private----------")]
     private Color _selectColor;
+
     private void Start()
     {
         popup.transform.DOScale(1, 1f).SetEase(Ease.OutQuad);
         _selectColor = playerBtnImage.color;
     }
+
     public void ClosePanel()
     {
         popup.transform.DOScale(0, 0.5f).SetEase(Ease.InQuad);

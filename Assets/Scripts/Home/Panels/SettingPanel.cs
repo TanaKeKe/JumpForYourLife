@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 using DG.Tweening;
 using UnityEngine;
@@ -14,6 +13,7 @@ public class SettingPanel : Panel
     [SerializeField] private GameObject soundOff;
     [SerializeField] private GameObject popup;
     [SerializeField] private Image image;
+
     private void Start()
     {
         popup.transform.DOScale(1, 1f).SetEase(Ease.OutQuart);

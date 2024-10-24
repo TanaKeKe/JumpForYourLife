@@ -1,32 +1,33 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
 
 public class GamePlayController : Singleton<GamePlayController>
 {
+    [Header("-----------Camera----------")]
     [SerializeField] private Camera myCamera;
     [SerializeField] private GameObject bars;
     [SerializeField] private float rangeCamera;
     [SerializeField] private float countChangeCamera;
-    [Space(10)]
 
+    [Header("----------Other----------")]
     [SerializeField] private float spaceBetweenTwoBlocks;
     [SerializeField] private GameObject perfect;
     [SerializeField] private GameObject countDown;
     [SerializeField] private GameObject endGameBar;
+
+    [Header("----------Public----------")]
     public int score;
-    private Vector3 _targetPosition;
     public bool isPlaying;
     public bool isPerfect;
     public bool isFinish;
     public bool isPause;
     public bool isResume;
     public bool isStart;
+
+    private Vector3 _targetPosition;
+
     private void Start()
     {
         LoadPlayer();
