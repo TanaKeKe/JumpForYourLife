@@ -621,6 +621,8 @@ MonoBehaviour:
   blockPrefab: {fileID: 2212336175221620597, guid: 3cd69dcd4c2f0ca4498954b38eaf20dc, type: 3}
   blockCount: 6
   spaceBetweenTwoBlocks: 3.5
+  numberOpenMediumBlock: 5
+  numberOpenHardBlock: 20
 --- !u!1 &957188087
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +681,7 @@ MonoBehaviour:
   perfect: {fileID: 988849627}
   countDown: {fileID: 115000912}
   endGameBar: {fileID: 624283473}
+  score: 0
   isPlaying: 0
   isPerfect: 0
   isFinish: 0

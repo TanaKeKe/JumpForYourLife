@@ -13,9 +13,22 @@ public class BlockEvent : MonoBehaviour
 
     private int _countChange;
     private bool _checkDotween;
+    private float _timeFaded;
+    private float _minValueFaded;
+    private float _maxValueFaded;
+    private float _sizeXOfColliderNormalBlock;
+    private float _sizeXOfColliderMediumBlock;
+    private float _sizeXOfColliderHardBlock;
 
     private void Start()
     {
+        _timeFaded = 2.5f;
+        _minValueFaded = 0f;
+        _maxValueFaded = 1f;
+
+        _sizeXOfColliderNormalBlock = 1.1f;
+        _sizeXOfColliderMediumBlock = 0.85f;
+        _sizeXOfColliderHardBlock = 0.6f;
         LoadSkinNormalBlock();
     }
 
@@ -48,17 +61,17 @@ public class BlockEvent : MonoBehaviour
 
     public void SetColliderNormalBlock()
     {
-        boxColider2D.size = new Vector2(1.1f, boxColider2D.size.y);
+        boxColider2D.size = new Vector2(_sizeXOfColliderNormalBlock, boxColider2D.size.y);
     }
 
     public void SetColliderMediumBlock()
     {
-        boxColider2D.size = new Vector2(0.85f, boxColider2D.size.y);
+        boxColider2D.size = new Vector2(_sizeXOfColliderMediumBlock, boxColider2D.size.y);
     }
 
     public void SetColliderHardBlock()
     {
-        boxColider2D.size = new Vector2(0.6f, boxColider2D.size.y);
+        boxColider2D.size = new Vector2(_sizeXOfColliderHardBlock, boxColider2D.size.y);
     }
 
     public void SetOriginBlock()
@@ -79,8 +92,8 @@ public class BlockEvent : MonoBehaviour
     {
         if(_checkDotween)
         {
-            if (spriteRenderer.color.a >= 1f) spriteRenderer.DOFade(0, 2.5f);
-            if (spriteRenderer.color.a <= 0f) spriteRenderer.DOFade(1, 2.5f);
+            if (spriteRenderer.color.a >= _maxValueFaded) spriteRenderer.DOFade(_minValueFaded, _timeFaded);
+            if (spriteRenderer.color.a <= _minValueFaded) spriteRenderer.DOFade(_maxValueFaded, _timeFaded);
         }
     }
 

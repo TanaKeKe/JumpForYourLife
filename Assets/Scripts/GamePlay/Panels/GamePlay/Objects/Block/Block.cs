@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 public class Block : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float speedRandomRange = 0.1f;
+    [SerializeField] private float speedRandomRange;
 
     public Collider2D _collider2D;
 
@@ -13,12 +13,14 @@ public class Block : MonoBehaviour
     private float _rightLimit;
     private float _angle;
     private float _pauseSpeed;
+    private float _speedBosst;
 
     private void Start()
     {
         _angle = 0f;
         _leftLimit = -2.1f;
         _rightLimit = 2.1f;
+        _speedBosst = 0.4f;
     }
 
     private void OnEnable()
@@ -142,14 +144,14 @@ public class Block : MonoBehaviour
         {
             if(speed > -2f)
             {
-                speed -= 0.4f;
+                speed -= _speedBosst;
             }
         }
         else
         {
             if(speed < 2f)
             {
-                speed += 0.4f;
+                speed += _speedBosst;
             }
         }
     }

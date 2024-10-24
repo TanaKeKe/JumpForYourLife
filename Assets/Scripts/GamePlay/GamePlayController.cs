@@ -28,6 +28,8 @@ public class GamePlayController : Singleton<GamePlayController>
 
     private Vector3 _targetPosition;
 
+    public float SpaceBetweenTwoBlocks {  get { return spaceBetweenTwoBlocks; } }
+
     private void Start()
     {
         LoadPlayer();

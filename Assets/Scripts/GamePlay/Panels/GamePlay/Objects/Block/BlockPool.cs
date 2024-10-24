@@ -8,6 +8,8 @@ public class BlockPool : MonoBehaviour
     [SerializeField] private GameObject blockPrefab;
     [SerializeField] private int blockCount;
     [SerializeField] private float spaceBetweenTwoBlocks;
+    [SerializeField] private int numberOpenMediumBlock;
+    [SerializeField] private int numberOpenHardBlock;
 
     private int _endIndex;
     private List<GameObject> _blockPool;
@@ -115,10 +117,10 @@ public class BlockPool : MonoBehaviour
 
     private void SetAmountTypeBlockUsing()
     {
-        if (GamePlayController.Instance.score < 6) _endIndex = 1;
+        if (GamePlayController.Instance.score < numberOpenMediumBlock) _endIndex = 1;
         else
         {
-            if (GamePlayController.Instance.score < 25) _endIndex = 5;
+            if (GamePlayController.Instance.score < numberOpenHardBlock) _endIndex = 5;
             else _endIndex = 6;
         }
     }
@@ -169,7 +171,7 @@ public class BlockPool : MonoBehaviour
 
     private void ResetPositionObject(GameObject obj)
     {
-        _positionLowest -= 3.5f;
+        _positionLowest -= spaceBetweenTwoBlocks;
         //Debug.Log(_positionLowest);
         Vector3 position = obj.transform.position;
         position.y = _positionLowest;

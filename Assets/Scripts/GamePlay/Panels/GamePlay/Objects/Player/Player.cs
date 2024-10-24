@@ -12,13 +12,15 @@ public class Player : MonoBehaviour
     private float _distanceJump;
     private bool _startGame;
     private float _positionYPlayer;
+    private double _positionMaxOfPlayer;
 
     private void Awake()
     {
         _rigidbody2d = GetComponent<Rigidbody2D>();
         _collider2D = GetComponent<Collider2D>();
         _animator = GetComponent<Animator>();
-        _positionYPlayer = 3.5f;
+        _positionYPlayer = GamePlayController.Instance.SpaceBetweenTwoBlocks;
+        _positionMaxOfPlayer = 4.5f;
     }
 
     private void OnEnable()
@@ -103,16 +105,16 @@ public class Player : MonoBehaviour
     public void SetDistanceJump()
     {
         double distanceJumpCurrent = Math.Round(_positionYPlayer - transform.position.y, 1);
-        if (distanceJumpCurrent < 4.5f) distanceJumpCurrent = 3.5f;
+        if (distanceJumpCurrent < _positionMaxOfPlayer) distanceJumpCurrent = GamePlayController.Instance.SpaceBetweenTwoBlocks;
         //Debug.Log(distanceJumpCurrent);
-        if(Mathf.Approximately((float)distanceJumpCurrent,3.5f) == true)
+        if(Mathf.Approximately((float)distanceJumpCurrent, GamePlayController.Instance.SpaceBetweenTwoBlocks) == true)
         {
-            _distanceJump = 3.5f;
+            _distanceJump = GamePlayController.Instance.SpaceBetweenTwoBlocks;
             _positionYPlayer = transform.position.y;
         }
         else
         {
-            _distanceJump = 7f;
+            _distanceJump = GamePlayController.Instance.SpaceBetweenTwoBlocks * 2;
             _positionYPlayer = transform.position.y;
         }
     }
