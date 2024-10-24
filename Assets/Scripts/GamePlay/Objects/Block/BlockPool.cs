@@ -80,7 +80,7 @@ public class BlockPool : MonoBehaviour
         Block block = obj.GetComponent<Block>();
         BlockEvent blockEvent = obj.GetComponent<BlockEvent>();
         blockEvent.typeBlock = type;
-
+        
         if (type == TypeBlock.Normal)
         {
             blockEvent.LoadSkinNormalBlock();

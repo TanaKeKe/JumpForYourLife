@@ -63,11 +63,11 @@ public class Block : MonoBehaviour
     {
         if(speed > 0)
         {
-            angle = (float)Random.Range(0.1f, 0.15f);
+            angle = (float)Random.Range(0.1f, 0.25f);
         }
         else
         {
-            angle = (float)Random.Range(-0.15f, -0.1f);
+            angle = (float)Random.Range(-0.25f, -0.1f);
         }
     }
 

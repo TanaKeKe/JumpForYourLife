@@ -71,6 +71,7 @@ public class BlockEvent : MonoBehaviour
     public void SetOriginBlock()
     {
         spriteRenderer.sprite = spriteOrigin;
+        spriteRenderer.color = Color.white;
         isBreak = false;
         countChange = 0;
         col2D.isTrigger = false;
@@ -85,36 +86,8 @@ public class BlockEvent : MonoBehaviour
     {
         if(checkDotween)
         {
-            if(spriteRenderer.color.a <= 0.001f)
-            {
-                StartCoroutine(CoroutineFade());
-            }
-            if(spriteRenderer.color.a >= 0.999f)
-            {
-                StartCoroutine(CoroutineMakeOpacity());
-            }
-        }
-    }
-
-    private IEnumerator CoroutineMakeOpacity()
-    {
-        float faded = 1f;
-        while (faded > 0)
-        {
-            faded -= 0.001f;
-            spriteRenderer.color = new Color(1f, 1f, 1f, faded);
-            yield return null;
-        }
-    }
-
-    private IEnumerator CoroutineFade()
-    {
-        float faded = 0;
-        while(faded < 1f)
-        {
-            faded += 0.001f;
-            spriteRenderer.color = new Color(1f, 1f, 1f,faded);
-            yield return null;
+            if (spriteRenderer.color.a >= 1f) spriteRenderer.DOFade(0, 2.5f);
+            if (spriteRenderer.color.a <= 0f) spriteRenderer.DOFade(1, 2.5f);
         }
     }
 
@@ -123,7 +96,6 @@ public class BlockEvent : MonoBehaviour
         if (checkDotween)
         {
             //spriteRenderer.DOKill();
-            spriteRenderer.color = Color.white;
             checkDotween = false;
         }
     }
