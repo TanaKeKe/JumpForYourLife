@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dcd450a215f674281d722ac456b447, type: 3}
+  m_Name: Jungle
+  m_EditorClassIdentifier: 
+  backgroundSprite: {fileID: 71845278, guid: b502392cf90dd97469b3617b1b5ab6c0, type: 3}
+  originNormalBlock: {fileID: -212228419, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  breakNormalBlock: {fileID: 1196323186, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  originMediumBlock: {fileID: -669701007, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  breakMediumBlock: {fileID: -1563182168, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  originHardBlock: {fileID: -122296294, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  breakHardBlock: {fileID: 1075294752, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  avatarTheme: {fileID: -1404381375, guid: c99aeac8835180246b27cd07dbbd764e, type: 3}
+  wallSprite: {fileID: -379459625, guid: 3e9c2e941c022cd4788333b0e5af9863, type: 3}
+  nameTheme: Jungle
