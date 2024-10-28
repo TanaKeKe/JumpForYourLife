@@ -1,4 +1,5 @@
 using System.Collections;
+using Common;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -27,13 +28,13 @@ public class ShopPanel : Panel
 
     private void Start()
     {
-        popup.transform.DOScale(1, 1f).SetEase(Ease.OutQuad);
+        popup.transform.DOScale(1, 0.6f).SetEase(Ease.OutBack);
         _selectColor = playerBtnImage.color;
     }
 
     public void ClosePanel()
     {
-        popup.transform.DOScale(0, 0.5f).SetEase(Ease.InQuad);
+        popup.transform.DOScale(0, 0.5f).SetEase(Ease.InBack);
         image.color = new Color(1, 1, 1, 0);
         StartCoroutine(CouroutinePopup());
     }
@@ -41,7 +42,7 @@ public class ShopPanel : Panel
     private IEnumerator CouroutinePopup()
     {
         yield return new WaitForSeconds(0.5f);
-        PanelManager.Instance.ClosePanel("ShopPanel");
+        PanelManager.Instance.ClosePanel(GameConfig.SHOP_PANEL);
     }
 
     public void OpenIconSelectOfPlayer()

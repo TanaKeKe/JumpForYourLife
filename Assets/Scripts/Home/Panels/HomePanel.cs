@@ -1,3 +1,4 @@
+using Common;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,26 +11,26 @@ public class HomePanel : Panel
 
     private void Awake()
     {
-        if (!PlayerPrefs.HasKey("player"))
+        if (!PlayerPrefs.HasKey(GamePrefs.PLAYER_KEY))
         {
-            PlayerPrefs.SetString("player", "TanaKeKe");
+            PlayerPrefs.SetString(GamePrefs.PLAYER_KEY, GameConfig.PLAYER_NAME);
         }
 
-        if (!PlayerPrefs.HasKey("theme"))
+        if (!PlayerPrefs.HasKey(GamePrefs.THEME_KEY))
         {
-            PlayerPrefs.SetString("theme", "Fall");
+            PlayerPrefs.SetString(GamePrefs.THEME_KEY, GameConfig.THEME_FALL);
         }
 
-        highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        highScoreText.text = PlayerPrefs.GetInt(GamePrefs.HIGH_SCORE_KEY, 0).ToString();
         SetOriginIconShop();
     }
 
     private void SetOriginIconShop()
     {
-        PlayerInfors[] playerInfors = Resources.LoadAll<PlayerInfors>("ScriptableObjects/PlayerInfors");
-        foreach(PlayerInfors obj in playerInfors)
+        PlayerInfors[] playerInfors = Resources.LoadAll<PlayerInfors>(GameConfig.PLAYER_INFORS_PATH);
+        foreach (PlayerInfors obj in playerInfors)
         {
-            if (PlayerPrefs.GetString("player").Equals(obj.AvatarName))
+            if (GamePrefs.GetPlayerName().Equals(obj.AvatarName))
             {
                 iconShop.sprite = obj.AvatarSpriteOn;
                 break;
@@ -41,6 +42,7 @@ public class HomePanel : Panel
     {
         Messenger.Broadcast(EventKey.SetIconShop, iconShop);
     }
+
     public void StartGame()
     {
         SceneManager.LoadScene(Scene.gameplay);
@@ -48,11 +50,11 @@ public class HomePanel : Panel
 
     public void OpenSetting()
     {
-        PanelManager.Instance.OpenPanel("SettingPanel");
+        PanelManager.Instance.OpenPanel(GameConfig.SETTING_PANEL);
     }
 
     public void OpenShop()
     {
-        PanelManager.Instance.OpenPanel("ShopPanel");
+        PanelManager.Instance.OpenPanel(GameConfig.SHOP_PANEL);
     }
 }

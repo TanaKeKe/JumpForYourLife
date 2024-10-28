@@ -4,8 +4,11 @@ using Random = UnityEngine.Random;
 
 public class Block : MonoBehaviour
 {
+    [SerializeField] private BlockEvent blockEvent; 
     [SerializeField] private float speed;
     [SerializeField] private float speedRandomRange;
+
+    public BlockEvent BlockEvent => blockEvent;
 
     public Collider2D _collider2D;
 

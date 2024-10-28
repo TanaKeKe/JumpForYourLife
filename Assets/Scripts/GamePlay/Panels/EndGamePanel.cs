@@ -1,10 +1,13 @@
-﻿using TMPro;
+﻿using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 public class EndGamePanel : Panel
 {
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private GameObject glow;
+    [SerializeField] private Transform glow;
+
+    [SerializeField] private SpriteRenderer glowSR;
     [SerializeField] private GameObject scoreImage;
     [SerializeField] private GameObject newRecordImage;
 
@@ -15,6 +18,11 @@ public class EndGamePanel : Panel
     {
         Messenger.Broadcast<TextMeshProUGUI>(EventKey.ShowScore, scoreText);
         ViewImageScore();
+
+        glow.DOKill();
+        glow.DORotate(new Vector3(0, 0, 360), 2f, RotateMode.FastBeyond360)
+            .SetEase(Ease.Linear) // Quay đều
+            .SetLoops(-1, LoopType.Restart); // Lặp vô tận
     }
 
     private void ViewImageScore()
@@ -33,8 +41,9 @@ public class EndGamePanel : Panel
 
     private void Update()
     {
-        RotationGlow();
+        // RotationGlow();
     }
+
     private void RotationGlow()
     {
         _quaternion = Quaternion.Euler(0, 0, _rotationZ++);

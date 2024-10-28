@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e564cc48b52ee429de1dd952b29dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockEvent: {fileID: -699309919749011191}
   speed: 1.3
   speedRandomRange: 0.2
   _collider2D: {fileID: 2305671231600736897}

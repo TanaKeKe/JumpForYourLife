@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Diagnostics;
+using Common;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -69,7 +70,7 @@ public class SettingPanel : Panel
 
     public void CheckSound()
     {
-        if (soundOn.activeInHierarchy)
+        if (soundOn.activeSelf)
         {
             soundOff.SetActive(true);
             soundOn.SetActive(false);
@@ -106,14 +107,14 @@ public class SettingPanel : Panel
     public void ClosePanel()
     {
         popup.transform.DOScale(0, 0.5f).SetEase(Ease.InQuart);
-        image.color = new Color(1,1,1,0);
-        StartCoroutine(CouroutinePopup());
+        image.color = new Color(1, 1, 1, 0);
+        StartCoroutine(IEDelayClosePopup());
     }
 
-    private IEnumerator CouroutinePopup()
+    private IEnumerator IEDelayClosePopup()
     {
         yield return new WaitForSeconds(0.5f);
-        PanelManager.Instance.ClosePanel("SettingPanel");
+        PanelManager.Instance.ClosePanel(GameConfig.SETTING_PANEL);
     }
 
     public void OpenLink()
@@ -121,7 +122,7 @@ public class SettingPanel : Panel
         UnityEngine.Debug.Log("Ấn vào nút open");
 
         // Liên kết Facebook cần mở
-        string url = "https://www.facebook.com/tan.phanthanh.731";
+        string url = GameConfig.FB_URL;
 
         // Kiểm tra hệ điều hành (để xử lý theo cách tương thích)
         try

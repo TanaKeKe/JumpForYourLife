@@ -954,7 +954,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &7679374070740616757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,7 +969,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyOnClose: 0
   scoreText: {fileID: 2044674151623995852}
-  glow: {fileID: 4100634304689946857}
+  glow: {fileID: 86638473683232440}
+  glowSR: {fileID: 0}
   scoreImage: {fileID: 1495530229041883254}
   newRecordImage: {fileID: 8910126579379107838}
 --- !u!1 &8073280207376756851

@@ -65,7 +65,8 @@ public class BlockPool : MonoBehaviour
         int index = (int)Random.Range(0, _endIndex);
         TypeBlock type = (TypeBlock)index;
         Block block = obj.GetComponent<Block>();
-        BlockEvent blockEvent = obj.GetComponent<BlockEvent>();
+        // BlockEvent blockEvent = obj.GetComponent<BlockEvent>();
+        BlockEvent blockEvent = block.BlockEvent;
         blockEvent.typeBlock = type;
 
         if (type == TypeBlock.Normal)

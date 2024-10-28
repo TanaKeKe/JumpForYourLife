@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Common;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,11 +12,13 @@ public class PlayerShopController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI namePlayer;
 
     private List<GameObject> _avatarPrefabs = new List<GameObject>();
+
     public void Start()
     {
         GenerateAvatarPlayer();
         TurnOnSpriteAndNamePlayer();
     }
+
     private void OnEnable()
     {
         Messenger.AddListener(EventKey.SetNewPlayerBtnToPlayerSprite, TurnOnSpriteAndNamePlayer);
@@ -33,7 +36,7 @@ public class PlayerShopController : MonoBehaviour
         foreach (GameObject player in _avatarPrefabs)
         {
             PlayerInfors obj = player.GetComponent<PlayerButton>().playerInfors;
-            if (PlayerPrefs.GetString("player").Equals(obj.AvatarName))
+            if (PlayerPrefs.GetString(GamePrefs.PLAYER_KEY).Equals(obj.AvatarName))
             {
                 image.sprite = obj.AvatarSpriteOn;
                 break;
@@ -41,14 +44,13 @@ public class PlayerShopController : MonoBehaviour
         }
     }
 
-
     public void TurnOnSpriteAndNamePlayer()
     {
         foreach (GameObject player in _avatarPrefabs)
         {
             PlayerInfors obj = player.GetComponent<PlayerButton>().playerInfors;
 
-            if(PlayerPrefs.GetString("player").Equals(obj.AvatarName))
+            if (PlayerPrefs.GetString("player").Equals(obj.AvatarName))
             {
                 namePlayer.text = obj.AvatarName;
                 playerSprite.sprite = obj.PlayerSprite;
@@ -60,7 +62,7 @@ public class PlayerShopController : MonoBehaviour
 
     private void GenerateAvatarPlayer()
     {
-        PlayerInfors[] playerInfors = Resources.LoadAll<PlayerInfors>("ScriptableObjects/PlayerInfors");
+        PlayerInfors[] playerInfors = Resources.LoadAll<PlayerInfors>(GameConfig.PLAYER_INFORS_PATH);
         foreach (PlayerInfors player in playerInfors)
         {
             var obj = Instantiate(avatarPrefab, content);

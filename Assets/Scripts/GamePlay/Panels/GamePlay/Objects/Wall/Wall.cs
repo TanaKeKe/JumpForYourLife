@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Wall : MonoBehaviour
@@ -6,11 +7,15 @@ public class Wall : MonoBehaviour
     private BoxCollider2D _collider;
     private Vector2 _wallHeight;
 
+    private void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _collider = GetComponent<BoxCollider2D>();
+    }
+
     private void Start()
     {
         _wallHeight = new Vector2(0, 10f);
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _collider = GetComponent<BoxCollider2D>();
     }
 
     private void OnEnable()

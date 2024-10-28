@@ -1,15 +1,24 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "newPlayerInfors", menuName = "PlayerInfors/Player", order = 1)]
 public class PlayerInfors : ScriptableObject
 {
-    [SerializeField] private Sprite playerSprite;
-    [SerializeField] private Sprite avatarSpriteOn;
-    [SerializeField] private Sprite avatarSpriteOff;
-    [SerializeField] private string avatarName;
+    [SerializeField] [PreviewField(80)]
+    private Sprite playerSprite;
 
-    public Sprite PlayerSprite { get { return playerSprite; } }
-    public Sprite AvatarSpriteOn { get { return avatarSpriteOn; } }
-    public Sprite AvatarSpriteOff { get { return avatarSpriteOff; } }
-    public string AvatarName { get { return avatarName; } }
+    [SerializeField] [PreviewField(80)]
+    private Sprite avatarSpriteOn;
+
+    [SerializeField] [PreviewField(80)]
+    private Sprite avatarSpriteOff;
+    
+    [Title("Hello ae")]
+    [SerializeField] 
+    [GUIColor("yellow")] private string avatarName;
+
+    public Sprite PlayerSprite => playerSprite;
+    public Sprite AvatarSpriteOn => avatarSpriteOn;
+    public Sprite AvatarSpriteOff => avatarSpriteOff;
+    public string AvatarName => avatarName;
 }
