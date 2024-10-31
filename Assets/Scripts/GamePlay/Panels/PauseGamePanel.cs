@@ -1,3 +1,4 @@
+using Common;
 using UnityEngine;
 
 public class PauseGamePanel : Panel
@@ -15,9 +16,9 @@ public class PauseGamePanel : Panel
 
     private void LoadDataSound()
     {
-        if (PlayerPrefs.HasKey("soundState"))
+        if (PlayerPrefs.HasKey(GamePrefs.SOUND_KEY))
         {
-            if (PlayerPrefs.GetString("soundState").Equals("ON"))
+            if (PlayerPrefs.GetInt(GamePrefs.SOUND_KEY) == 1)
             {
                 soundOn.SetActive(true);
                 soundOff.SetActive(false);
@@ -30,7 +31,7 @@ public class PauseGamePanel : Panel
         }
         else
         {
-            PlayerPrefs.SetString("soundState", "ON");
+            PlayerPrefs.SetInt(GamePrefs.SOUND_KEY,1);
             soundOn.SetActive(true);
             soundOff.SetActive(false);
         }
@@ -38,9 +39,9 @@ public class PauseGamePanel : Panel
 
     private void LoadDataMusic()
     {
-        if (PlayerPrefs.HasKey("musicState"))
+        if (PlayerPrefs.HasKey(GamePrefs.MUSIC_KEY))
         {
-            if (PlayerPrefs.GetString("musicState").Equals("ON"))
+            if (PlayerPrefs.GetInt(GamePrefs.MUSIC_KEY) == 1)
             {
                 musicOn.SetActive(true);
                 musicOff.SetActive(false);
@@ -53,7 +54,7 @@ public class PauseGamePanel : Panel
         }
         else
         {
-            PlayerPrefs.SetString("musicState", "ON");
+            PlayerPrefs.SetInt(GamePrefs.MUSIC_KEY, 1);
             musicOn.SetActive(true);
             musicOff.SetActive(false);
         }
@@ -79,37 +80,37 @@ public class PauseGamePanel : Panel
 
     public void CheckSound()
     {
-        if (soundOn.activeInHierarchy)
+        if (soundOn.activeSelf)
         {
             soundOff.SetActive(true);
             soundOn.SetActive(false);
             AudioGamePlayManager.Instance.StopSound();
-            PlayerPrefs.SetString("soundState", "OFF");
+            PlayerPrefs.SetInt(GamePrefs.SOUND_KEY, 0);
         }
         else
         {
             soundOff.SetActive(false);
             soundOn.SetActive(true);
             AudioGamePlayManager.Instance.ContinueSound();
-            PlayerPrefs.SetString("soundState", "ON");
+            PlayerPrefs.SetInt(GamePrefs.SOUND_KEY, 1);
         }
     }
 
     public void CheckMusic()
     {
-        if(musicOn.activeInHierarchy)
+        if(musicOn.activeSelf)
         {
             musicOff.SetActive(true);
             musicOn.SetActive(false);
             AudioGamePlayManager.Instance.StopMusic();
-            PlayerPrefs.SetString("musicState", "OFF");
+            PlayerPrefs.SetInt(GamePrefs.MUSIC_KEY, 0);
         }
         else
         {
             musicOff.SetActive(false);
             musicOn.SetActive(true);
             AudioGamePlayManager.Instance.ContinueMusic();
-            PlayerPrefs.SetString("musicState", "ON");
+            PlayerPrefs.SetInt(GamePrefs.MUSIC_KEY, 1);
         }
     }
 }

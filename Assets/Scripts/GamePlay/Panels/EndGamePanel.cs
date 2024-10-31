@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using Common;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -27,7 +28,7 @@ public class EndGamePanel : Panel
 
     private void ViewImageScore()
     {
-        if (PlayerPrefs.GetInt("HighScore", 0) > int.Parse(scoreText.text))
+        if (PlayerPrefs.GetInt(GamePrefs.HIGH_SCORE_KEY, 0) > int.Parse(scoreText.text))
         {
             scoreImage.SetActive(true);
             newRecordImage.SetActive(false);

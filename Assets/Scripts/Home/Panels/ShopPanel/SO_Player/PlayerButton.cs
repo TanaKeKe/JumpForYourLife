@@ -1,3 +1,4 @@
+using Common;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +25,7 @@ public class PlayerButton : MonoBehaviour
 
     private void SetButtonState()
     {
-        if (PlayerPrefs.GetString("player").Equals(this.playerInfors.AvatarName))
+        if (PlayerPrefs.GetString(GamePrefs.PLAYER_KEY).Equals(this.playerInfors.AvatarName))
         {
             SetBtnSelected();
         }
@@ -46,7 +47,7 @@ public class PlayerButton : MonoBehaviour
 
     public void OnClick()
     {
-        PlayerPrefs.SetString("player", playerInfors.AvatarName);
+        PlayerPrefs.SetString(GamePrefs.PLAYER_KEY, playerInfors.AvatarName);
         Messenger.Broadcast(EventKey.SetOriginAvatarBtn);
         SetBtnSelected();
         Messenger.Broadcast(EventKey.SetNewPlayerBtnToPlayerSprite);

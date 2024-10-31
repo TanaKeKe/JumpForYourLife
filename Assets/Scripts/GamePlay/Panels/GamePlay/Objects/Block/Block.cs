@@ -7,6 +7,8 @@ public class Block : MonoBehaviour
     [SerializeField] private BlockEvent blockEvent; 
     [SerializeField] private float speed;
     [SerializeField] private float speedRandomRange;
+    [SerializeField] private Transform positionWallLeft;
+    [SerializeField] private Transform positionWallRight;
 
     public BlockEvent BlockEvent => blockEvent;
 
@@ -21,8 +23,8 @@ public class Block : MonoBehaviour
     private void Start()
     {
         _angle = 0f;
-        _leftLimit = -2.1f;
-        _rightLimit = 2.1f;
+        _leftLimit = positionWallLeft.position.x + 1.05f;
+        _rightLimit = positionWallRight.position.x - 1.05f;
         _speedBosst = 0.4f;
     }
 
@@ -125,20 +127,20 @@ public class Block : MonoBehaviour
 
     public void SetLimitNormalBlock()
     {
-        _leftLimit = -2.1f;
-        _rightLimit = 2.1f;
+        _leftLimit = positionWallLeft.position.x + 1.05f;
+        _rightLimit = positionWallRight.position.x - 1.05f;
     }
 
     public void SetLimitMediumBlock()
     {
-        _leftLimit = -2.2f;
-        _rightLimit = 2.2f;
+        _leftLimit = positionWallLeft.position.x + 0.95f;
+        _rightLimit = positionWallRight.position.x - 0.95f;
     }
 
     public void SetLimitHardBlock()
     {
-        _leftLimit = -2.3f;
-        _rightLimit = 2.3f;
+        _leftLimit = positionWallLeft.position.x + 0.85f;
+        _rightLimit = positionWallRight.position.x - 0.85f;
     }
 
     public void BoostSpeed()

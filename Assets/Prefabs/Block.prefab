@@ -147,6 +147,8 @@ MonoBehaviour:
   blockEvent: {fileID: -699309919749011191}
   speed: 1.3
   speedRandomRange: 0.2
+  positionWallLeft: {fileID: 8371244810744228229, guid: f1edb02681ffa8c48a508af75f501800, type: 3}
+  positionWallRight: {fileID: 6723761630484628477, guid: 193d2f9cd0f0d5b4190c4c29890a2c22, type: 3}
   _collider2D: {fileID: 2305671231600736897}
 --- !u!114 &-699309919749011191
 MonoBehaviour:

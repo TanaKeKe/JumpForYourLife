@@ -1,3 +1,4 @@
+using Common;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -10,7 +11,7 @@ public class VolumeHomeSetting : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("musicVolume") && PlayerPrefs.HasKey("soundVolume"))
+        if (PlayerPrefs.HasKey(GamePrefs.MUSIC_VOLUME_KEY) && PlayerPrefs.HasKey(GamePrefs.SOUND_VOLUME_KEY))
         {
             LoadVolume();
         }
@@ -24,21 +25,21 @@ public class VolumeHomeSetting : MonoBehaviour
     public void SetMusicVolume()
     {
         float volume = musicSlider.value;
-        myAudioMixer.SetFloat("music", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("musicVolume", volume);
+        myAudioMixer.SetFloat(GameConfig.MUSIC, Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat(GamePrefs.MUSIC_VOLUME_KEY, volume);
     }
 
     public void SetSoundVolume()
     {
         float volume = soundSlider.value;
-        myAudioMixer.SetFloat("sound", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("soundVolume", volume);
+        myAudioMixer.SetFloat(GameConfig.SOUND, Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat(GamePrefs.SOUND_VOLUME_KEY, volume);
     }
 
     public void LoadVolume()
     {
-        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        soundSlider.value = PlayerPrefs.GetFloat("soundVolume");
+        musicSlider.value = PlayerPrefs.GetFloat(GamePrefs.MUSIC_VOLUME_KEY);
+        soundSlider.value = PlayerPrefs.GetFloat(GamePrefs.SOUND_VOLUME_KEY);
 
         SetMusicVolume();
         SetSoundVolume();

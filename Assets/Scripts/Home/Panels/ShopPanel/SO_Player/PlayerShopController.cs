@@ -50,7 +50,7 @@ public class PlayerShopController : MonoBehaviour
         {
             PlayerInfors obj = player.GetComponent<PlayerButton>().playerInfors;
 
-            if (PlayerPrefs.GetString("player").Equals(obj.AvatarName))
+            if (PlayerPrefs.GetString(GamePrefs.PLAYER_KEY).Equals(obj.AvatarName))
             {
                 namePlayer.text = obj.AvatarName;
                 playerSprite.sprite = obj.PlayerSprite;
@@ -62,7 +62,7 @@ public class PlayerShopController : MonoBehaviour
 
     private void GenerateAvatarPlayer()
     {
-        PlayerInfors[] playerInfors = Resources.LoadAll<PlayerInfors>(GameConfig.PLAYER_INFORS_PATH);
+        PlayerInfors[] playerInfors = Resources.LoadAll<PlayerInfors>(GameConfig.PLAYER_INFOR_PATH);
         foreach (PlayerInfors player in playerInfors)
         {
             var obj = Instantiate(avatarPrefab, content);

@@ -18,7 +18,7 @@ public class HomePanel : Panel
 
         if (!PlayerPrefs.HasKey(GamePrefs.THEME_KEY))
         {
-            PlayerPrefs.SetString(GamePrefs.THEME_KEY, GameConfig.THEME_FALL);
+            PlayerPrefs.SetString(GamePrefs.THEME_KEY, GameConfig.THEME_NAME);
         }
 
         highScoreText.text = PlayerPrefs.GetInt(GamePrefs.HIGH_SCORE_KEY, 0).ToString();
@@ -27,10 +27,10 @@ public class HomePanel : Panel
 
     private void SetOriginIconShop()
     {
-        PlayerInfors[] playerInfors = Resources.LoadAll<PlayerInfors>(GameConfig.PLAYER_INFORS_PATH);
+        PlayerInfors[] playerInfors = Resources.LoadAll<PlayerInfors>(GameConfig.PLAYER_INFOR_PATH);
         foreach (PlayerInfors obj in playerInfors)
         {
-            if (GamePrefs.GetPlayerName().Equals(obj.AvatarName))
+            if (GamePrefs.GetPlayerOriginName().Equals(obj.AvatarName))
             {
                 iconShop.sprite = obj.AvatarSpriteOn;
                 break;

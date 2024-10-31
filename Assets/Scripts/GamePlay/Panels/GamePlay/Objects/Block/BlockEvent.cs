@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using Common;
+using DG.Tweening;
 using UnityEngine;
 
 public class BlockEvent : MonoBehaviour
@@ -34,8 +35,8 @@ public class BlockEvent : MonoBehaviour
 
     public void LoadSkinNormalBlock()
     {
-        string nameTheme = PlayerPrefs.GetString("theme");
-        ThemeInfors theme = Resources.Load<ThemeInfors>("ScriptableObjects/ThemeInfors/" + nameTheme);
+        string nameTheme = GamePrefs.GetThemeOriginName();
+        ThemeInfors theme = Resources.Load<ThemeInfors>(GameConfig.THEME_INFOR_PATH + "/" + nameTheme);
         spriteRenderer.sprite = theme.OriginNormalBlock;
         spriteOrigin = theme.OriginNormalBlock;
         spriteBreak = theme.BreakNormalBlock;
@@ -43,8 +44,8 @@ public class BlockEvent : MonoBehaviour
 
     public void LoadSkinMediumBlock()
     {
-        string nameTheme = PlayerPrefs.GetString("theme");
-        ThemeInfors theme = Resources.Load<ThemeInfors>("ScriptableObjects/ThemeInfors/" + nameTheme);
+        string nameTheme = GamePrefs.GetThemeOriginName();
+        ThemeInfors theme = Resources.Load<ThemeInfors>(GameConfig.THEME_INFOR_PATH + "/" + nameTheme);
         spriteRenderer.sprite = theme.OriginMediumBlock;
         spriteOrigin = theme.OriginMediumBlock;
         spriteBreak = theme.BreakMediumBlock;
@@ -52,8 +53,8 @@ public class BlockEvent : MonoBehaviour
 
     public void LoadSkinHardBlock()
     {
-        string nameTheme = PlayerPrefs.GetString("theme");
-        ThemeInfors theme = Resources.Load<ThemeInfors>("ScriptableObjects/ThemeInfors/" + nameTheme);
+        string nameTheme = GamePrefs.GetThemeOriginName();
+        ThemeInfors theme = Resources.Load<ThemeInfors>(GameConfig.THEME_INFOR_PATH + "/" + nameTheme);
         spriteRenderer.sprite = theme.OriginHardBlock;
         spriteOrigin = theme.OriginHardBlock;
         spriteBreak = theme.BreakHardBlock;
@@ -108,7 +109,7 @@ public class BlockEvent : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag(GameTags.PLAYER_TAG))
         {
             isBreak = true;
         }
@@ -116,7 +117,7 @@ public class BlockEvent : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag(GameTags.WALL_TAG))
         {
             if (isBreak == true)
             {

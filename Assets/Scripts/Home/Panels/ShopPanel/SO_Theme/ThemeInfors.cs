@@ -1,34 +1,45 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "newTheme", menuName = "ThemeInfors/Theme",order = 2)]
 public class ThemeInfors : ScriptableObject
 {
-    [SerializeField] private Sprite backgroundSprite;
+    [SerializeField][PreviewField(80)] 
+    private Sprite backgroundSprite;
     [Header("----------Normal----------")]
-    [SerializeField] private Sprite originNormalBlock;
-    [SerializeField] private Sprite breakNormalBlock;
+    [SerializeField][PreviewField(80)] 
+    private Sprite originNormalBlock;
+    [SerializeField][PreviewField(80)] 
+    private Sprite breakNormalBlock;
 
     [Header("----------Medium----------")]
-    [SerializeField] private Sprite originMediumBlock;
-    [SerializeField] private Sprite breakMediumBlock;
+    [SerializeField][PreviewField(80)] 
+    private Sprite originMediumBlock;
+    [SerializeField][PreviewField(80)] 
+    private Sprite breakMediumBlock;
 
     [Header("----------Hard----------")]
-    [SerializeField] private Sprite originHardBlock;
-    [SerializeField] private Sprite breakHardBlock;
+    [SerializeField][PreviewField(80)] 
+    private Sprite originHardBlock;
+    [SerializeField][PreviewField(80)] 
+    private Sprite breakHardBlock;
 
     [Header("----------Other----------")]
-    [SerializeField] private Sprite avatarTheme;
-    [SerializeField] private Sprite wallSprite;
-    [SerializeField] private string nameTheme;
+    [SerializeField][PreviewField(80)] 
+    private Sprite avatarTheme;
+    [SerializeField][PreviewField(80)] 
+    private Sprite wallSprite;
+    [SerializeField][PreviewField(80)] 
+    private string nameTheme;
 
-    public Sprite BackgroundSprite { get { return backgroundSprite; } }
-    public Sprite OriginNormalBlock { get { return originNormalBlock; } }
-    public Sprite BreakNormalBlock { get { return breakNormalBlock; } }
-    public Sprite OriginMediumBlock { get { return originMediumBlock; } }
-    public Sprite BreakMediumBlock { get { return breakMediumBlock; } }
-    public Sprite OriginHardBlock { get { return originHardBlock; } }
-    public Sprite BreakHardBlock { get { return breakHardBlock; } }
-    public Sprite AvatarTheme { get { return avatarTheme; } }
-    public Sprite WallSprite { get { return wallSprite; } }
-    public string NameTheme { get { return nameTheme; } }
+    public Sprite BackgroundSprite => backgroundSprite; 
+    public Sprite OriginNormalBlock => originNormalBlock; 
+    public Sprite BreakNormalBlock => breakNormalBlock; 
+    public Sprite OriginMediumBlock => originMediumBlock; 
+    public Sprite BreakMediumBlock => breakMediumBlock; 
+    public Sprite OriginHardBlock => originHardBlock; 
+    public Sprite BreakHardBlock => breakHardBlock; 
+    public Sprite AvatarTheme => avatarTheme; 
+    public Sprite WallSprite => wallSprite; 
+    public string NameTheme => nameTheme; 
 }

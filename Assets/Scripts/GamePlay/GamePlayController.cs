@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Common;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -41,8 +42,8 @@ public class GamePlayController : Singleton<GamePlayController>
 
     private void LoadPlayer()
     {
-        string namePlayer = PlayerPrefs.GetString("player");
-        GameObject playerCurrent = Resources.Load<GameObject>("Players/" + namePlayer);
+        string namePlayer = PlayerPrefs.GetString(GamePrefs.PLAYER_KEY);
+        GameObject playerCurrent = Resources.Load<GameObject>(GameConfig.PLAYER_PATH + namePlayer);
         Instantiate(playerCurrent, transform);
     }
 

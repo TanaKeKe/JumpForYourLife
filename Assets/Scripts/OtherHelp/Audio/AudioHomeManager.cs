@@ -1,3 +1,4 @@
+using Common;
 using UnityEngine;
 
 public class AudioHomeManager : Singleton<AudioHomeManager>
@@ -11,7 +12,7 @@ public class AudioHomeManager : Singleton<AudioHomeManager>
 
     private float _saveTimeMusicPause;
 
-    public AudioClip BackgroundSound { get { return backgroundSound; } }
+    public AudioClip BackgroundSound => backgroundSound;
 
     private void Start()
     {
@@ -23,18 +24,18 @@ public class AudioHomeManager : Singleton<AudioHomeManager>
 
     private void LoadDataSound()
     {
-        if (PlayerPrefs.HasKey("soundVolume"))
+        if (PlayerPrefs.HasKey(GamePrefs.SOUND_VOLUME_KEY))
         {
-            soundSource.volume = PlayerPrefs.GetFloat("soundVolume");
+            soundSource.volume = PlayerPrefs.GetFloat(GamePrefs.SOUND_VOLUME_KEY);
         }
         else
         {
             soundSource.volume = 1f;
         }
 
-        if (PlayerPrefs.HasKey("soundState"))
+        if (PlayerPrefs.HasKey(GamePrefs.SOUND_KEY))
         {
-            if (PlayerPrefs.GetString("soundState").Equals("ON"))
+            if (PlayerPrefs.GetInt(GamePrefs.SOUND_KEY) == 1)
             {
                 ContinueSound();
             }
@@ -45,25 +46,25 @@ public class AudioHomeManager : Singleton<AudioHomeManager>
         }
         else
         {
-            PlayerPrefs.SetString("soundState", "ON");
+            PlayerPrefs.SetInt(GamePrefs.SOUND_KEY, 1);
             ContinueSound();
         }
     }
 
     private void LoadDataMusic()
     {
-        if (PlayerPrefs.HasKey("musicVolume"))
+        if (PlayerPrefs.HasKey(GamePrefs.MUSIC_VOLUME_KEY))
         {
-            musicSource.volume = PlayerPrefs.GetFloat("musicVolume");
+            musicSource.volume = PlayerPrefs.GetFloat(GamePrefs.MUSIC_VOLUME_KEY);
         }
         else
         {
             musicSource.volume = 1f;
         }
 
-        if (PlayerPrefs.HasKey("musicState"))
+        if (PlayerPrefs.HasKey(GamePrefs.MUSIC_KEY))
         {
-            if (PlayerPrefs.GetString("musicState").Equals("ON"))
+            if (PlayerPrefs.GetInt(GamePrefs.MUSIC_KEY) == 1)
             {
                 ContinueMusic();
             }
@@ -74,9 +75,14 @@ public class AudioHomeManager : Singleton<AudioHomeManager>
         }
         else
         {
-            PlayerPrefs.SetString("musicState", "ON");
+            PlayerPrefs.SetInt(GamePrefs.MUSIC_KEY, 1);
             ContinueMusic();
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        soundSource.PlayOneShot(clip);
     }
 
     public void StopMusic()

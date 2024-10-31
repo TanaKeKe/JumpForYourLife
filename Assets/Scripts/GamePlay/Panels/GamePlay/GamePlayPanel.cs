@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Common;
 
 public class GamePlayPanel : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class GamePlayPanel : MonoBehaviour
 
     private void LoadBackGround()
     {
-        ThemeInfors theme = Resources.Load<ThemeInfors>("ScriptableObjects/ThemeInfors/" + PlayerPrefs.GetString("theme"));
+        ThemeInfors theme = Resources.Load<ThemeInfors>( GameConfig.THEME_INFOR_PATH + "/" + GamePrefs.GetThemeOriginName());
         backGround.sprite = theme.BackgroundSprite;
     }
 
@@ -43,6 +44,6 @@ public class GamePlayPanel : MonoBehaviour
         GamePlayController.Instance.isPause = true;
         GamePlayController.Instance.isResume = false;
         //Debug.Log("Đã pause");
-        PanelManager.Instance.OpenPanel("PauseGamePanel");
+        PanelManager.Instance.OpenPanel(GameConfig.PAUSE_PANEL);
     }
 }

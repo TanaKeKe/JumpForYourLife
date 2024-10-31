@@ -1,4 +1,5 @@
 ﻿using System;
+using Common;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -60,7 +61,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Block"))
+        if (collision.gameObject.CompareTag(GameTags.BLOCK_TAG))
         {
             _animator.SetBool("isJumping", false);
             _isJump = false;

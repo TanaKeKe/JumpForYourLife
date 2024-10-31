@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Common
 {
     public static class GameConfig
@@ -8,17 +10,22 @@ namespace Common
         public const string FB_URL = "https://www.facebook.com/tan.phanthanh.731";
 
         // theme
-        public const string THEME_FALL = "Fall";
-        public const string THEME_WINTER = "Winter";
+        public const string THEME_NAME = "Fall";
 
         // path
-        public const string PLAYER_INFORS_PATH = "ScriptableObjects/PlayerInfors";
+        public const string PLAYER_INFOR_PATH = "ScriptableObjects/PlayerInfors";
+        public const string THEME_INFOR_PATH = "ScriptableObjects/ThemeInfors";
+
+        public const string PLAYER_PATH = "Players/";
 
         // panel
         public const string SETTING_PANEL = "SettingPanel";
         public const string SHOP_PANEL = "ShopPanel";
-        
-        // sound
-        public const string SFX_JUMP = "Jump";
+        public const string ENDGAME_PANEL = "EndGamePanel";
+        public const string PAUSE_PANEL = "PauseGamePanel";
+
+        // audioMixer
+        public const string MUSIC = "music";
+        public const string SOUND = "sound";
     }
 }

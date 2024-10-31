@@ -1,6 +1,6 @@
 
 public static class Scene
 {
-    public static int gameplay = 0;
-    public static int home = 1;
+    public const int home = 0;
+    public const int gameplay = 1;
 }

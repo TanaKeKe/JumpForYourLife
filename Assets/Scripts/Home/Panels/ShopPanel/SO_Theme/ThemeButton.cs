@@ -1,3 +1,4 @@
+using Common;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,7 @@ public class ThemeButton : MonoBehaviour
     {
         this.themeInfors = themeInfors;
         themeBtn.sprite = this.themeInfors.AvatarTheme;
-        if (PlayerPrefs.GetString("theme").Equals(this.themeInfors.NameTheme))
+        if (PlayerPrefs.GetString(GamePrefs.THEME_KEY).Equals(this.themeInfors.NameTheme))
         {
             SetBtnSelected();
         }
@@ -23,7 +24,7 @@ public class ThemeButton : MonoBehaviour
     {
         Messenger.Broadcast(EventKey.SetOriginThemeBtn);
         SetBtnSelected();
-        PlayerPrefs.SetString("theme", themeInfors.NameTheme);
+        PlayerPrefs.SetString(GamePrefs.THEME_KEY, themeInfors.NameTheme);
         Messenger.Broadcast(EventKey.SetNewThemeBtnToThemeSprite);
     }
 

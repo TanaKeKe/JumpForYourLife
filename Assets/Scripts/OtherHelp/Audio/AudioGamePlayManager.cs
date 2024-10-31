@@ -15,10 +15,10 @@ public class AudioGamePlayManager : Singleton<AudioGamePlayManager>
 
     private float _saveTimeMusicPause;
 
-    public AudioClip BackgroundSound { get { return backgroundSound; } }
-    public AudioClip BreakSound { get { return breakSound; } }
-    public AudioClip JumpSound { get { return jumpSound; } }
-    public AudioClip GameOverSound { get { return gameOverSound; } }
+    public AudioClip BackgroundSound =>  backgroundSound; 
+    public AudioClip BreakSound =>  breakSound; 
+    public AudioClip JumpSound =>  jumpSound; 
+    public AudioClip GameOverSound =>  gameOverSound; 
     
 
     private void Start()
@@ -31,18 +31,18 @@ public class AudioGamePlayManager : Singleton<AudioGamePlayManager>
 
     private void LoadDataSound()
     {
-        if (PlayerPrefs.HasKey("soundVolume"))
+        if (PlayerPrefs.HasKey(GamePrefs.SOUND_VOLUME_KEY))
         {
-            soundSource.volume = PlayerPrefs.GetFloat("soundVolume");
+            soundSource.volume = PlayerPrefs.GetFloat(GamePrefs.SOUND_VOLUME_KEY);
         }
         else
         {
             soundSource.volume = 1f;
         }
 
-        if (PlayerPrefs.HasKey("soundState"))
+        if (PlayerPrefs.HasKey(GamePrefs.SOUND_KEY))
         {
-            if (PlayerPrefs.GetString("soundState").Equals("ON"))
+            if (PlayerPrefs.GetInt(GamePrefs.SOUND_KEY) == 1)
             {
                 ContinueSound();
             }
@@ -53,25 +53,25 @@ public class AudioGamePlayManager : Singleton<AudioGamePlayManager>
         }
         else
         {
-            PlayerPrefs.SetString("soundState", "ON");
+            PlayerPrefs.SetInt(GamePrefs.SOUND_KEY, 1);
             ContinueSound();
         }
     }
 
     private void LoadDataMusic()
     {
-        if (PlayerPrefs.HasKey("musicVolume"))
+        if (PlayerPrefs.HasKey(GamePrefs.MUSIC_VOLUME_KEY))
         {
-            musicSource.volume = PlayerPrefs.GetFloat("musicVolume");
+            musicSource.volume = PlayerPrefs.GetFloat(GamePrefs.MUSIC_VOLUME_KEY);
         }
         else
         {
             musicSource.volume = 1f;
         }
 
-        if (PlayerPrefs.HasKey("musicState"))
+        if (PlayerPrefs.HasKey(GamePrefs.MUSIC_KEY))
         {
-            if (PlayerPrefs.GetString("musicState").Equals("ON"))
+            if (PlayerPrefs.GetInt(GamePrefs.MUSIC_KEY) == 1)
             {
                 ContinueMusic();
             }
@@ -82,7 +82,7 @@ public class AudioGamePlayManager : Singleton<AudioGamePlayManager>
         }
         else
         {
-            PlayerPrefs.SetString("musicState", "ON");
+            PlayerPrefs.SetInt(GamePrefs.MUSIC_KEY, 1);
             ContinueMusic();
         }
     }

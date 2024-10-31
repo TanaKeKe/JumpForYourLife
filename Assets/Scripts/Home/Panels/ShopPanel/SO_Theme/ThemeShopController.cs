@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Common;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,7 +36,7 @@ public class ThemeShopController : MonoBehaviour
         foreach (GameObject theme in _themePrefabs)
         {
             ThemeInfors obj = theme.GetComponent<ThemeButton>().themeInfors;
-            if (PlayerPrefs.GetString("theme").Equals(obj.NameTheme))
+            if (PlayerPrefs.GetString(GamePrefs.THEME_KEY).Equals(obj.NameTheme))
             {
                 theme.GetComponent<ThemeButton>().SetOriginThemeBtn();
                 break;
@@ -49,7 +50,7 @@ public class ThemeShopController : MonoBehaviour
         {
             ThemeInfors obj = theme.GetComponent<ThemeButton>().themeInfors;
 
-            if (PlayerPrefs.GetString("theme").Equals(obj.NameTheme))
+            if (PlayerPrefs.GetString(GamePrefs.THEME_KEY).Equals(obj.NameTheme))
             {
                 nameTheme.text = obj.NameTheme;
                 themeSprite.sprite = obj.BackgroundSprite;
@@ -60,7 +61,7 @@ public class ThemeShopController : MonoBehaviour
 
     private void GenerateTheme()
     {
-        ThemeInfors[] themeInfors = Resources.LoadAll<ThemeInfors>("ScriptableObjects/ThemeInfors");
+        ThemeInfors[] themeInfors = Resources.LoadAll<ThemeInfors>(GameConfig.THEME_INFOR_PATH);
         foreach (ThemeInfors theme in themeInfors)
         {
             var obj = Instantiate(themePrefab, content);

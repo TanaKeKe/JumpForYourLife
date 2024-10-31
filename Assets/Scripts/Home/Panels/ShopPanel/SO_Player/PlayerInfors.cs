@@ -13,9 +13,7 @@ public class PlayerInfors : ScriptableObject
     [SerializeField] [PreviewField(80)]
     private Sprite avatarSpriteOff;
     
-    [Title("Hello ae")]
-    [SerializeField] 
-    [GUIColor("yellow")] private string avatarName;
+    [SerializeField] private string avatarName;
 
     public Sprite PlayerSprite => playerSprite;
     public Sprite AvatarSpriteOn => avatarSpriteOn;
