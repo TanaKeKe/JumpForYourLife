@@ -30,9 +30,10 @@ public class GamePlayController : Singleton<GamePlayController>
     private Vector3 _targetPosition;
 
     public float SpaceBetweenTwoBlocks {  get { return spaceBetweenTwoBlocks; } }
-
+    
     private void Start()
     {
+        Application.targetFrameRate = GameConfig.FPS;
         LoadPlayer();
         countDown.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
         perfect.transform.SetParent(GamePlayController.Instance.GetCamera().transform);
