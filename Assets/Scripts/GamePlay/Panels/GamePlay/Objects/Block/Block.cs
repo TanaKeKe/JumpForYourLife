@@ -13,7 +13,6 @@ public class Block : MonoBehaviour
     public BlockEvent BlockEvent => blockEvent;
 
     public Collider2D _collider2D;
-
     private float _leftLimit;
     private float _rightLimit;
     private float _angle;
@@ -23,19 +22,26 @@ public class Block : MonoBehaviour
     private void Start()
     {
         _angle = 0f;
-        _leftLimit = positionWallLeft.position.x + 1.05f;
-        _rightLimit = positionWallRight.position.x - 1.05f;
         _speedBosst = 0.4f;
     }
 
     private void OnEnable()
     {
         Messenger.AddListener(EventKey.SetSpeedBlocks, SetSpeedBlocks);
+        Messenger.AddListener(EventKey.IdentifyLimitBlockMoving, LimitBlockMoving);
     }
 
     private void OnDisable()
     {
         Messenger.RemoveListener(EventKey.SetSpeedBlocks, SetSpeedBlocks);
+        Messenger.RemoveListener(EventKey.IdentifyLimitBlockMoving, LimitBlockMoving);
+    }
+
+    private void LimitBlockMoving()
+    {
+        _leftLimit = positionWallLeft.position.x + 1.05f;
+        _rightLimit = positionWallRight.position.x - 1.05f;
+        Messenger.Broadcast(EventKey.GetBlockFromPool);
     }
 
     private void SetSpeedBlocks()

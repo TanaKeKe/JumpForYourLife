@@ -22,7 +22,6 @@ public class BlockPool : MonoBehaviour
         _positionLowest = -14.5f;
         GenerateBlock(blockPrefab);
         //Debug.Log("Sinh khối đứng thành công: " + AmountObjectInPool());
-        GetBlockFromPool();
     }
 
     private void OnEnable()

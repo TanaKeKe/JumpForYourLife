@@ -14,6 +14,8 @@ public class WallSpawn : MonoBehaviour
         LoadSkinWall();
         wallTinyRightPrefab.GetComponent<SpriteRenderer>().sprite = wallTinyLeftPrefab.GetComponent<SpriteRenderer>().sprite;
         GenerateWall(wallTinyRightPrefab, wallTinyLeftPrefab);
+        Messenger.Broadcast(EventKey.IdentifyLimitBlockMoving);
+
     }
 
     private void LoadSkinWall()

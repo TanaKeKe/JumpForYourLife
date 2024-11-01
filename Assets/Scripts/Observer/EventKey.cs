@@ -26,4 +26,5 @@
     SetBlock,
     GetBlockFormPool,
     SetLowestPosition,
+    IdentifyLimitBlockMoving,
 }
