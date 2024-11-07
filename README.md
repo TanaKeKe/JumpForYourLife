@@ -1,9 +1,9 @@
 # Game Unity 2D
 ## 1. Thông Tin
-**Tên Game:** JumpForYourLife
-**Thành viên:** Phan Thanh Tân
-**Cố Vấn:** Nguyễn Tiến Hùng
-**Link Tải Game:** [JumpForYourLife]()
+##### **Tên Game:** JumpForYourLife
+##### **Thành viên:** Phan Thanh Tân
+##### **Cố Vấn:** Nguyễn Tiến Hùng
+##### **Link Tải Game:** [JumpForYourLife]()
 ### Version Control Strategy
 
 Dựa trên Gitflow để quản lý code, cụ thể là sử dụng phần mềm **Fork**. Gồm 4 nhánh main, develop, review, backup.
