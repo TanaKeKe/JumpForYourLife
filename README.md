@@ -1,9 +1,9 @@
 # Game Unity 2D
 ## 1. Thông Tin
 ##### **Tên Game:** JumpForYourLife
-##### **Thành viên:** Phan Thanh Tân
-##### **Cố Vấn:** Nguyễn Tiến Hùng
-##### **Link Tải Game:** [JumpForYourLife]()
+##### **Thành viên:** [Phan Thanh Tân](https://github.com/TanaKeKe?fbclid=IwY2xjawG2F6tleHRuA2FlbQIxMAABHdk8g-46_QxlPnvj-EI7KAKM6_auWOZQyAn44Gmicc8MSRO7uH80lW61ug_aem_YiPfD4achhN8eAa2vGZNbw)
+##### **Cố Vấn:** [Nguyễn Tiến Hùng](https://github.com/NgTienHungg?fbclid=IwY2xjawG2F4RleHRuA2FlbQIxMAABHTgbFw5NUG5aoYjEB1GtZ2StL6Am77yeAked5MnfSeTgqtKLFYzXrLmiDQ_aem_qg2IxJtLmAHKE8WVl6fJOg)
+##### **Link Tải Game và Video demo:** [JumpForYourLife](https://drive.google.com/drive/folders/1UvoCjm3te6q1eYfMYo2oSAMK_YV_5L7D?usp=drive_link)
 ### Version Control Strategy
 
 Dựa trên Gitflow để quản lý code, cụ thể là sử dụng phần mềm **Fork**. Gồm 4 nhánh main, develop, review, backup.
@@ -29,10 +29,11 @@ Dựa trên Gitflow để quản lý code, cụ thể là sử dụng phần m�
 - Design pattern: obsever pattern, Singleton.
 - Dotween
 
-## 5. Ảnh và Video Demo
-
-###### Video:
-###### Hình ảnh minh họa:
+## 5. Hình ảnh demo
+![alt text](image.png)
+![alt text](image-3.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
 ## 6. Các Vấn Đề Gặp Phải
 
 #### Vấn Đề 1: Kiểm tra va chạm
