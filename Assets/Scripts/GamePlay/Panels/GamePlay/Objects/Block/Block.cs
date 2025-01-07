@@ -1,10 +1,11 @@
 ﻿using System;
+using Common;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Block : MonoBehaviour
 {
-    [SerializeField] private BlockEvent blockEvent; 
+    [SerializeField] private BlockEvent blockEvent;
     [SerializeField] private float speed;
     [SerializeField] private float speedRandomRange;
     [SerializeField] private Transform positionWallLeft;
@@ -13,8 +14,6 @@ public class Block : MonoBehaviour
     public BlockEvent BlockEvent => blockEvent;
 
     public Collider2D _collider2D;
-    private float _leftLimit;
-    private float _rightLimit;
     private float _angle;
     private float _pauseSpeed;
     private float _speedBosst;
@@ -23,25 +22,17 @@ public class Block : MonoBehaviour
     {
         _angle = 0f;
         _speedBosst = 0.4f;
+        Messenger.Broadcast(EventKey.GetBlockFromPool);
     }
 
     private void OnEnable()
     {
         Messenger.AddListener(EventKey.SetSpeedBlocks, SetSpeedBlocks);
-        Messenger.AddListener(EventKey.IdentifyLimitBlockMoving, LimitBlockMoving);
     }
 
     private void OnDisable()
     {
         Messenger.RemoveListener(EventKey.SetSpeedBlocks, SetSpeedBlocks);
-        Messenger.RemoveListener(EventKey.IdentifyLimitBlockMoving, LimitBlockMoving);
-    }
-
-    private void LimitBlockMoving()
-    {
-        _leftLimit = positionWallLeft.position.x + 1.05f;
-        _rightLimit = positionWallRight.position.x - 1.05f;
-        Messenger.Broadcast(EventKey.GetBlockFromPool);
     }
 
     private void SetSpeedBlocks()
@@ -52,13 +43,12 @@ public class Block : MonoBehaviour
     private void Update()
     {
         Move();
-        ChangeDirection();
         CheckPauseAndFinish();
     }
 
     private void CheckPauseAndFinish()
     {
-        if(GamePlayController.Instance.isPause || GamePlayController.Instance.isFinish)
+        if (GamePlayController.Instance.isPause || GamePlayController.Instance.isFinish)
         {
             if (speed != 0)
             {
@@ -75,7 +65,7 @@ public class Block : MonoBehaviour
 
     public void SetAngle()
     {
-        if(speed > 0)
+        if (speed > 0)
         {
             _angle = (float)Random.Range(0.1f, 0.25f);
         }
@@ -92,25 +82,15 @@ public class Block : MonoBehaviour
 
     public void ChangeDirection()
     {
-        if (transform.position.x < _leftLimit)
-        {
-            Vector3 position = transform.position;
-            position.x = _leftLimit;
-            transform.position = position;
-        }
+        speed *= -1f;
+        _angle *= -1f;
+    }
 
-        if (transform.position.x > _rightLimit)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag(GameTags.WALL_TAG))
         {
-            Vector3 position = transform.position;
-            position.x = _rightLimit;
-            transform.position = position;
-        }
-
-        // không so sánh 2 số float vì sẽ có sai số cực nhỏ
-        if (Mathf.Approximately(Math.Abs(transform.position.x), _rightLimit))
-        {
-            speed *= -1f;
-            _angle *= -1f;
+            ChangeDirection();
         }
     }
 
@@ -131,36 +111,18 @@ public class Block : MonoBehaviour
         this.speed = speed;
     }
 
-    public void SetLimitNormalBlock()
-    {
-        _leftLimit = positionWallLeft.position.x + 1.05f;
-        _rightLimit = positionWallRight.position.x - 1.05f;
-    }
-
-    public void SetLimitMediumBlock()
-    {
-        _leftLimit = positionWallLeft.position.x + 0.95f;
-        _rightLimit = positionWallRight.position.x - 0.95f;
-    }
-
-    public void SetLimitHardBlock()
-    {
-        _leftLimit = positionWallLeft.position.x + 0.85f;
-        _rightLimit = positionWallRight.position.x - 0.85f;
-    }
-
     public void BoostSpeed()
     {
-        if(speed < 0)
+        if (speed < 0)
         {
-            if(speed > -2f)
+            if (speed > -2f)
             {
                 speed -= _speedBosst;
             }
         }
         else
         {
-            if(speed < 2f)
+            if (speed < 2f)
             {
                 speed += _speedBosst;
             }

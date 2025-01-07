@@ -72,14 +72,12 @@ public class BlockPool : MonoBehaviour
         {
             blockEvent.LoadSkinNormalBlock();
             blockEvent.SetColliderNormalBlock();
-            block.SetLimitNormalBlock();
         }
 
         if (type == TypeBlock.Medium)
         {
             blockEvent.LoadSkinMediumBlock();
             blockEvent.SetColliderMediumBlock();
-            block.SetLimitMediumBlock();
         }
 
         if (type == TypeBlock.Speed)
@@ -101,7 +99,6 @@ public class BlockPool : MonoBehaviour
         {
             blockEvent.LoadSkinHardBlock();
             blockEvent.SetColliderHardBlock();
-            block.SetLimitHardBlock();
         }
 
         if (type == TypeBlock.Normal || type == TypeBlock.Medium || type == TypeBlock.Hard)
