@@ -172,6 +172,7 @@ public class BlockPool : MonoBehaviour
         //Debug.Log(_positionLowest);
         Vector3 position = obj.transform.position;
         position.y = _positionLowest;
+        position.x = 0;
         obj.transform.position = position; // đặt lại vị trí cho object
     }
 
